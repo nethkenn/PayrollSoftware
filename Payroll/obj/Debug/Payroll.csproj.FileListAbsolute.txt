@@ -1,0 +1,12 @@
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\bin\Debug\Payroll.exe.config
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\bin\Debug\Payroll.exe
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\bin\Debug\Payroll.pdb
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\bin\Debug\MySql.Data.dll
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\bin\Debug\Google.Protobuf.dll
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\bin\Debug\MySql.Data.xml
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\obj\Debug\Payroll.csprojResolveAssemblyReference.cache
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\obj\Debug\Payroll.Form1.resources
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\obj\Debug\Payroll.Properties.Resources.resources
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\obj\Debug\Payroll.csproj.GenerateResource.Cache
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\obj\Debug\Payroll.exe
+c:\users\digima\documents\visual studio 2015\Projects\Payroll\Payroll\obj\Debug\Payroll.pdb
