@@ -52,5 +52,10 @@ namespace Payroll
         {
             panel1.Size = new Size(57, 647);
         }
+
+        private void t_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
