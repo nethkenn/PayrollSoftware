@@ -21,5 +21,36 @@ namespace Payroll
             InitializeComponent();
             dbcon = new db();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseHover(object sender, EventArgs e)
+        {
+            panel1.Size = new Size(201, 647);
+            /* mySecondCustmControl1.Size = new Size(957, 406);
+            firstCustomControl1.Size = new Size(811, 406);
+            mySecondCustmControl1.Location = new Point(69, 156);
+            firstCustomControl1.Location = new Point(69, 156);
+            */
+
+        }
+
+        private void Form1_MouseHover(object sender, EventArgs e)
+        {
+            panel1.Size = new Size(57, 647);
+        }
     }
 }
