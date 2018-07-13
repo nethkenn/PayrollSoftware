@@ -14,7 +14,7 @@ namespace Payroll
 {
     public class db
     {
-        private MySqlConnection con;
+        public MySqlConnection con;
         //Constructor
         public db()
         {
@@ -22,9 +22,9 @@ namespace Payroll
         }
 
         //Initialize values
-        private void Initialize()
+        public void Initialize()
         {
-            con = new MySqlConnection("server=localhost;user id=root;database=test;password=water123");
+            con = new MySqlConnection("server=localhost;user id=root;database=payroll;password=water123");
         }
 
         public bool OpenCon()
@@ -71,12 +71,27 @@ namespace Payroll
         //Insert statement
         public void Insert(string table,string[] columns,string[] values)
         {
-            this.Initialize();
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO "+table+"(" + string.Join(",", columns) + ") VALUES('" + string.Join(",", values) + "')", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                this.Initialize();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO " + table + "(" + string.Join(",", columns) + ") VALUES('" + string.Join("','", values) + "')", con);
+                int check = cmd.ExecuteNonQuery();
+                con.Close();
 
+                if (check == 0)
+                {
+                    MessageBox.Show("Error");
+                }
+                else
+                {
+                    MessageBox.Show("Success");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured!" + ex);
+            }
         }
 
         //string table -> table name

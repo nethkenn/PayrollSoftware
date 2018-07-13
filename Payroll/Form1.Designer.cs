@@ -36,7 +36,23 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.t = new System.Windows.Forms.Panel();
+            this.CompanyPanel = new System.Windows.Forms.Panel();
+            this.lblBankAccount = new System.Windows.Forms.Label();
+            this.payroll_company_account_no = new System.Windows.Forms.TextBox();
+            this.payroll_company_date_started = new System.Windows.Forms.DateTimePicker();
+            this.lblNatureOfBusiness = new System.Windows.Forms.Label();
+            this.lblCompanyEmail = new System.Windows.Forms.Label();
+            this.lblCompanyPhilhealth = new System.Windows.Forms.Label();
+            this.lblCompanyContact = new System.Windows.Forms.Label();
+            this.lblCompanySss = new System.Windows.Forms.Label();
+            this.lblCompanyAddress = new System.Windows.Forms.Label();
+            this.lblBank = new System.Windows.Forms.Label();
+            this.lblCompanyRdo = new System.Windows.Forms.Label();
+            this.lblCompanyTin = new System.Windows.Forms.Label();
+            this.lblCompanyPagibig = new System.Windows.Forms.Label();
+            this.lblCompanyCode = new System.Windows.Forms.Label();
+            this.lblCompanyDateStarted = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCompanyHeader = new System.Windows.Forms.Label();
             this.btnCompanySave = new System.Windows.Forms.Button();
@@ -57,29 +73,15 @@
             this.payroll_company_code = new System.Windows.Forms.TextBox();
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.lblCompanyName = new System.Windows.Forms.Label();
-            this.lblCompanyDateStarted = new System.Windows.Forms.Label();
-            this.lblCompanyCode = new System.Windows.Forms.Label();
-            this.lblCompanyPagibig = new System.Windows.Forms.Label();
-            this.lblCompanyRdo = new System.Windows.Forms.Label();
-            this.lblCompanyTin = new System.Windows.Forms.Label();
-            this.lblCompanyAddress = new System.Windows.Forms.Label();
-            this.lblBank = new System.Windows.Forms.Label();
-            this.lblCompanyContact = new System.Windows.Forms.Label();
-            this.lblCompanySss = new System.Windows.Forms.Label();
-            this.lblCompanyEmail = new System.Windows.Forms.Label();
-            this.lblCompanyPhilhealth = new System.Windows.Forms.Label();
-            this.lblNatureOfBusiness = new System.Windows.Forms.Label();
-            this.payroll_company_date_started = new System.Windows.Forms.DateTimePicker();
-            this.payroll_company_account_no = new System.Windows.Forms.TextBox();
-            this.lblBankAccount = new System.Windows.Forms.Label();
+            this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.payroll_company_logo_default = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.t.SuspendLayout();
+            this.CompanyPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.b.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -207,47 +209,189 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
-            // t
+            // CompanyPanel
             // 
-            this.t.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.t.Controls.Add(this.lblBankAccount);
-            this.t.Controls.Add(this.payroll_company_account_no);
-            this.t.Controls.Add(this.payroll_company_date_started);
-            this.t.Controls.Add(this.lblNatureOfBusiness);
-            this.t.Controls.Add(this.lblCompanyEmail);
-            this.t.Controls.Add(this.lblCompanyPhilhealth);
-            this.t.Controls.Add(this.lblCompanyContact);
-            this.t.Controls.Add(this.lblCompanySss);
-            this.t.Controls.Add(this.lblCompanyAddress);
-            this.t.Controls.Add(this.lblBank);
-            this.t.Controls.Add(this.lblCompanyRdo);
-            this.t.Controls.Add(this.lblCompanyTin);
-            this.t.Controls.Add(this.lblCompanyPagibig);
-            this.t.Controls.Add(this.lblCompanyCode);
-            this.t.Controls.Add(this.lblCompanyDateStarted);
-            this.t.Controls.Add(this.lblCompanyName);
-            this.t.Controls.Add(this.panel2);
-            this.t.Controls.Add(this.btnCompanySave);
-            this.t.Controls.Add(this.btnCompanyEdit);
-            this.t.Controls.Add(this.b);
-            this.t.Controls.Add(this.payroll_company_nature_of_business);
-            this.t.Controls.Add(this.payroll_company_philhealth);
-            this.t.Controls.Add(this.payroll_company_email);
-            this.t.Controls.Add(this.payroll_company_sss);
-            this.t.Controls.Add(this.payroll_company_contact);
-            this.t.Controls.Add(this.payroll_company_bank);
-            this.t.Controls.Add(this.payroll_company_rdo);
-            this.t.Controls.Add(this.payroll_company_tin);
-            this.t.Controls.Add(this.payroll_company_address);
-            this.t.Controls.Add(this.payroll_company_pagibig);
-            this.t.Controls.Add(this.payroll_company_code);
-            this.t.Controls.Add(this.payroll_company_name);
-            this.t.Controls.Add(this.dataGridView1);
-            this.t.Location = new System.Drawing.Point(72, 12);
-            this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(1038, 623);
-            this.t.TabIndex = 1;
-            this.t.Paint += new System.Windows.Forms.PaintEventHandler(this.t_Paint);
+            this.CompanyPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CompanyPanel.Controls.Add(this.lblBankAccount);
+            this.CompanyPanel.Controls.Add(this.payroll_company_account_no);
+            this.CompanyPanel.Controls.Add(this.payroll_company_date_started);
+            this.CompanyPanel.Controls.Add(this.lblNatureOfBusiness);
+            this.CompanyPanel.Controls.Add(this.lblCompanyEmail);
+            this.CompanyPanel.Controls.Add(this.lblCompanyPhilhealth);
+            this.CompanyPanel.Controls.Add(this.lblCompanyContact);
+            this.CompanyPanel.Controls.Add(this.lblCompanySss);
+            this.CompanyPanel.Controls.Add(this.lblCompanyAddress);
+            this.CompanyPanel.Controls.Add(this.lblBank);
+            this.CompanyPanel.Controls.Add(this.lblCompanyRdo);
+            this.CompanyPanel.Controls.Add(this.lblCompanyTin);
+            this.CompanyPanel.Controls.Add(this.lblCompanyPagibig);
+            this.CompanyPanel.Controls.Add(this.lblCompanyCode);
+            this.CompanyPanel.Controls.Add(this.lblCompanyDateStarted);
+            this.CompanyPanel.Controls.Add(this.lblCompanyName);
+            this.CompanyPanel.Controls.Add(this.panel2);
+            this.CompanyPanel.Controls.Add(this.btnCompanySave);
+            this.CompanyPanel.Controls.Add(this.btnCompanyEdit);
+            this.CompanyPanel.Controls.Add(this.b);
+            this.CompanyPanel.Controls.Add(this.payroll_company_nature_of_business);
+            this.CompanyPanel.Controls.Add(this.payroll_company_philhealth);
+            this.CompanyPanel.Controls.Add(this.payroll_company_email);
+            this.CompanyPanel.Controls.Add(this.payroll_company_sss);
+            this.CompanyPanel.Controls.Add(this.payroll_company_contact);
+            this.CompanyPanel.Controls.Add(this.payroll_company_bank);
+            this.CompanyPanel.Controls.Add(this.payroll_company_rdo);
+            this.CompanyPanel.Controls.Add(this.payroll_company_tin);
+            this.CompanyPanel.Controls.Add(this.payroll_company_address);
+            this.CompanyPanel.Controls.Add(this.payroll_company_pagibig);
+            this.CompanyPanel.Controls.Add(this.payroll_company_code);
+            this.CompanyPanel.Controls.Add(this.payroll_company_name);
+            this.CompanyPanel.Controls.Add(this.dataGridView1);
+            this.CompanyPanel.Location = new System.Drawing.Point(72, 12);
+            this.CompanyPanel.Name = "CompanyPanel";
+            this.CompanyPanel.Size = new System.Drawing.Size(1038, 623);
+            this.CompanyPanel.TabIndex = 1;
+            this.CompanyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.t_Paint);
+            // 
+            // lblBankAccount
+            // 
+            this.lblBankAccount.AutoSize = true;
+            this.lblBankAccount.Location = new System.Drawing.Point(347, 403);
+            this.lblBankAccount.Name = "lblBankAccount";
+            this.lblBankAccount.Size = new System.Drawing.Size(115, 13);
+            this.lblBankAccount.TabIndex = 35;
+            this.lblBankAccount.Text = "Bank Account Number";
+            // 
+            // payroll_company_account_no
+            // 
+            this.payroll_company_account_no.Location = new System.Drawing.Point(348, 419);
+            this.payroll_company_account_no.Name = "payroll_company_account_no";
+            this.payroll_company_account_no.Size = new System.Drawing.Size(319, 20);
+            this.payroll_company_account_no.TabIndex = 9;
+            this.payroll_company_account_no.Tag = "Bank Account Number";
+            // 
+            // payroll_company_date_started
+            // 
+            this.payroll_company_date_started.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.payroll_company_date_started.Location = new System.Drawing.Point(348, 338);
+            this.payroll_company_date_started.Name = "payroll_company_date_started";
+            this.payroll_company_date_started.Size = new System.Drawing.Size(319, 20);
+            this.payroll_company_date_started.TabIndex = 17;
+            // 
+            // lblNatureOfBusiness
+            // 
+            this.lblNatureOfBusiness.AutoSize = true;
+            this.lblNatureOfBusiness.Location = new System.Drawing.Point(10, 565);
+            this.lblNatureOfBusiness.Name = "lblNatureOfBusiness";
+            this.lblNatureOfBusiness.Size = new System.Drawing.Size(96, 13);
+            this.lblNatureOfBusiness.TabIndex = 33;
+            this.lblNatureOfBusiness.Text = "Nature of Business";
+            // 
+            // lblCompanyEmail
+            // 
+            this.lblCompanyEmail.AutoSize = true;
+            this.lblCompanyEmail.Location = new System.Drawing.Point(10, 523);
+            this.lblCompanyEmail.Name = "lblCompanyEmail";
+            this.lblCompanyEmail.Size = new System.Drawing.Size(79, 13);
+            this.lblCompanyEmail.TabIndex = 31;
+            this.lblCompanyEmail.Text = "Company Email";
+            // 
+            // lblCompanyPhilhealth
+            // 
+            this.lblCompanyPhilhealth.AutoSize = true;
+            this.lblCompanyPhilhealth.Location = new System.Drawing.Point(347, 523);
+            this.lblCompanyPhilhealth.Name = "lblCompanyPhilhealth";
+            this.lblCompanyPhilhealth.Size = new System.Drawing.Size(100, 13);
+            this.lblCompanyPhilhealth.TabIndex = 30;
+            this.lblCompanyPhilhealth.Text = "Company Philhealth";
+            // 
+            // lblCompanyContact
+            // 
+            this.lblCompanyContact.AutoSize = true;
+            this.lblCompanyContact.Location = new System.Drawing.Point(10, 482);
+            this.lblCompanyContact.Name = "lblCompanyContact";
+            this.lblCompanyContact.Size = new System.Drawing.Size(91, 13);
+            this.lblCompanyContact.TabIndex = 29;
+            this.lblCompanyContact.Text = "Company Contact";
+            // 
+            // lblCompanySss
+            // 
+            this.lblCompanySss.AutoSize = true;
+            this.lblCompanySss.Location = new System.Drawing.Point(347, 482);
+            this.lblCompanySss.Name = "lblCompanySss";
+            this.lblCompanySss.Size = new System.Drawing.Size(75, 13);
+            this.lblCompanySss.TabIndex = 28;
+            this.lblCompanySss.Text = "Company SSS";
+            // 
+            // lblCompanyAddress
+            // 
+            this.lblCompanyAddress.AutoSize = true;
+            this.lblCompanyAddress.Location = new System.Drawing.Point(10, 442);
+            this.lblCompanyAddress.Name = "lblCompanyAddress";
+            this.lblCompanyAddress.Size = new System.Drawing.Size(92, 13);
+            this.lblCompanyAddress.TabIndex = 27;
+            this.lblCompanyAddress.Text = "Company Address";
+            // 
+            // lblBank
+            // 
+            this.lblBank.AutoSize = true;
+            this.lblBank.Location = new System.Drawing.Point(347, 364);
+            this.lblBank.Name = "lblBank";
+            this.lblBank.Size = new System.Drawing.Size(32, 13);
+            this.lblBank.TabIndex = 26;
+            this.lblBank.Text = "Bank";
+            // 
+            // lblCompanyRdo
+            // 
+            this.lblCompanyRdo.AutoSize = true;
+            this.lblCompanyRdo.Location = new System.Drawing.Point(10, 403);
+            this.lblCompanyRdo.Name = "lblCompanyRdo";
+            this.lblCompanyRdo.Size = new System.Drawing.Size(78, 13);
+            this.lblCompanyRdo.TabIndex = 25;
+            this.lblCompanyRdo.Text = "Company RDO";
+            // 
+            // lblCompanyTin
+            // 
+            this.lblCompanyTin.AutoSize = true;
+            this.lblCompanyTin.Location = new System.Drawing.Point(347, 442);
+            this.lblCompanyTin.Name = "lblCompanyTin";
+            this.lblCompanyTin.Size = new System.Drawing.Size(72, 13);
+            this.lblCompanyTin.TabIndex = 24;
+            this.lblCompanyTin.Text = "Company TIN";
+            // 
+            // lblCompanyPagibig
+            // 
+            this.lblCompanyPagibig.AutoSize = true;
+            this.lblCompanyPagibig.Location = new System.Drawing.Point(347, 565);
+            this.lblCompanyPagibig.Name = "lblCompanyPagibig";
+            this.lblCompanyPagibig.Size = new System.Drawing.Size(97, 13);
+            this.lblCompanyPagibig.TabIndex = 23;
+            this.lblCompanyPagibig.Text = "Company PAGIBIG";
+            // 
+            // lblCompanyCode
+            // 
+            this.lblCompanyCode.AutoSize = true;
+            this.lblCompanyCode.Location = new System.Drawing.Point(10, 364);
+            this.lblCompanyCode.Name = "lblCompanyCode";
+            this.lblCompanyCode.Size = new System.Drawing.Size(79, 13);
+            this.lblCompanyCode.TabIndex = 22;
+            this.lblCompanyCode.Text = "Company Code";
+            // 
+            // lblCompanyDateStarted
+            // 
+            this.lblCompanyDateStarted.AutoSize = true;
+            this.lblCompanyDateStarted.Location = new System.Drawing.Point(347, 325);
+            this.lblCompanyDateStarted.Name = "lblCompanyDateStarted";
+            this.lblCompanyDateStarted.Size = new System.Drawing.Size(114, 13);
+            this.lblCompanyDateStarted.TabIndex = 21;
+            this.lblCompanyDateStarted.Text = "Company Date Started";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(10, 325);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(82, 13);
+            this.lblCompanyName.TabIndex = 20;
+            this.lblCompanyName.Text = "Company Name";
             // 
             // panel2
             // 
@@ -276,6 +420,7 @@
             this.btnCompanySave.TabIndex = 18;
             this.btnCompanySave.Text = "Save";
             this.btnCompanySave.UseVisualStyleBackColor = true;
+            this.btnCompanySave.Click += new System.EventHandler(this.btnCompanySave_Click);
             // 
             // btnCompanyEdit
             // 
@@ -288,6 +433,7 @@
             // 
             // b
             // 
+            this.b.Controls.Add(this.payroll_company_logo_default);
             this.b.Controls.Add(this.btnCompanyUpload);
             this.b.Controls.Add(this.payroll_company_logo);
             this.b.Location = new System.Drawing.Point(698, 323);
@@ -305,12 +451,14 @@
             this.btnCompanyUpload.TabIndex = 16;
             this.btnCompanyUpload.Text = "Upload Logo";
             this.btnCompanyUpload.UseVisualStyleBackColor = true;
+            this.btnCompanyUpload.Click += new System.EventHandler(this.btnCompanyUpload_Click);
             // 
             // payroll_company_logo
             // 
-            this.payroll_company_logo.Location = new System.Drawing.Point(6, 18);
+            this.payroll_company_logo.Location = new System.Drawing.Point(6, 15);
             this.payroll_company_logo.Name = "payroll_company_logo";
             this.payroll_company_logo.Size = new System.Drawing.Size(284, 154);
+            this.payroll_company_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.payroll_company_logo.TabIndex = 15;
             this.payroll_company_logo.TabStop = false;
             // 
@@ -319,7 +467,8 @@
             this.payroll_company_nature_of_business.Location = new System.Drawing.Point(11, 581);
             this.payroll_company_nature_of_business.Name = "payroll_company_nature_of_business";
             this.payroll_company_nature_of_business.Size = new System.Drawing.Size(317, 20);
-            this.payroll_company_nature_of_business.TabIndex = 13;
+            this.payroll_company_nature_of_business.TabIndex = 7;
+            this.payroll_company_nature_of_business.Tag = "Nature of Business";
             // 
             // payroll_company_philhealth
             // 
@@ -327,71 +476,82 @@
             this.payroll_company_philhealth.Name = "payroll_company_philhealth";
             this.payroll_company_philhealth.Size = new System.Drawing.Size(319, 20);
             this.payroll_company_philhealth.TabIndex = 12;
+            this.payroll_company_philhealth.Tag = "Company Philhealth";
             // 
             // payroll_company_email
             // 
             this.payroll_company_email.Location = new System.Drawing.Point(11, 542);
             this.payroll_company_email.Name = "payroll_company_email";
             this.payroll_company_email.Size = new System.Drawing.Size(317, 20);
-            this.payroll_company_email.TabIndex = 11;
+            this.payroll_company_email.TabIndex = 6;
+            this.payroll_company_email.Tag = "Company Email";
             // 
             // payroll_company_sss
             // 
             this.payroll_company_sss.Location = new System.Drawing.Point(348, 500);
             this.payroll_company_sss.Name = "payroll_company_sss";
             this.payroll_company_sss.Size = new System.Drawing.Size(319, 20);
-            this.payroll_company_sss.TabIndex = 10;
+            this.payroll_company_sss.TabIndex = 11;
+            this.payroll_company_sss.Tag = "Company SSS";
             // 
             // payroll_company_contact
             // 
             this.payroll_company_contact.Location = new System.Drawing.Point(11, 500);
             this.payroll_company_contact.Name = "payroll_company_contact";
             this.payroll_company_contact.Size = new System.Drawing.Size(317, 20);
-            this.payroll_company_contact.TabIndex = 9;
+            this.payroll_company_contact.TabIndex = 5;
+            this.payroll_company_contact.Tag = "Company Contact";
             // 
             // payroll_company_bank
             // 
+            this.payroll_company_bank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_company_bank.FormattingEnabled = true;
             this.payroll_company_bank.Location = new System.Drawing.Point(348, 380);
             this.payroll_company_bank.Name = "payroll_company_bank";
             this.payroll_company_bank.Size = new System.Drawing.Size(319, 21);
             this.payroll_company_bank.TabIndex = 8;
+            this.payroll_company_bank.Tag = "";
             // 
             // payroll_company_rdo
             // 
+            this.payroll_company_rdo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_company_rdo.FormattingEnabled = true;
             this.payroll_company_rdo.Location = new System.Drawing.Point(13, 419);
             this.payroll_company_rdo.Name = "payroll_company_rdo";
             this.payroll_company_rdo.Size = new System.Drawing.Size(317, 21);
-            this.payroll_company_rdo.TabIndex = 7;
+            this.payroll_company_rdo.TabIndex = 3;
             // 
             // payroll_company_tin
             // 
             this.payroll_company_tin.Location = new System.Drawing.Point(348, 458);
             this.payroll_company_tin.Name = "payroll_company_tin";
             this.payroll_company_tin.Size = new System.Drawing.Size(319, 20);
-            this.payroll_company_tin.TabIndex = 6;
+            this.payroll_company_tin.TabIndex = 10;
+            this.payroll_company_tin.Tag = "Company TIN";
             // 
             // payroll_company_address
             // 
             this.payroll_company_address.Location = new System.Drawing.Point(13, 458);
             this.payroll_company_address.Name = "payroll_company_address";
             this.payroll_company_address.Size = new System.Drawing.Size(317, 20);
-            this.payroll_company_address.TabIndex = 5;
+            this.payroll_company_address.TabIndex = 4;
+            this.payroll_company_address.Tag = "Company Address";
             // 
             // payroll_company_pagibig
             // 
             this.payroll_company_pagibig.Location = new System.Drawing.Point(349, 581);
             this.payroll_company_pagibig.Name = "payroll_company_pagibig";
             this.payroll_company_pagibig.Size = new System.Drawing.Size(319, 20);
-            this.payroll_company_pagibig.TabIndex = 4;
+            this.payroll_company_pagibig.TabIndex = 13;
+            this.payroll_company_pagibig.Tag = "Company Pagibig";
             // 
             // payroll_company_code
             // 
             this.payroll_company_code.Location = new System.Drawing.Point(12, 380);
             this.payroll_company_code.Name = "payroll_company_code";
             this.payroll_company_code.Size = new System.Drawing.Size(317, 20);
-            this.payroll_company_code.TabIndex = 3;
+            this.payroll_company_code.TabIndex = 2;
+            this.payroll_company_code.Tag = "Company Code";
             // 
             // payroll_company_name
             // 
@@ -399,6 +559,7 @@
             this.payroll_company_name.Name = "payroll_company_name";
             this.payroll_company_name.Size = new System.Drawing.Size(317, 20);
             this.payroll_company_name.TabIndex = 1;
+            this.payroll_company_name.Tag = "Company Name";
             // 
             // dataGridView1
             // 
@@ -408,146 +569,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(1012, 190);
             this.dataGridView1.TabIndex = 0;
             // 
-            // lblCompanyName
+            // CompanyFileDialog
             // 
-            this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Location = new System.Drawing.Point(10, 325);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(82, 13);
-            this.lblCompanyName.TabIndex = 20;
-            this.lblCompanyName.Text = "Company Name";
+            this.CompanyFileDialog.FileName = "openFileDialog1";
             // 
-            // lblCompanyDateStarted
+            // payroll_company_logo_default
             // 
-            this.lblCompanyDateStarted.AutoSize = true;
-            this.lblCompanyDateStarted.Location = new System.Drawing.Point(347, 325);
-            this.lblCompanyDateStarted.Name = "lblCompanyDateStarted";
-            this.lblCompanyDateStarted.Size = new System.Drawing.Size(114, 13);
-            this.lblCompanyDateStarted.TabIndex = 21;
-            this.lblCompanyDateStarted.Text = "Company Date Started";
-            // 
-            // lblCompanyCode
-            // 
-            this.lblCompanyCode.AutoSize = true;
-            this.lblCompanyCode.Location = new System.Drawing.Point(10, 364);
-            this.lblCompanyCode.Name = "lblCompanyCode";
-            this.lblCompanyCode.Size = new System.Drawing.Size(79, 13);
-            this.lblCompanyCode.TabIndex = 22;
-            this.lblCompanyCode.Text = "Company Code";
-            // 
-            // lblCompanyPagibig
-            // 
-            this.lblCompanyPagibig.AutoSize = true;
-            this.lblCompanyPagibig.Location = new System.Drawing.Point(347, 565);
-            this.lblCompanyPagibig.Name = "lblCompanyPagibig";
-            this.lblCompanyPagibig.Size = new System.Drawing.Size(97, 13);
-            this.lblCompanyPagibig.TabIndex = 23;
-            this.lblCompanyPagibig.Text = "Company PAGIBIG";
-            // 
-            // lblCompanyRdo
-            // 
-            this.lblCompanyRdo.AutoSize = true;
-            this.lblCompanyRdo.Location = new System.Drawing.Point(10, 403);
-            this.lblCompanyRdo.Name = "lblCompanyRdo";
-            this.lblCompanyRdo.Size = new System.Drawing.Size(78, 13);
-            this.lblCompanyRdo.TabIndex = 25;
-            this.lblCompanyRdo.Text = "Company RDO";
-            // 
-            // lblCompanyTin
-            // 
-            this.lblCompanyTin.AutoSize = true;
-            this.lblCompanyTin.Location = new System.Drawing.Point(347, 442);
-            this.lblCompanyTin.Name = "lblCompanyTin";
-            this.lblCompanyTin.Size = new System.Drawing.Size(72, 13);
-            this.lblCompanyTin.TabIndex = 24;
-            this.lblCompanyTin.Text = "Company TIN";
-            // 
-            // lblCompanyAddress
-            // 
-            this.lblCompanyAddress.AutoSize = true;
-            this.lblCompanyAddress.Location = new System.Drawing.Point(10, 442);
-            this.lblCompanyAddress.Name = "lblCompanyAddress";
-            this.lblCompanyAddress.Size = new System.Drawing.Size(92, 13);
-            this.lblCompanyAddress.TabIndex = 27;
-            this.lblCompanyAddress.Text = "Company Address";
-            // 
-            // lblBank
-            // 
-            this.lblBank.AutoSize = true;
-            this.lblBank.Location = new System.Drawing.Point(347, 364);
-            this.lblBank.Name = "lblBank";
-            this.lblBank.Size = new System.Drawing.Size(32, 13);
-            this.lblBank.TabIndex = 26;
-            this.lblBank.Text = "Bank";
-            // 
-            // lblCompanyContact
-            // 
-            this.lblCompanyContact.AutoSize = true;
-            this.lblCompanyContact.Location = new System.Drawing.Point(10, 482);
-            this.lblCompanyContact.Name = "lblCompanyContact";
-            this.lblCompanyContact.Size = new System.Drawing.Size(91, 13);
-            this.lblCompanyContact.TabIndex = 29;
-            this.lblCompanyContact.Text = "Company Contact";
-            // 
-            // lblCompanySss
-            // 
-            this.lblCompanySss.AutoSize = true;
-            this.lblCompanySss.Location = new System.Drawing.Point(347, 482);
-            this.lblCompanySss.Name = "lblCompanySss";
-            this.lblCompanySss.Size = new System.Drawing.Size(75, 13);
-            this.lblCompanySss.TabIndex = 28;
-            this.lblCompanySss.Text = "Company SSS";
-            // 
-            // lblCompanyEmail
-            // 
-            this.lblCompanyEmail.AutoSize = true;
-            this.lblCompanyEmail.Location = new System.Drawing.Point(10, 523);
-            this.lblCompanyEmail.Name = "lblCompanyEmail";
-            this.lblCompanyEmail.Size = new System.Drawing.Size(79, 13);
-            this.lblCompanyEmail.TabIndex = 31;
-            this.lblCompanyEmail.Text = "Company Email";
-            // 
-            // lblCompanyPhilhealth
-            // 
-            this.lblCompanyPhilhealth.AutoSize = true;
-            this.lblCompanyPhilhealth.Location = new System.Drawing.Point(347, 523);
-            this.lblCompanyPhilhealth.Name = "lblCompanyPhilhealth";
-            this.lblCompanyPhilhealth.Size = new System.Drawing.Size(100, 13);
-            this.lblCompanyPhilhealth.TabIndex = 30;
-            this.lblCompanyPhilhealth.Text = "Company Philhealth";
-            // 
-            // lblNatureOfBusiness
-            // 
-            this.lblNatureOfBusiness.AutoSize = true;
-            this.lblNatureOfBusiness.Location = new System.Drawing.Point(10, 565);
-            this.lblNatureOfBusiness.Name = "lblNatureOfBusiness";
-            this.lblNatureOfBusiness.Size = new System.Drawing.Size(96, 13);
-            this.lblNatureOfBusiness.TabIndex = 33;
-            this.lblNatureOfBusiness.Text = "Nature of Business";
-            // 
-            // payroll_company_date_started
-            // 
-            this.payroll_company_date_started.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.payroll_company_date_started.Location = new System.Drawing.Point(348, 338);
-            this.payroll_company_date_started.Name = "payroll_company_date_started";
-            this.payroll_company_date_started.Size = new System.Drawing.Size(319, 20);
-            this.payroll_company_date_started.TabIndex = 17;
-            // 
-            // payroll_company_account_no
-            // 
-            this.payroll_company_account_no.Location = new System.Drawing.Point(348, 419);
-            this.payroll_company_account_no.Name = "payroll_company_account_no";
-            this.payroll_company_account_no.Size = new System.Drawing.Size(319, 20);
-            this.payroll_company_account_no.TabIndex = 34;
-            // 
-            // lblBankAccount
-            // 
-            this.lblBankAccount.AutoSize = true;
-            this.lblBankAccount.Location = new System.Drawing.Point(347, 403);
-            this.lblBankAccount.Name = "lblBankAccount";
-            this.lblBankAccount.Size = new System.Drawing.Size(115, 13);
-            this.lblBankAccount.TabIndex = 35;
-            this.lblBankAccount.Text = "Bank Account Number";
+            this.payroll_company_logo_default.Location = new System.Drawing.Point(6, 15);
+            this.payroll_company_logo_default.Name = "payroll_company_logo_default";
+            this.payroll_company_logo_default.Size = new System.Drawing.Size(284, 154);
+            this.payroll_company_logo_default.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.payroll_company_logo_default.TabIndex = 36;
+            this.payroll_company_logo_default.TabStop = false;
+            this.payroll_company_logo_default.Visible = false;
             // 
             // Form1
             // 
@@ -555,7 +589,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1122, 647);
-            this.Controls.Add(this.t);
+            this.Controls.Add(this.CompanyPanel);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -563,13 +597,14 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             this.panel1.ResumeLayout(false);
-            this.t.ResumeLayout(false);
-            this.t.PerformLayout();
+            this.CompanyPanel.ResumeLayout(false);
+            this.CompanyPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.b.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,7 +618,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel t;
+        private System.Windows.Forms.Panel CompanyPanel;
         private System.Windows.Forms.Button btnCompanySave;
         private System.Windows.Forms.Button btnCompanyEdit;
         private System.Windows.Forms.GroupBox b;
@@ -595,7 +630,6 @@
         private System.Windows.Forms.TextBox payroll_company_sss;
         private System.Windows.Forms.TextBox payroll_company_contact;
         private System.Windows.Forms.ComboBox payroll_company_bank;
-        private System.Windows.Forms.ComboBox payroll_company_rdo;
         private System.Windows.Forms.TextBox payroll_company_tin;
         private System.Windows.Forms.TextBox payroll_company_address;
         private System.Windows.Forms.TextBox payroll_company_pagibig;
@@ -604,7 +638,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblCompanyHeader;
-        private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Label lblCompanyRdo;
         private System.Windows.Forms.Label lblCompanyTin;
         private System.Windows.Forms.Label lblCompanyPagibig;
@@ -621,6 +654,9 @@
         private System.Windows.Forms.DateTimePicker payroll_company_date_started;
         private System.Windows.Forms.Label lblBankAccount;
         private System.Windows.Forms.TextBox payroll_company_account_no;
+        internal System.Windows.Forms.ComboBox payroll_company_rdo;
+        private System.Windows.Forms.OpenFileDialog CompanyFileDialog;
+        private System.Windows.Forms.PictureBox payroll_company_logo_default;
     }
 }
 
