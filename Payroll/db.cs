@@ -65,17 +65,47 @@ namespace Payroll
             }
         }
 
-        //string table -> table name
-        //string[] columns -> column names
-        //string[] values -> values 
-        //Insert statement
-        public void Insert(string table,string[] columns,string[] values)
+        public string CheckRecord(string table)
         {
             try
             {
                 this.Initialize();
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO " + table + "(" + string.Join(",", columns) + ") VALUES('" + string.Join("','", values) + "')", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT count(*) FROM "+table+"", con);
+                Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+
+                if(count > 0)
+                {
+                    return "Exist";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured!" + ex);
+            }
+
+            return "No Data";
+        }
+
+        //string table -> table name
+        //string[] columns -> column names
+        //string[] values -> values 
+        //Insert statement
+        public void Insert(string table,string[] columns,string[] values, string picturecolumn, byte[] logo)
+        {
+            try
+            {
+                this.Initialize();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO " + table + "(" + string.Join(",", columns) +") VALUES('" + string.Join("','", values) + "')", con);
+
+                if (picturecolumn != "")
+                {
+                    cmd = new MySqlCommand("INSERT INTO " + table + "(" + string.Join(",", columns) + "," + picturecolumn + ") VALUES('" + string.Join("','", values) + "',@picture)", con);
+                    cmd.Parameters.AddWithValue("@picture", logo);
+                }
+
                 int check = cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -85,7 +115,7 @@ namespace Payroll
                 }
                 else
                 {
-                    MessageBox.Show("Success");
+                    MessageBox.Show("Successfully inserted");
                 }
             }
             catch (Exception ex)
@@ -99,14 +129,34 @@ namespace Payroll
         //string idvalue -> primaryvalue
         //string primarykey -> primary key column 
         //Update statement
-        public void Update(string table,string[] columnandvalues,string idvalue,string primarykey)
+        public void Update(string table,string[] columnandvalues,string idvalue,string primarykey, string picturecolumn, byte[] logo)
         {
-            this.Initialize();
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("UPDATE " + table + " SET " + string.Join(",", columnandvalues) + " WHERE " + primarykey + "=" + idvalue + "", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                this.Initialize();
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE " + table + " SET " + string.Join(",", columnandvalues) + " WHERE " + primarykey + "=" + idvalue + "", con);
+                if (picturecolumn != "")
+                {
+                    cmd = new MySqlCommand("UPDATE " + table + " SET " + string.Join(",", columnandvalues) + "," + picturecolumn + "=@picture WHERE " + primarykey + "=" + idvalue + "", con);
+                    cmd.Parameters.AddWithValue("@picture", logo);
+                }
+                int check = cmd.ExecuteNonQuery();
+                con.Close();
 
+                if (check == 0)
+                {
+                    MessageBox.Show("Error");
+                }
+                else
+                {
+                    MessageBox.Show("Successfully updated");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured!" + ex);
+            }
 
         }
 

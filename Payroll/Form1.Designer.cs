@@ -58,6 +58,7 @@
             this.btnCompanySave = new System.Windows.Forms.Button();
             this.btnCompanyEdit = new System.Windows.Forms.Button();
             this.b = new System.Windows.Forms.GroupBox();
+            this.payroll_company_logo_default = new System.Windows.Forms.PictureBox();
             this.btnCompanyUpload = new System.Windows.Forms.Button();
             this.payroll_company_logo = new System.Windows.Forms.PictureBox();
             this.payroll_company_nature_of_business = new System.Windows.Forms.TextBox();
@@ -72,16 +73,16 @@
             this.payroll_company_pagibig = new System.Windows.Forms.TextBox();
             this.payroll_company_code = new System.Windows.Forms.TextBox();
             this.payroll_company_name = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.payroll_company_logo_default = new System.Windows.Forms.PictureBox();
+            this.payroll_company_id = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.b.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -212,6 +213,7 @@
             // CompanyPanel
             // 
             this.CompanyPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CompanyPanel.Controls.Add(this.payroll_company_id);
             this.CompanyPanel.Controls.Add(this.lblBankAccount);
             this.CompanyPanel.Controls.Add(this.payroll_company_account_no);
             this.CompanyPanel.Controls.Add(this.payroll_company_date_started);
@@ -244,7 +246,7 @@
             this.CompanyPanel.Controls.Add(this.payroll_company_pagibig);
             this.CompanyPanel.Controls.Add(this.payroll_company_code);
             this.CompanyPanel.Controls.Add(this.payroll_company_name);
-            this.CompanyPanel.Controls.Add(this.dataGridView1);
+            this.CompanyPanel.Controls.Add(this.payroll_company_datagrid);
             this.CompanyPanel.Location = new System.Drawing.Point(72, 12);
             this.CompanyPanel.Name = "CompanyPanel";
             this.CompanyPanel.Size = new System.Drawing.Size(1038, 623);
@@ -430,9 +432,11 @@
             this.btnCompanyEdit.TabIndex = 17;
             this.btnCompanyEdit.Text = "Edit";
             this.btnCompanyEdit.UseVisualStyleBackColor = true;
+            this.btnCompanyEdit.Click += new System.EventHandler(this.btnCompanyEdit_Click);
             // 
             // b
             // 
+            this.b.BackColor = System.Drawing.Color.Transparent;
             this.b.Controls.Add(this.payroll_company_logo_default);
             this.b.Controls.Add(this.btnCompanyUpload);
             this.b.Controls.Add(this.payroll_company_logo);
@@ -442,6 +446,17 @@
             this.b.TabIndex = 16;
             this.b.TabStop = false;
             this.b.Text = "Company Logo";
+            // 
+            // payroll_company_logo_default
+            // 
+            this.payroll_company_logo_default.BackColor = System.Drawing.Color.Transparent;
+            this.payroll_company_logo_default.Location = new System.Drawing.Point(6, 15);
+            this.payroll_company_logo_default.Name = "payroll_company_logo_default";
+            this.payroll_company_logo_default.Size = new System.Drawing.Size(284, 154);
+            this.payroll_company_logo_default.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.payroll_company_logo_default.TabIndex = 36;
+            this.payroll_company_logo_default.TabStop = false;
+            this.payroll_company_logo_default.Visible = false;
             // 
             // btnCompanyUpload
             // 
@@ -561,27 +576,31 @@
             this.payroll_company_name.TabIndex = 1;
             this.payroll_company_name.Tag = "Company Name";
             // 
-            // dataGridView1
+            // payroll_company_datagrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 108);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 190);
-            this.dataGridView1.TabIndex = 0;
+            this.payroll_company_datagrid.AllowUserToAddRows = false;
+            this.payroll_company_datagrid.AllowUserToResizeColumns = false;
+            this.payroll_company_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.payroll_company_datagrid.Location = new System.Drawing.Point(13, 108);
+            this.payroll_company_datagrid.Name = "payroll_company_datagrid";
+            this.payroll_company_datagrid.ReadOnly = true;
+            this.payroll_company_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.payroll_company_datagrid.Size = new System.Drawing.Size(1012, 190);
+            this.payroll_company_datagrid.TabIndex = 0;
+            this.payroll_company_datagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payroll_company_datagrid_CellClick);
             // 
             // CompanyFileDialog
             // 
             this.CompanyFileDialog.FileName = "openFileDialog1";
             // 
-            // payroll_company_logo_default
+            // payroll_company_id
             // 
-            this.payroll_company_logo_default.Location = new System.Drawing.Point(6, 15);
-            this.payroll_company_logo_default.Name = "payroll_company_logo_default";
-            this.payroll_company_logo_default.Size = new System.Drawing.Size(284, 154);
-            this.payroll_company_logo_default.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.payroll_company_logo_default.TabIndex = 36;
-            this.payroll_company_logo_default.TabStop = false;
-            this.payroll_company_logo_default.Visible = false;
+            this.payroll_company_id.Location = new System.Drawing.Point(12, 341);
+            this.payroll_company_id.Name = "payroll_company_id";
+            this.payroll_company_id.Size = new System.Drawing.Size(317, 20);
+            this.payroll_company_id.TabIndex = 36;
+            this.payroll_company_id.Tag = "";
+            this.payroll_company_id.Visible = false;
             // 
             // Form1
             // 
@@ -602,9 +621,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.b.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,7 +654,7 @@
         private System.Windows.Forms.TextBox payroll_company_pagibig;
         private System.Windows.Forms.TextBox payroll_company_code;
         private System.Windows.Forms.TextBox payroll_company_name;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView payroll_company_datagrid;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblCompanyHeader;
         private System.Windows.Forms.Label lblCompanyRdo;
@@ -657,6 +676,7 @@
         internal System.Windows.Forms.ComboBox payroll_company_rdo;
         private System.Windows.Forms.OpenFileDialog CompanyFileDialog;
         private System.Windows.Forms.PictureBox payroll_company_logo_default;
+        private System.Windows.Forms.TextBox payroll_company_id;
     }
 }
 
