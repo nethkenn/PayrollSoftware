@@ -42,6 +42,7 @@ namespace Payroll
 
         public void ShowImage(OpenFileDialog CompanyFileDialog, PictureBox payroll_company_logo)
         {
+            CompanyFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             //show image
             if (CompanyFileDialog.ShowDialog() == DialogResult.OK)
             {
