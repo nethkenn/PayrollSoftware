@@ -76,7 +76,7 @@ namespace Payroll
                 {
                     if (c.Text == "" && c.Name != "payroll_company_id")
                     {
-                        MessageBox.Show(c.Tag.ToString() + " is Required");
+                        MessageBox.Show(c.Tag.ToString() + " is Required", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         complete = false;
                         c.Focus();
                         break;
@@ -121,7 +121,7 @@ namespace Payroll
                     }
                     else
                     {
-                        MessageBox.Show("Only one Company is allowed");
+                        MessageBox.Show("Only one Company is allowed", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -137,7 +137,7 @@ namespace Payroll
         {
             try
             {
-                    DataGridViewRow row = this.payroll_company_datagrid.Rows[e.RowIndex];
+                    DataGridViewRow row = this.payroll_company_datagrid.SelectedRows[e.RowIndex];
                     
                     payroll_company_id.Text                       = row.Cells["payroll_company_id"].Value.ToString();
                     payroll_company_name.Text                     = row.Cells["payroll_company_name"].Value.ToString();
@@ -169,9 +169,9 @@ namespace Payroll
                     btnCompanyEdit.Enabled = true;
             
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
               
         }

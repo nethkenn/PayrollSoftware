@@ -60,7 +60,7 @@ namespace Payroll
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -82,7 +82,7 @@ namespace Payroll
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occured!" + ex);
+                MessageBox.Show("Error occured!" + ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return "No Data";
@@ -115,12 +115,12 @@ namespace Payroll
                 }
                 else
                 {
-                    MessageBox.Show("Successfully inserted");
+                    MessageBox.Show("Successfully inserted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occured!" + ex);
+                MessageBox.Show("Error occured!" + ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,12 +150,12 @@ namespace Payroll
                 }
                 else
                 {
-                    MessageBox.Show("Successfully updated");
+                    MessageBox.Show("Successfully updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occured!" + ex);
+                MessageBox.Show("Error occured!" + ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

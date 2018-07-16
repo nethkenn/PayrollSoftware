@@ -37,6 +37,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.CompanyPanel = new System.Windows.Forms.Panel();
+            this.payroll_company_id = new System.Windows.Forms.TextBox();
             this.lblBankAccount = new System.Windows.Forms.Label();
             this.payroll_company_account_no = new System.Windows.Forms.TextBox();
             this.payroll_company_date_started = new System.Windows.Forms.DateTimePicker();
@@ -75,7 +76,6 @@
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.payroll_company_id = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -252,6 +252,15 @@
             this.CompanyPanel.Size = new System.Drawing.Size(1038, 623);
             this.CompanyPanel.TabIndex = 1;
             this.CompanyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.t_Paint);
+            // 
+            // payroll_company_id
+            // 
+            this.payroll_company_id.Location = new System.Drawing.Point(12, 341);
+            this.payroll_company_id.Name = "payroll_company_id";
+            this.payroll_company_id.Size = new System.Drawing.Size(317, 20);
+            this.payroll_company_id.TabIndex = 36;
+            this.payroll_company_id.Tag = "";
+            this.payroll_company_id.Visible = false;
             // 
             // lblBankAccount
             // 
@@ -592,15 +601,6 @@
             // CompanyFileDialog
             // 
             this.CompanyFileDialog.FileName = "openFileDialog1";
-            // 
-            // payroll_company_id
-            // 
-            this.payroll_company_id.Location = new System.Drawing.Point(12, 341);
-            this.payroll_company_id.Name = "payroll_company_id";
-            this.payroll_company_id.Size = new System.Drawing.Size(317, 20);
-            this.payroll_company_id.TabIndex = 36;
-            this.payroll_company_id.Tag = "";
-            this.payroll_company_id.Visible = false;
             // 
             // Form1
             // 
