@@ -121,5 +121,13 @@ namespace Payroll
                 }
             }
         }
+   
+        private void AW(object sender, EventArgs e)
+        {
+            this.ActiveControl.BackColor = Color.FromArgb(49,46,48);
+            
+        }
+    
     }
 }
+    
