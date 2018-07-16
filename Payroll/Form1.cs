@@ -132,7 +132,7 @@ namespace Payroll
         {
             try
             {
-                    DataGridViewRow row = this.payroll_company_datagrid.SelectedRows[e.RowIndex];
+                    DataGridViewRow row = this.payroll_company_datagrid.Rows[e.RowIndex];
                     
                     payroll_company_id.Text                       = row.Cells["payroll_company_id"].Value.ToString();
                     payroll_company_name.Text                     = row.Cells["payroll_company_name"].Value.ToString();
@@ -215,6 +215,8 @@ namespace Payroll
         {
             this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
             this.HideAllPanel(Controls);
+            Department dept = new Department();
+            dept.ShowDialog();
         }
 
         public void HideAllPanel(Control.ControlCollection Controls)

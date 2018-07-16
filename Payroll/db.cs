@@ -111,7 +111,7 @@ namespace Payroll
 
                 if (check == 0)
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -146,7 +146,7 @@ namespace Payroll
 
                 if (check == 0)
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

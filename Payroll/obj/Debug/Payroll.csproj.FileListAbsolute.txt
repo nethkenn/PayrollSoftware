@@ -46,3 +46,4 @@ C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Properties.Resources.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.csproj.GenerateResource.Cache
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Department.resources
