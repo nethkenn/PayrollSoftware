@@ -36,6 +36,7 @@ namespace Payroll
             //load company to datagrid
             companycontroller.LoadCompany(payroll_company_datagrid);
 
+
             //check if company is exist
             if (dbcon.CheckRecord("tbl_payroll_company") == "Exist")
             {
@@ -48,23 +49,24 @@ namespace Payroll
         private void panel1_MouseHover(object sender, EventArgs e)
         {
             panel1.Size = new Size(201, 647);
-            /* mySecondCustmControl1.Size = new Size(957, 406);
-            firstCustomControl1.Size = new Size(811, 406);
-            mySecondCustmControl1.Location = new Point(69, 156);
-            firstCustomControl1.Location = new Point(69, 156);
-            */
-
+            payroll_config_dropdown.Visible = false;
+            if (btn_payroll_config.BackColor != Color.FromArgb(158, 158, 158))
+            {
+                btn_payroll_config.BackColor = Color.FromArgb(41, 39, 40);
+            }
         }
+
 
         private void Form1_MouseHover(object sender, EventArgs e)
         {
             panel1.Size = new Size(57, 647);
+            payroll_config_dropdown.Visible = false;
+            if (btn_payroll_config.BackColor == Color.FromArgb(54, 153, 210))
+            {
+                btn_payroll_config.BackColor = Color.FromArgb(41, 39, 40);
+            }
         }
 
-        private void t_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnCompanySave_Click(object sender, EventArgs e)
         {
@@ -206,15 +208,38 @@ namespace Payroll
                 CompanyPanel.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
                 payroll_company_logo.Image = null;
                 btnCompanyEdit.Enabled = false;
+
             }
         }
-   
-        private void AW(object sender, EventArgs e)
+
+        private void show_payroll_config_dropdown(object sender, EventArgs e)
         {
-            this.ActiveControl.BackColor = Color.FromArgb(49,46,48);
-            
+            panel1.Size = new Size(201, 647);
+            payroll_config_dropdown.Visible = true;
+            btn_payroll_config.BackColor = Color.FromArgb(54, 153, 210);
         }
-    
+
+        private void btn_company_list_Click(object sender, EventArgs e)
+        {
+            btn_company_list.BackColor = Color.Blue;
+        }
+
+        private void push_button(object sender, EventArgs e)
+        {
+
+            foreach (Control c in panel1.Controls)
+            {
+                if (c is Button)
+                {
+                    if (c.BackColor == Color.FromArgb(158, 158, 158))
+                    {
+                        c.BackColor = Color.FromArgb(41, 39, 40);
+                    }
+                }
+            }
+
+            this.ActiveControl.BackColor = Color.FromArgb(158, 158, 158);
+        }
     }
 }
     
