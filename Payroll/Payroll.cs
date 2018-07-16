@@ -15,6 +15,9 @@ namespace Payroll
     public class Payroll
     {
         db dbcon = new db();
+        MySqlDataAdapter adapter;
+        DataSet ds;
+        DataTable dt;
 
         //string query -> query
         //ComboBox combobox -> combobox
@@ -27,14 +30,30 @@ namespace Payroll
 
             if (dbcon.OpenCon() == true)
             {
-                MySqlDataAdapter da = new MySqlDataAdapter(query, dbcon.con);
-                DataSet ds = new DataSet();
-                da.Fill(ds, table);
+                adapter = new MySqlDataAdapter(query, dbcon.con);
+                ds = new DataSet();
+                adapter.Fill(ds, table);
                 combobox.DisplayMember = displaymember;
                 combobox.ValueMember = valuemember;
                 combobox.DataSource = ds.Tables[table];
                 dbcon.con.Close();
             }
+        }
+
+        public void FillDataGrid(string query,DataGridView gridview)
+        {
+            dbcon.Initialize();
+
+            if (dbcon.OpenCon() == true)
+            {
+                dt = new DataTable();
+                adapter = new MySqlDataAdapter(query, dbcon.con);
+                adapter.Fill(dt);
+                gridview.DataSource = dt;
+                dbcon.con.Close();
+
+            }
+
         }
     }
 }
