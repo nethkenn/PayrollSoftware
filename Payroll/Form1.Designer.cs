@@ -172,7 +172,7 @@
             this.btn_company_list.TabIndex = 4;
             this.btn_company_list.Text = "         COMPANY          LIST";
             this.btn_company_list.UseVisualStyleBackColor = false;
-            this.btn_company_list.Click += new System.EventHandler(this.AW);
+            this.btn_company_list.Click += new System.EventHandler(this.btn_company_list_Click);
             this.btn_company_list.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // btn_employee_list
@@ -191,7 +191,7 @@
             this.btn_employee_list.TabIndex = 3;
             this.btn_employee_list.Text = "         EMPLOYEE        LIST";
             this.btn_employee_list.UseVisualStyleBackColor = false;
-            this.btn_employee_list.Click += new System.EventHandler(this.AW);
+            this.btn_employee_list.Click += new System.EventHandler(this.btn_employee_list_Click);
             this.btn_employee_list.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // btn_payroll_config
@@ -253,7 +253,6 @@
             this.CompanyPanel.Name = "CompanyPanel";
             this.CompanyPanel.Size = new System.Drawing.Size(1038, 623);
             this.CompanyPanel.TabIndex = 1;
-            this.CompanyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.t_Paint);
             this.CompanyPanel.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_company_id
@@ -649,11 +648,11 @@
             this.ClientSize = new System.Drawing.Size(1122, 647);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CompanyPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Click += new System.EventHandler(this.AW);
             this.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             this.panel1.ResumeLayout(false);
             this.CompanyPanel.ResumeLayout(false);

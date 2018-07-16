@@ -61,11 +61,6 @@ namespace Payroll
             panel1.Size = new Size(57, 647);
         }
 
-        private void t_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCompanySave_Click(object sender, EventArgs e)
         {
             bool complete = true;
@@ -208,13 +203,34 @@ namespace Payroll
                 btnCompanyEdit.Enabled = false;
             }
         }
-   
-        private void AW(object sender, EventArgs e)
+
+        private void btn_company_list_Click(object sender, EventArgs e)
         {
-            this.ActiveControl.BackColor = Color.FromArgb(49,46,48);
-            
+            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.HideAllPanel(Controls);
+            CompanyPanel.Visible = true;
         }
-    
+
+        private void btn_employee_list_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.HideAllPanel(Controls);
+        }
+
+        public void HideAllPanel(Control.ControlCollection Controls)
+        {
+            foreach (Control c in Controls)
+            {
+                if (c.GetType() == typeof(Panel))
+                {
+                    if (c.Name != "panel1")
+                    {
+                        c.Visible = false;
+                    }
+
+                }
+            }
+        }
     }
 }
     
