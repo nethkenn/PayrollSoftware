@@ -67,7 +67,6 @@ namespace Payroll
             }
         }
 
-
         private void btnCompanySave_Click(object sender, EventArgs e)
         {
             bool complete = true;
@@ -139,7 +138,7 @@ namespace Payroll
         {
             try
             {
-                    DataGridViewRow row = this.payroll_company_datagrid.SelectedRows[e.RowIndex];
+                    DataGridViewRow row = this.payroll_company_datagrid.Rows[e.RowIndex];
                     
                     payroll_company_id.Text                       = row.Cells["payroll_company_id"].Value.ToString();
                     payroll_company_name.Text                     = row.Cells["payroll_company_name"].Value.ToString();
@@ -219,11 +218,6 @@ namespace Payroll
             btn_payroll_config.BackColor = Color.FromArgb(54, 153, 210);
         }
 
-        private void btn_company_list_Click(object sender, EventArgs e)
-        {
-            btn_company_list.BackColor = Color.Blue;
-        }
-
         private void push_button(object sender, EventArgs e)
         {
 
@@ -239,6 +233,38 @@ namespace Payroll
             }
 
             this.ActiveControl.BackColor = Color.FromArgb(158, 158, 158);
+        }
+
+        private void btn_company_list_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.HideAllPanel(Controls);
+            this.push_button(sender,e);
+            CompanyPanel.Visible = true;
+        }
+
+        private void btn_employee_list_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.HideAllPanel(Controls);
+            this.push_button(sender, e);
+            Department dept = new Department();
+            dept.ShowDialog();
+        }
+
+        public void HideAllPanel(Control.ControlCollection Controls)
+        {
+            foreach (Control c in Controls)
+            {
+                if (c.GetType() == typeof(Panel))
+                {
+                    if (c.Name != "panel1")
+                    {
+                        c.Visible = false;
+                    }
+
+                }
+            }
         }
     }
 }

@@ -204,7 +204,7 @@
             this.btn_company_list.Text = "            Company List";
             this.btn_company_list.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_company_list.UseVisualStyleBackColor = false;
-            this.btn_company_list.Click += new System.EventHandler(this.push_button);
+            this.btn_company_list.Click += new System.EventHandler(this.btn_company_list_Click);
             this.btn_company_list.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // btn_employee_list
@@ -226,7 +226,7 @@
             this.btn_employee_list.Text = "            Employee List";
             this.btn_employee_list.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_employee_list.UseVisualStyleBackColor = false;
-            this.btn_employee_list.Click += new System.EventHandler(this.push_button);
+            this.btn_employee_list.Click += new System.EventHandler(this.btn_employee_list_Click);
             this.btn_employee_list.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // btn_payroll_config
@@ -1005,6 +1005,7 @@
             this.ClientSize = new System.Drawing.Size(1122, 647);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CompanyPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
