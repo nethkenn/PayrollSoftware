@@ -338,6 +338,7 @@
             this.btn_department.Text = "            Department";
             this.btn_department.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_department.UseVisualStyleBackColor = false;
+            this.btn_department.Click += new System.EventHandler(this.btn_department_Click);
             // 
             // btn_job_title
             // 

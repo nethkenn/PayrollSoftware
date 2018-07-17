@@ -31,6 +31,8 @@ namespace Payroll
             this.LoadActiveCompany();
             this.LoadArchiveCompany();
             payroll_department_name.Text = "";
+            btnDeptArchived.Enabled      = false;
+            btnDeptEdit.Enabled          = false;
         }
 
         private void Department_Load(object sender, EventArgs e)
@@ -75,6 +77,7 @@ namespace Payroll
             {
                 DataGridViewRow row = this.payroll_department_datagrid_archive.Rows[e.RowIndex];
 
+                payroll_department_name.Text = row.Cells["payroll_department_name"].Value.ToString();
                 payroll_department_id.Text = row.Cells["payroll_department_id"].Value.ToString();
                 btnDeptArchived.Enabled    = false;
                 btnDeptRestore.Enabled     = true;
@@ -97,6 +100,7 @@ namespace Payroll
                 btnDeptArchived.Enabled      = true;
                 btnDeptRestore.Enabled       = false;
                 btnDeptEdit.Enabled          = true;
+                btnDeptSave.Enabled          = false;
 
             }
             catch (Exception)

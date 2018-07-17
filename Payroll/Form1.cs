@@ -248,8 +248,7 @@ namespace Payroll
             this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
             this.HideAllPanel(Controls);
             this.push_button(sender, e);
-            Department dept = new Department();
-            dept.ShowDialog();
+            CompanyPanel.Visible = true;
         }
 
         public void HideAllPanel(Control.ControlCollection Controls)
@@ -265,6 +264,12 @@ namespace Payroll
 
                 }
             }
+        }
+
+        private void btn_department_Click(object sender, EventArgs e)
+        {
+            Department dept = new Department();
+            dept.ShowDialog();
         }
     }
 }
