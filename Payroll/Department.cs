@@ -146,6 +146,7 @@ namespace Payroll
             this.LoadArchiveCompany();
             btnDeptArchived.Enabled = false;
             btnDeptEdit.Enabled = false;
+            btnDeptSave.Enabled = true;
             payroll_department_name.Text = "";
         }
     }
