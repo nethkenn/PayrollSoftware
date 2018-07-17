@@ -112,7 +112,15 @@ namespace Payroll
 
                     if (dbcon.CheckRecord(table) != "Exist")
                     {
+                        //insert company
                         dbcon.Insert(table, column_name, column_value, picturecolumn, picturevalue);
+
+                        // insert audit logs
+                        string table2 = "tbl_payroll_audit_logs";
+                        string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+                        string[] column_value2 = { "nethken", "Add new Company named " + payroll_company_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                        dbcon.Insert(table2, column_name2, column_value2, "", null);
+
                         //load company to datagrid
                         companycontroller.LoadCompany(payroll_company_datagrid);
                         //clear textboxes and picture   
@@ -202,6 +210,13 @@ namespace Payroll
                                             "payroll_company_bank='"+payroll_company_bank.SelectedValue.ToString()+"'","payroll_company_date_started='"+payroll_company_date_started.Value.ToString("yyyy-MM-dd")+"'"};
                 dbcon.Update(table, columnandvalues,idvalue, primarykey, picturecolumn,picturevalue);
 
+
+                // insert audit logs
+                string table2 = "tbl_payroll_audit_logs";
+                string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+                string[] column_value2 = { "nethken", "Edited Company named " + payroll_company_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                dbcon.Insert(table2, column_name2, column_value2, "", null);
+
                 companycontroller.LoadCompany(payroll_company_datagrid);
                 //clear textboxes and picture   
                 CompanyPanel.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
@@ -270,6 +285,12 @@ namespace Payroll
         {
             Department dept = new Department();
             dept.ShowDialog();
+        }
+
+        private void btn_job_title_Click(object sender, EventArgs e)
+        {
+            Jobtitle job = new Jobtitle();
+            job.ShowDialog();
         }
     }
 }

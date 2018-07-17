@@ -75,11 +75,11 @@
             this.payroll_department_datagrid_active.AllowUserToResizeColumns = false;
             this.payroll_department_datagrid_active.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.payroll_department_datagrid_active.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.payroll_department_datagrid_active.Location = new System.Drawing.Point(6, 6);
+            this.payroll_department_datagrid_active.Location = new System.Drawing.Point(0, 0);
             this.payroll_department_datagrid_active.Name = "payroll_department_datagrid_active";
             this.payroll_department_datagrid_active.ReadOnly = true;
             this.payroll_department_datagrid_active.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.payroll_department_datagrid_active.Size = new System.Drawing.Size(441, 164);
+            this.payroll_department_datagrid_active.Size = new System.Drawing.Size(453, 176);
             this.payroll_department_datagrid_active.TabIndex = 0;
             this.payroll_department_datagrid_active.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payroll_department_datagrid_active_CellClick);
             // 
@@ -100,11 +100,11 @@
             this.payroll_department_datagrid_archive.AllowUserToResizeColumns = false;
             this.payroll_department_datagrid_archive.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.payroll_department_datagrid_archive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.payroll_department_datagrid_archive.Location = new System.Drawing.Point(9, 6);
+            this.payroll_department_datagrid_archive.Location = new System.Drawing.Point(0, 0);
             this.payroll_department_datagrid_archive.Name = "payroll_department_datagrid_archive";
             this.payroll_department_datagrid_archive.ReadOnly = true;
             this.payroll_department_datagrid_archive.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.payroll_department_datagrid_archive.Size = new System.Drawing.Size(441, 164);
+            this.payroll_department_datagrid_archive.Size = new System.Drawing.Size(454, 176);
             this.payroll_department_datagrid_archive.TabIndex = 0;
             this.payroll_department_datagrid_archive.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payroll_department_datagrid_archive_CellClick);
             // 

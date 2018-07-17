@@ -109,14 +109,18 @@ namespace Payroll
                 int check = cmd.ExecuteNonQuery();
                 con.Close();
 
-                if (check == 0)
+                if(table != "tbl_payroll_audit_logs")
                 {
-                    MessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (check == 0)
+                    {
+                        MessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Successfully inserted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Successfully inserted", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+         
             }
             catch (Exception ex)
             {
