@@ -362,6 +362,7 @@
             this.btn_job_title.Text = "            Job Title";
             this.btn_job_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_job_title.UseVisualStyleBackColor = false;
+            this.btn_job_title.Click += new System.EventHandler(this.btn_job_title_Click);
             // 
             // btn_holiday
             // 

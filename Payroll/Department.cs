@@ -24,15 +24,31 @@ namespace Payroll
 
         private void btnDeptSave_Click(object sender, EventArgs e)
         {
-            string table           = "tbl_payroll_department";
-            string[] column_name   = {"payroll_department_name"};
-            string[] column_value  = {payroll_department_name.Text};
-            dbcon.Insert(table, column_name, column_value, "", null);
-            this.LoadActiveCompany();
-            this.LoadArchiveCompany();
-            payroll_department_name.Text = "";
-            btnDeptArchived.Enabled      = false;
-            btnDeptEdit.Enabled          = false;
+            if(payroll_department_name.Text != "")
+            {
+                string table           = "tbl_payroll_department";
+                string[] column_name   = {"payroll_department_name"};
+                string[] column_value  = {payroll_department_name.Text};
+                dbcon.Insert(table, column_name, column_value, "", null);
+                this.LoadActiveCompany();
+                this.LoadArchiveCompany();
+
+
+                // insert audit logs
+                string table2 = "tbl_payroll_audit_logs";
+                string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+                string[] column_value2 = { "nethken", "Add new Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                dbcon.Insert(table2, column_name2, column_value2, "", null);
+
+                payroll_department_name.Text = "";
+                btnDeptArchived.Enabled      = false;
+                btnDeptEdit.Enabled          = false;
+            }
+            else
+            {
+                MessageBox.Show("Please input a Department Name", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void Department_Load(object sender, EventArgs e)
@@ -69,6 +85,16 @@ namespace Payroll
             this.LoadActiveCompany();
             this.LoadArchiveCompany();
             btnDeptArchived.Enabled = false;
+            btnDeptSave.Enabled = true;
+            btnDeptEdit.Enabled = false;
+
+            // insert audit logs
+            string table2 = "tbl_payroll_audit_logs";
+            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Archived Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null);
+
+            payroll_department_name.Text = "";
         }
 
         private void payroll_department_datagrid_archive_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -81,6 +107,8 @@ namespace Payroll
                 payroll_department_id.Text = row.Cells["payroll_department_id"].Value.ToString();
                 btnDeptArchived.Enabled    = false;
                 btnDeptRestore.Enabled     = true;
+                btnDeptSave.Enabled        = false;
+
 
             }
             catch (Exception)
@@ -115,12 +143,15 @@ namespace Payroll
            {
                 btnDeptRestore.Enabled = false;
                 btnDeptEdit.Enabled = false;
+                btnDeptSave.Enabled = true;
             }
            else
            {
                 btnDeptArchived.Enabled = false;
                 btnDeptEdit.Enabled = false;
             }
+
+            payroll_department_name.Text = "";
         }
 
         private void btnDeptRestore_Click(object sender, EventArgs e)
@@ -133,6 +164,16 @@ namespace Payroll
             this.LoadActiveCompany();
             this.LoadArchiveCompany();
             btnDeptRestore.Enabled = false;
+            btnDeptSave.Enabled = true;
+            btnDeptEdit.Enabled = false;
+
+            // insert audit logs
+            string table2 = "tbl_payroll_audit_logs";
+            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Restored Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null);
+
+            payroll_department_name.Text = "";
         }
 
         private void btnDeptEdit_Click(object sender, EventArgs e)
@@ -147,6 +188,13 @@ namespace Payroll
             btnDeptArchived.Enabled = false;
             btnDeptEdit.Enabled = false;
             btnDeptSave.Enabled = true;
+
+            // insert audit logs
+            string table2 = "tbl_payroll_audit_logs";
+            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Edited Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null);
+
             payroll_department_name.Text = "";
         }
     }
