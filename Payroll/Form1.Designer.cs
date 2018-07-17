@@ -91,6 +91,7 @@
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btn_audit_trail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.payroll_config_dropdown.SuspendLayout();
@@ -104,6 +105,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.btn_audit_trail);
             this.panel1.Controls.Add(this.btn_reports);
             this.panel1.Controls.Add(this.btn_payroll_process);
             this.panel1.Controls.Add(this.btn_timekeeping);
@@ -998,6 +1000,26 @@
             // 
             this.CompanyFileDialog.FileName = "openFileDialog1";
             // 
+            // btn_audit_trail
+            // 
+            this.btn_audit_trail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_audit_trail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_audit_trail.FlatAppearance.BorderSize = 0;
+            this.btn_audit_trail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_audit_trail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_audit_trail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_audit_trail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_audit_trail.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_audit_trail.Image = ((System.Drawing.Image)(resources.GetObject("btn_audit_trail.Image")));
+            this.btn_audit_trail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_audit_trail.Location = new System.Drawing.Point(1, 359);
+            this.btn_audit_trail.Name = "btn_audit_trail";
+            this.btn_audit_trail.Size = new System.Drawing.Size(197, 40);
+            this.btn_audit_trail.TabIndex = 9;
+            this.btn_audit_trail.Text = "            Audit Trail";
+            this.btn_audit_trail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_audit_trail.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1090,6 +1112,7 @@
         private System.Windows.Forms.Button btn_pagibig_hdmf;
         private System.Windows.Forms.FlowLayoutPanel payroll_config_dropdown;
         private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.Button btn_audit_trail;
     }
 }
 
