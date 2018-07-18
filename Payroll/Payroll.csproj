@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuditLogsController.cs" />
     <Compile Include="CompanyController.cs" />
     <Compile Include="db.cs" />
     <Compile Include="Department.cs">

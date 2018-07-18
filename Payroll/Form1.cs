@@ -18,6 +18,7 @@ namespace Payroll
         private db dbcon;
         private Payroll payroll;
         private CompanyController companycontroller;
+        private AuditLogsController auditlogscontroller;
 
         public Form1()
         {
@@ -25,6 +26,7 @@ namespace Payroll
             dbcon   = new db();
             payroll = new Payroll();
             companycontroller = new CompanyController();
+            auditlogscontroller = new AuditLogsController();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,7 +37,8 @@ namespace Payroll
             companycontroller.LoadBDO(payroll_company_bank);
             //load company to datagrid
             companycontroller.LoadCompany(payroll_company_datagrid);
-
+            //load auditlogs to datagrid
+            auditlogscontroller.LoadAuditLogs(payroll_auditlogs_datagrid);
 
             //check if company is exist
             if (dbcon.CheckRecord("tbl_payroll_company") == "Exist")
@@ -291,6 +294,12 @@ namespace Payroll
         {
             Jobtitle job = new Jobtitle();
             job.ShowDialog();
+        }
+
+
+        private void AuditDateChanged(object sender, EventArgs e)
+        {
+            auditlogscontroller.SearchDate(dateTimePickerAuditLogFrom.Value,dateTimePickerAuditLogTo.Value, payroll_auditlogs_datagrid);
         }
     }
 }

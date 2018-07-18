@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_audit_trail = new System.Windows.Forms.Button();
             this.btn_reports = new System.Windows.Forms.Button();
             this.btn_payroll_process = new System.Windows.Forms.Button();
             this.btn_timekeeping = new System.Windows.Forms.Button();
@@ -91,7 +92,14 @@
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btn_audit_trail = new System.Windows.Forms.Button();
+            this.AuditlogsPanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.payroll_auditlogs_datagrid = new System.Windows.Forms.DataGridView();
+            this.dateTimePickerAuditLogFrom = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAuditLogTo = new System.Windows.Forms.DateTimePicker();
+            this.labelAuditLogFrom = new System.Windows.Forms.Label();
+            this.labelAuditLogTo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.payroll_config_dropdown.SuspendLayout();
@@ -100,6 +108,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).BeginInit();
+            this.AuditlogsPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_auditlogs_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,14 +123,33 @@
             this.panel1.Controls.Add(this.btn_company_list);
             this.panel1.Controls.Add(this.btn_employee_list);
             this.panel1.Controls.Add(this.btn_payroll_config);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.Info;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1169, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(201, 647);
             this.panel1.TabIndex = 0;
             this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            // 
+            // btn_audit_trail
+            // 
+            this.btn_audit_trail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_audit_trail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_audit_trail.FlatAppearance.BorderSize = 0;
+            this.btn_audit_trail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_audit_trail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_audit_trail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_audit_trail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_audit_trail.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_audit_trail.Image = ((System.Drawing.Image)(resources.GetObject("btn_audit_trail.Image")));
+            this.btn_audit_trail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_audit_trail.Location = new System.Drawing.Point(1, 359);
+            this.btn_audit_trail.Name = "btn_audit_trail";
+            this.btn_audit_trail.Size = new System.Drawing.Size(197, 40);
+            this.btn_audit_trail.TabIndex = 9;
+            this.btn_audit_trail.Text = "            Audit Trail";
+            this.btn_audit_trail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_audit_trail.UseVisualStyleBackColor = false;
             // 
             // btn_reports
             // 
@@ -256,7 +286,6 @@
             // CompanyPanel
             // 
             this.CompanyPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.CompanyPanel.Controls.Add(this.payroll_config_dropdown);
             this.CompanyPanel.Controls.Add(this.payroll_company_id);
             this.CompanyPanel.Controls.Add(this.lblBankAccount);
             this.CompanyPanel.Controls.Add(this.payroll_company_account_no);
@@ -314,7 +343,7 @@
             this.payroll_config_dropdown.Controls.Add(this.btn_philhealth_table);
             this.payroll_config_dropdown.Controls.Add(this.btn_pagibig_hdmf);
             this.payroll_config_dropdown.Controls.Add(this.btn_reset);
-            this.payroll_config_dropdown.Location = new System.Drawing.Point(127, 1);
+            this.payroll_config_dropdown.Location = new System.Drawing.Point(1216, 12);
             this.payroll_config_dropdown.Name = "payroll_config_dropdown";
             this.payroll_config_dropdown.Size = new System.Drawing.Size(200, 630);
             this.payroll_config_dropdown.TabIndex = 9;
@@ -1001,33 +1030,97 @@
             // 
             this.CompanyFileDialog.FileName = "openFileDialog1";
             // 
-            // btn_audit_trail
+            // AuditlogsPanel
             // 
-            this.btn_audit_trail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_audit_trail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_audit_trail.FlatAppearance.BorderSize = 0;
-            this.btn_audit_trail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_audit_trail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_audit_trail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_audit_trail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_audit_trail.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_audit_trail.Image = ((System.Drawing.Image)(resources.GetObject("btn_audit_trail.Image")));
-            this.btn_audit_trail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_audit_trail.Location = new System.Drawing.Point(1, 359);
-            this.btn_audit_trail.Name = "btn_audit_trail";
-            this.btn_audit_trail.Size = new System.Drawing.Size(197, 40);
-            this.btn_audit_trail.TabIndex = 9;
-            this.btn_audit_trail.Text = "            Audit Trail";
-            this.btn_audit_trail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_audit_trail.UseVisualStyleBackColor = false;
+            this.AuditlogsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.AuditlogsPanel.Controls.Add(this.labelAuditLogTo);
+            this.AuditlogsPanel.Controls.Add(this.labelAuditLogFrom);
+            this.AuditlogsPanel.Controls.Add(this.dateTimePickerAuditLogTo);
+            this.AuditlogsPanel.Controls.Add(this.dateTimePickerAuditLogFrom);
+            this.AuditlogsPanel.Controls.Add(this.panel4);
+            this.AuditlogsPanel.Controls.Add(this.payroll_auditlogs_datagrid);
+            this.AuditlogsPanel.Location = new System.Drawing.Point(72, 7);
+            this.AuditlogsPanel.Name = "AuditlogsPanel";
+            this.AuditlogsPanel.Size = new System.Drawing.Size(1038, 628);
+            this.AuditlogsPanel.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Location = new System.Drawing.Point(13, 14);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1012, 71);
+            this.panel4.TabIndex = 19;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(48, 25);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 22);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Audit Logs";
+            // 
+            // payroll_auditlogs_datagrid
+            // 
+            this.payroll_auditlogs_datagrid.AllowUserToAddRows = false;
+            this.payroll_auditlogs_datagrid.AllowUserToResizeColumns = false;
+            this.payroll_auditlogs_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.payroll_auditlogs_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.payroll_auditlogs_datagrid.Location = new System.Drawing.Point(13, 182);
+            this.payroll_auditlogs_datagrid.Name = "payroll_auditlogs_datagrid";
+            this.payroll_auditlogs_datagrid.ReadOnly = true;
+            this.payroll_auditlogs_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.payroll_auditlogs_datagrid.Size = new System.Drawing.Size(1012, 424);
+            this.payroll_auditlogs_datagrid.TabIndex = 0;
+            // 
+            // dateTimePickerAuditLogFrom
+            // 
+            this.dateTimePickerAuditLogFrom.Location = new System.Drawing.Point(13, 138);
+            this.dateTimePickerAuditLogFrom.Name = "dateTimePickerAuditLogFrom";
+            this.dateTimePickerAuditLogFrom.Size = new System.Drawing.Size(201, 20);
+            this.dateTimePickerAuditLogFrom.TabIndex = 1;
+            this.dateTimePickerAuditLogFrom.Value = new System.DateTime(2018, 7, 18, 0, 0, 0, 0);
+            this.dateTimePickerAuditLogFrom.ValueChanged += new System.EventHandler(this.AuditDateChanged);
+            // 
+            // dateTimePickerAuditLogTo
+            // 
+            this.dateTimePickerAuditLogTo.Location = new System.Drawing.Point(244, 138);
+            this.dateTimePickerAuditLogTo.Name = "dateTimePickerAuditLogTo";
+            this.dateTimePickerAuditLogTo.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAuditLogTo.TabIndex = 20;
+            this.dateTimePickerAuditLogTo.Value = new System.DateTime(2018, 7, 18, 0, 0, 0, 0);
+            this.dateTimePickerAuditLogTo.ValueChanged += new System.EventHandler(this.AuditDateChanged);
+            // 
+            // labelAuditLogFrom
+            // 
+            this.labelAuditLogFrom.AutoSize = true;
+            this.labelAuditLogFrom.Location = new System.Drawing.Point(10, 118);
+            this.labelAuditLogFrom.Name = "labelAuditLogFrom";
+            this.labelAuditLogFrom.Size = new System.Drawing.Size(33, 13);
+            this.labelAuditLogFrom.TabIndex = 21;
+            this.labelAuditLogFrom.Text = "From:";
+            // 
+            // labelAuditLogTo
+            // 
+            this.labelAuditLogTo.AutoSize = true;
+            this.labelAuditLogTo.Location = new System.Drawing.Point(241, 118);
+            this.labelAuditLogTo.Name = "labelAuditLogTo";
+            this.labelAuditLogTo.Size = new System.Drawing.Size(23, 13);
+            this.labelAuditLogTo.TabIndex = 22;
+            this.labelAuditLogTo.Text = "To:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1122, 647);
+            this.ClientSize = new System.Drawing.Size(1327, 647);
+            this.Controls.Add(this.payroll_config_dropdown);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.AuditlogsPanel);
             this.Controls.Add(this.CompanyPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -1045,6 +1138,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).EndInit();
+            this.AuditlogsPanel.ResumeLayout(false);
+            this.AuditlogsPanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_auditlogs_datagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1114,6 +1212,14 @@
         private System.Windows.Forms.FlowLayoutPanel payroll_config_dropdown;
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Button btn_audit_trail;
+        private System.Windows.Forms.Panel AuditlogsPanel;
+        private System.Windows.Forms.Label labelAuditLogTo;
+        private System.Windows.Forms.Label labelAuditLogFrom;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAuditLogTo;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAuditLogFrom;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView payroll_auditlogs_datagrid;
     }
 }
 
