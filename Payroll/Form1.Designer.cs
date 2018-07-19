@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_audit_trail = new System.Windows.Forms.Button();
             this.btn_reports = new System.Windows.Forms.Button();
             this.btn_payroll_process = new System.Windows.Forms.Button();
             this.btn_timekeeping = new System.Windows.Forms.Button();
@@ -91,7 +92,6 @@
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btn_audit_trail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.payroll_config_dropdown.SuspendLayout();
@@ -117,9 +117,29 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.Info;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 647);
+            this.panel1.Size = new System.Drawing.Size(34, 647);
             this.panel1.TabIndex = 0;
             this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            // 
+            // btn_audit_trail
+            // 
+            this.btn_audit_trail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_audit_trail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_audit_trail.FlatAppearance.BorderSize = 0;
+            this.btn_audit_trail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_audit_trail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_audit_trail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_audit_trail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_audit_trail.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_audit_trail.Image = ((System.Drawing.Image)(resources.GetObject("btn_audit_trail.Image")));
+            this.btn_audit_trail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_audit_trail.Location = new System.Drawing.Point(1, 359);
+            this.btn_audit_trail.Name = "btn_audit_trail";
+            this.btn_audit_trail.Size = new System.Drawing.Size(197, 40);
+            this.btn_audit_trail.TabIndex = 9;
+            this.btn_audit_trail.Text = "       Audit Trail";
+            this.btn_audit_trail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_audit_trail.UseVisualStyleBackColor = false;
             // 
             // btn_reports
             // 
@@ -133,11 +153,11 @@
             this.btn_reports.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_reports.Image = ((System.Drawing.Image)(resources.GetObject("btn_reports.Image")));
             this.btn_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reports.Location = new System.Drawing.Point(0, 313);
+            this.btn_reports.Location = new System.Drawing.Point(1, 313);
             this.btn_reports.Name = "btn_reports";
             this.btn_reports.Size = new System.Drawing.Size(197, 40);
             this.btn_reports.TabIndex = 8;
-            this.btn_reports.Text = "            Reports";
+            this.btn_reports.Text = "       Reports";
             this.btn_reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_reports.UseVisualStyleBackColor = false;
             this.btn_reports.Click += new System.EventHandler(this.push_button);
@@ -155,11 +175,11 @@
             this.btn_payroll_process.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_payroll_process.Image = ((System.Drawing.Image)(resources.GetObject("btn_payroll_process.Image")));
             this.btn_payroll_process.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_payroll_process.Location = new System.Drawing.Point(4, 267);
+            this.btn_payroll_process.Location = new System.Drawing.Point(1, 267);
             this.btn_payroll_process.Name = "btn_payroll_process";
             this.btn_payroll_process.Size = new System.Drawing.Size(197, 40);
             this.btn_payroll_process.TabIndex = 7;
-            this.btn_payroll_process.Text = "            Payroll Process";
+            this.btn_payroll_process.Text = "       Payroll Process";
             this.btn_payroll_process.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_payroll_process.UseVisualStyleBackColor = false;
             this.btn_payroll_process.Click += new System.EventHandler(this.push_button);
@@ -177,11 +197,11 @@
             this.btn_timekeeping.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_timekeeping.Image = ((System.Drawing.Image)(resources.GetObject("btn_timekeeping.Image")));
             this.btn_timekeeping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_timekeeping.Location = new System.Drawing.Point(4, 221);
+            this.btn_timekeeping.Location = new System.Drawing.Point(1, 221);
             this.btn_timekeeping.Name = "btn_timekeeping";
             this.btn_timekeeping.Size = new System.Drawing.Size(197, 40);
             this.btn_timekeeping.TabIndex = 5;
-            this.btn_timekeeping.Text = "            Timekeeping";
+            this.btn_timekeeping.Text = "       Timekeeping";
             this.btn_timekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_timekeeping.UseVisualStyleBackColor = false;
             this.btn_timekeeping.Click += new System.EventHandler(this.push_button);
@@ -199,11 +219,11 @@
             this.btn_company_list.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_company_list.Image = ((System.Drawing.Image)(resources.GetObject("btn_company_list.Image")));
             this.btn_company_list.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_company_list.Location = new System.Drawing.Point(0, 83);
+            this.btn_company_list.Location = new System.Drawing.Point(1, 83);
             this.btn_company_list.Name = "btn_company_list";
             this.btn_company_list.Size = new System.Drawing.Size(197, 40);
             this.btn_company_list.TabIndex = 4;
-            this.btn_company_list.Text = "            Company List";
+            this.btn_company_list.Text = "       Company List";
             this.btn_company_list.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_company_list.UseVisualStyleBackColor = false;
             this.btn_company_list.Click += new System.EventHandler(this.btn_company_list_Click);
@@ -225,7 +245,7 @@
             this.btn_employee_list.Name = "btn_employee_list";
             this.btn_employee_list.Size = new System.Drawing.Size(197, 40);
             this.btn_employee_list.TabIndex = 3;
-            this.btn_employee_list.Text = "            Employee List";
+            this.btn_employee_list.Text = "       Employee List";
             this.btn_employee_list.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_employee_list.UseVisualStyleBackColor = false;
             this.btn_employee_list.Click += new System.EventHandler(this.btn_employee_list_Click);
@@ -243,11 +263,11 @@
             this.btn_payroll_config.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_payroll_config.Image = ((System.Drawing.Image)(resources.GetObject("btn_payroll_config.Image")));
             this.btn_payroll_config.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_payroll_config.Location = new System.Drawing.Point(4, 175);
+            this.btn_payroll_config.Location = new System.Drawing.Point(1, 175);
             this.btn_payroll_config.Name = "btn_payroll_config";
             this.btn_payroll_config.Size = new System.Drawing.Size(197, 40);
             this.btn_payroll_config.TabIndex = 1;
-            this.btn_payroll_config.Text = "            Payroll Config";
+            this.btn_payroll_config.Text = "       Payroll Config";
             this.btn_payroll_config.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_payroll_config.UseVisualStyleBackColor = false;
             this.btn_payroll_config.Click += new System.EventHandler(this.push_button);
@@ -291,9 +311,9 @@
             this.CompanyPanel.Controls.Add(this.payroll_company_code);
             this.CompanyPanel.Controls.Add(this.payroll_company_name);
             this.CompanyPanel.Controls.Add(this.payroll_company_datagrid);
-            this.CompanyPanel.Location = new System.Drawing.Point(72, 12);
+            this.CompanyPanel.Location = new System.Drawing.Point(29, 12);
             this.CompanyPanel.Name = "CompanyPanel";
-            this.CompanyPanel.Size = new System.Drawing.Size(1038, 623);
+            this.CompanyPanel.Size = new System.Drawing.Size(1039, 623);
             this.CompanyPanel.TabIndex = 1;
             this.CompanyPanel.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
@@ -1001,32 +1021,12 @@
             // 
             this.CompanyFileDialog.FileName = "openFileDialog1";
             // 
-            // btn_audit_trail
-            // 
-            this.btn_audit_trail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_audit_trail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_audit_trail.FlatAppearance.BorderSize = 0;
-            this.btn_audit_trail.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_audit_trail.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_audit_trail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_audit_trail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_audit_trail.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_audit_trail.Image = ((System.Drawing.Image)(resources.GetObject("btn_audit_trail.Image")));
-            this.btn_audit_trail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_audit_trail.Location = new System.Drawing.Point(1, 359);
-            this.btn_audit_trail.Name = "btn_audit_trail";
-            this.btn_audit_trail.Size = new System.Drawing.Size(197, 40);
-            this.btn_audit_trail.TabIndex = 9;
-            this.btn_audit_trail.Text = "            Audit Trail";
-            this.btn_audit_trail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_audit_trail.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1122, 647);
+            this.ClientSize = new System.Drawing.Size(1077, 647);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CompanyPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
