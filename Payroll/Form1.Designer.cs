@@ -1047,6 +1047,7 @@
             this.AuditlogsPanel.Size = new System.Drawing.Size(1038, 628);
             this.AuditlogsPanel.TabIndex = 10;
             this.AuditlogsPanel.Visible = false;
+            this.AuditlogsPanel.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // cmb_AuditlogsUsers
             // 
@@ -1064,6 +1065,7 @@
             this.cmb_AuditlogsUsers.Size = new System.Drawing.Size(179, 21);
             this.cmb_AuditlogsUsers.TabIndex = 23;
             this.cmb_AuditlogsUsers.SelectedIndexChanged += new System.EventHandler(this.AuditDateChanged);
+            this.cmb_AuditlogsUsers.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // labelAuditLogTo
             // 
@@ -1073,6 +1075,7 @@
             this.labelAuditLogTo.Size = new System.Drawing.Size(23, 13);
             this.labelAuditLogTo.TabIndex = 22;
             this.labelAuditLogTo.Text = "To:";
+            this.labelAuditLogTo.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // labelAuditLogFrom
             // 
@@ -1082,6 +1085,7 @@
             this.labelAuditLogFrom.Size = new System.Drawing.Size(33, 13);
             this.labelAuditLogFrom.TabIndex = 21;
             this.labelAuditLogFrom.Text = "From:";
+            this.labelAuditLogFrom.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // dateTimePickerAuditLogTo
             // 
@@ -1092,6 +1096,7 @@
             this.dateTimePickerAuditLogTo.TabIndex = 20;
             this.dateTimePickerAuditLogTo.Value = new System.DateTime(2018, 7, 18, 23, 59, 0, 0);
             this.dateTimePickerAuditLogTo.ValueChanged += new System.EventHandler(this.AuditDateChanged);
+            this.dateTimePickerAuditLogTo.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // dateTimePickerAuditLogFrom
             // 
@@ -1102,6 +1107,7 @@
             this.dateTimePickerAuditLogFrom.TabIndex = 1;
             this.dateTimePickerAuditLogFrom.Value = new System.DateTime(2018, 7, 16, 0, 0, 0, 0);
             this.dateTimePickerAuditLogFrom.ValueChanged += new System.EventHandler(this.AuditDateChanged);
+            this.dateTimePickerAuditLogFrom.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // panel4
             // 
@@ -1111,6 +1117,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1012, 71);
             this.panel4.TabIndex = 19;
+            this.panel4.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // label15
             // 
@@ -1121,6 +1128,7 @@
             this.label15.Size = new System.Drawing.Size(101, 22);
             this.label15.TabIndex = 0;
             this.label15.Text = "Audit Logs";
+            this.label15.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_auditlogs_datagrid
             // 
@@ -1134,6 +1142,7 @@
             this.payroll_auditlogs_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.payroll_auditlogs_datagrid.Size = new System.Drawing.Size(1012, 424);
             this.payroll_auditlogs_datagrid.TabIndex = 0;
+            this.payroll_auditlogs_datagrid.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // Form1
             // 
