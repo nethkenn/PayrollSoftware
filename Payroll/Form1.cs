@@ -263,7 +263,6 @@ namespace Payroll
             this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
             this.HideAllPanel(Controls);
             this.push_button(sender, e);
-            CompanyPanel.Visible = true;
         }
 
         public void HideAllPanel(Control.ControlCollection Controls)
