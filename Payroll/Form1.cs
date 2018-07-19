@@ -62,7 +62,7 @@ namespace Payroll
 
         private void Form1_MouseHover(object sender, EventArgs e)
         {
-            panel1.Size = new Size(57, 647);
+            panel1.Size = new Size(34, 647);
             payroll_config_dropdown.Visible = false;
             if (btn_payroll_config.BackColor == Color.FromArgb(54, 153, 210))
             {
