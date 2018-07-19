@@ -25,10 +25,9 @@ namespace Payroll
             datagrid.Columns["payroll_audit_logs_archived"].Visible = false;
         }
 
-        public void SearchDate(DateTime from, DateTime to, DataGridView datagrid)
+        public void SearchDate(DateTime from, DateTime to, ComboBox cmbUser, DataGridView datagrid)
         {
-            MessageBox.Show("aw");
-            string searchLogs = "SELECT * FROM tbl_payroll_audit_logs where payroll_audit_logs_datetime between '"+from.ToString("yyyy-MM-dd hh:mm:ss")+"' and '"+to.ToString("yyyy-MM-dd hh:mm:ss") +"' ";
+            string searchLogs = "SELECT * FROM tbl_payroll_audit_logs where payroll_audit_logs_datetime >= '" + from.ToString("yyyy-MM-dd HH:mm:ss")+ "' AND payroll_audit_logs_datetime < '" + to.ToString("yyyy-MM-dd HH:mm:ss") + "' AND payroll_audit_logs_user ='"+cmbUser.SelectedItem.ToString()+"'";
             payroll.FillDataGrid(searchLogs, datagrid);
             datagrid.Columns["payroll_audit_logs_id"].Visible = false;
             datagrid.Columns["payroll_audit_logs_archived"].Visible = false;

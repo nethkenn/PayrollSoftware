@@ -299,7 +299,7 @@ namespace Payroll
 
         private void AuditDateChanged(object sender, EventArgs e)
         {
-            auditlogscontroller.SearchDate(dateTimePickerAuditLogFrom.Value,dateTimePickerAuditLogTo.Value, payroll_auditlogs_datagrid);
+            auditlogscontroller.SearchDate(dateTimePickerAuditLogFrom.Value,dateTimePickerAuditLogTo.Value, cmb_AuditlogsUsers, payroll_auditlogs_datagrid);
         }
     }
 }

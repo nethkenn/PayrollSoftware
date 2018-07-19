@@ -38,21 +38,6 @@
             this.btn_employee_list = new System.Windows.Forms.Button();
             this.btn_payroll_config = new System.Windows.Forms.Button();
             this.CompanyPanel = new System.Windows.Forms.Panel();
-            this.payroll_config_dropdown = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_department = new System.Windows.Forms.Button();
-            this.btn_job_title = new System.Windows.Forms.Button();
-            this.btn_holiday = new System.Windows.Forms.Button();
-            this.btn_allowances = new System.Windows.Forms.Button();
-            this.btn_deduction = new System.Windows.Forms.Button();
-            this.btn_leave = new System.Windows.Forms.Button();
-            this.btn_payroll_group = new System.Windows.Forms.Button();
-            this.btn_shift_template = new System.Windows.Forms.Button();
-            this.btn_tax_period = new System.Windows.Forms.Button();
-            this.btn_tax_table = new System.Windows.Forms.Button();
-            this.btn_sss_table = new System.Windows.Forms.Button();
-            this.btn_philhealth_table = new System.Windows.Forms.Button();
-            this.btn_pagibig_hdmf = new System.Windows.Forms.Button();
-            this.btn_reset = new System.Windows.Forms.Button();
             this.payroll_company_id = new System.Windows.Forms.TextBox();
             this.lblBankAccount = new System.Windows.Forms.Label();
             this.payroll_company_account_no = new System.Windows.Forms.TextBox();
@@ -91,23 +76,39 @@
             this.payroll_company_code = new System.Windows.Forms.TextBox();
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
+            this.payroll_config_dropdown = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_department = new System.Windows.Forms.Button();
+            this.btn_job_title = new System.Windows.Forms.Button();
+            this.btn_holiday = new System.Windows.Forms.Button();
+            this.btn_allowances = new System.Windows.Forms.Button();
+            this.btn_deduction = new System.Windows.Forms.Button();
+            this.btn_leave = new System.Windows.Forms.Button();
+            this.btn_payroll_group = new System.Windows.Forms.Button();
+            this.btn_shift_template = new System.Windows.Forms.Button();
+            this.btn_tax_period = new System.Windows.Forms.Button();
+            this.btn_tax_table = new System.Windows.Forms.Button();
+            this.btn_sss_table = new System.Windows.Forms.Button();
+            this.btn_philhealth_table = new System.Windows.Forms.Button();
+            this.btn_pagibig_hdmf = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.AuditlogsPanel = new System.Windows.Forms.Panel();
+            this.labelAuditLogTo = new System.Windows.Forms.Label();
+            this.labelAuditLogFrom = new System.Windows.Forms.Label();
+            this.dateTimePickerAuditLogTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAuditLogFrom = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.payroll_auditlogs_datagrid = new System.Windows.Forms.DataGridView();
-            this.dateTimePickerAuditLogFrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerAuditLogTo = new System.Windows.Forms.DateTimePicker();
-            this.labelAuditLogFrom = new System.Windows.Forms.Label();
-            this.labelAuditLogTo = new System.Windows.Forms.Label();
+            this.cmb_AuditlogsUsers = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
-            this.payroll_config_dropdown.SuspendLayout();
             this.panel2.SuspendLayout();
             this.b.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).BeginInit();
+            this.payroll_config_dropdown.SuspendLayout();
             this.AuditlogsPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_auditlogs_datagrid)).BeginInit();
@@ -125,7 +126,7 @@
             this.panel1.Controls.Add(this.btn_payroll_config);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.Info;
-            this.panel1.Location = new System.Drawing.Point(1169, 44);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(201, 647);
             this.panel1.TabIndex = 0;
@@ -325,325 +326,6 @@
             this.CompanyPanel.Size = new System.Drawing.Size(1038, 623);
             this.CompanyPanel.TabIndex = 1;
             this.CompanyPanel.MouseHover += new System.EventHandler(this.Form1_MouseHover);
-            // 
-            // payroll_config_dropdown
-            // 
-            this.payroll_config_dropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.payroll_config_dropdown.Controls.Add(this.btn_department);
-            this.payroll_config_dropdown.Controls.Add(this.btn_job_title);
-            this.payroll_config_dropdown.Controls.Add(this.btn_holiday);
-            this.payroll_config_dropdown.Controls.Add(this.btn_allowances);
-            this.payroll_config_dropdown.Controls.Add(this.btn_deduction);
-            this.payroll_config_dropdown.Controls.Add(this.btn_leave);
-            this.payroll_config_dropdown.Controls.Add(this.btn_payroll_group);
-            this.payroll_config_dropdown.Controls.Add(this.btn_shift_template);
-            this.payroll_config_dropdown.Controls.Add(this.btn_tax_period);
-            this.payroll_config_dropdown.Controls.Add(this.btn_tax_table);
-            this.payroll_config_dropdown.Controls.Add(this.btn_sss_table);
-            this.payroll_config_dropdown.Controls.Add(this.btn_philhealth_table);
-            this.payroll_config_dropdown.Controls.Add(this.btn_pagibig_hdmf);
-            this.payroll_config_dropdown.Controls.Add(this.btn_reset);
-            this.payroll_config_dropdown.Location = new System.Drawing.Point(1216, 12);
-            this.payroll_config_dropdown.Name = "payroll_config_dropdown";
-            this.payroll_config_dropdown.Size = new System.Drawing.Size(200, 630);
-            this.payroll_config_dropdown.TabIndex = 9;
-            this.payroll_config_dropdown.Visible = false;
-            // 
-            // btn_department
-            // 
-            this.btn_department.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_department.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_department.FlatAppearance.BorderSize = 0;
-            this.btn_department.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_department.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_department.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_department.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_department.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_department.Image = ((System.Drawing.Image)(resources.GetObject("btn_department.Image")));
-            this.btn_department.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_department.Location = new System.Drawing.Point(3, 3);
-            this.btn_department.Name = "btn_department";
-            this.btn_department.Size = new System.Drawing.Size(197, 38);
-            this.btn_department.TabIndex = 0;
-            this.btn_department.Text = "            Department";
-            this.btn_department.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_department.UseVisualStyleBackColor = false;
-            this.btn_department.Click += new System.EventHandler(this.btn_department_Click);
-            // 
-            // btn_job_title
-            // 
-            this.btn_job_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_job_title.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_job_title.FlatAppearance.BorderSize = 0;
-            this.btn_job_title.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_job_title.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_job_title.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_job_title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_job_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_job_title.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_job_title.Image = ((System.Drawing.Image)(resources.GetObject("btn_job_title.Image")));
-            this.btn_job_title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_job_title.Location = new System.Drawing.Point(3, 47);
-            this.btn_job_title.Name = "btn_job_title";
-            this.btn_job_title.Size = new System.Drawing.Size(197, 38);
-            this.btn_job_title.TabIndex = 1;
-            this.btn_job_title.Text = "            Job Title";
-            this.btn_job_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_job_title.UseVisualStyleBackColor = false;
-            this.btn_job_title.Click += new System.EventHandler(this.btn_job_title_Click);
-            // 
-            // btn_holiday
-            // 
-            this.btn_holiday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_holiday.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_holiday.FlatAppearance.BorderSize = 0;
-            this.btn_holiday.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_holiday.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_holiday.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_holiday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_holiday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_holiday.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_holiday.Image = ((System.Drawing.Image)(resources.GetObject("btn_holiday.Image")));
-            this.btn_holiday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_holiday.Location = new System.Drawing.Point(3, 91);
-            this.btn_holiday.Name = "btn_holiday";
-            this.btn_holiday.Size = new System.Drawing.Size(197, 38);
-            this.btn_holiday.TabIndex = 2;
-            this.btn_holiday.Text = "            Holiday";
-            this.btn_holiday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_holiday.UseVisualStyleBackColor = false;
-            // 
-            // btn_allowances
-            // 
-            this.btn_allowances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_allowances.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_allowances.FlatAppearance.BorderSize = 0;
-            this.btn_allowances.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_allowances.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_allowances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_allowances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_allowances.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_allowances.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_allowances.Image = ((System.Drawing.Image)(resources.GetObject("btn_allowances.Image")));
-            this.btn_allowances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_allowances.Location = new System.Drawing.Point(3, 135);
-            this.btn_allowances.Name = "btn_allowances";
-            this.btn_allowances.Size = new System.Drawing.Size(197, 38);
-            this.btn_allowances.TabIndex = 3;
-            this.btn_allowances.Text = "            Allowances";
-            this.btn_allowances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_allowances.UseVisualStyleBackColor = false;
-            // 
-            // btn_deduction
-            // 
-            this.btn_deduction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_deduction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_deduction.FlatAppearance.BorderSize = 0;
-            this.btn_deduction.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_deduction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_deduction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_deduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_deduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deduction.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_deduction.Image = ((System.Drawing.Image)(resources.GetObject("btn_deduction.Image")));
-            this.btn_deduction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_deduction.Location = new System.Drawing.Point(3, 179);
-            this.btn_deduction.Name = "btn_deduction";
-            this.btn_deduction.Size = new System.Drawing.Size(197, 38);
-            this.btn_deduction.TabIndex = 4;
-            this.btn_deduction.Text = "            Deduction";
-            this.btn_deduction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_deduction.UseVisualStyleBackColor = false;
-            // 
-            // btn_leave
-            // 
-            this.btn_leave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_leave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_leave.FlatAppearance.BorderSize = 0;
-            this.btn_leave.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_leave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_leave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_leave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_leave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_leave.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_leave.Image = ((System.Drawing.Image)(resources.GetObject("btn_leave.Image")));
-            this.btn_leave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_leave.Location = new System.Drawing.Point(3, 223);
-            this.btn_leave.Name = "btn_leave";
-            this.btn_leave.Size = new System.Drawing.Size(197, 38);
-            this.btn_leave.TabIndex = 5;
-            this.btn_leave.Text = "            Leave";
-            this.btn_leave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_leave.UseVisualStyleBackColor = false;
-            // 
-            // btn_payroll_group
-            // 
-            this.btn_payroll_group.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_payroll_group.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_payroll_group.FlatAppearance.BorderSize = 0;
-            this.btn_payroll_group.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_payroll_group.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_payroll_group.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_payroll_group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_payroll_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_payroll_group.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_payroll_group.Image = ((System.Drawing.Image)(resources.GetObject("btn_payroll_group.Image")));
-            this.btn_payroll_group.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_payroll_group.Location = new System.Drawing.Point(3, 267);
-            this.btn_payroll_group.Name = "btn_payroll_group";
-            this.btn_payroll_group.Size = new System.Drawing.Size(197, 38);
-            this.btn_payroll_group.TabIndex = 6;
-            this.btn_payroll_group.Text = "            Payroll Group";
-            this.btn_payroll_group.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_payroll_group.UseVisualStyleBackColor = false;
-            // 
-            // btn_shift_template
-            // 
-            this.btn_shift_template.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_shift_template.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_shift_template.FlatAppearance.BorderSize = 0;
-            this.btn_shift_template.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_shift_template.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_shift_template.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_shift_template.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_shift_template.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_shift_template.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_shift_template.Image = ((System.Drawing.Image)(resources.GetObject("btn_shift_template.Image")));
-            this.btn_shift_template.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_shift_template.Location = new System.Drawing.Point(3, 311);
-            this.btn_shift_template.Name = "btn_shift_template";
-            this.btn_shift_template.Size = new System.Drawing.Size(197, 38);
-            this.btn_shift_template.TabIndex = 7;
-            this.btn_shift_template.Text = "            Shift Template";
-            this.btn_shift_template.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_shift_template.UseVisualStyleBackColor = false;
-            // 
-            // btn_tax_period
-            // 
-            this.btn_tax_period.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_tax_period.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_tax_period.FlatAppearance.BorderSize = 0;
-            this.btn_tax_period.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_tax_period.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_tax_period.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_tax_period.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_tax_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tax_period.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_tax_period.Image = ((System.Drawing.Image)(resources.GetObject("btn_tax_period.Image")));
-            this.btn_tax_period.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tax_period.Location = new System.Drawing.Point(3, 355);
-            this.btn_tax_period.Name = "btn_tax_period";
-            this.btn_tax_period.Size = new System.Drawing.Size(197, 38);
-            this.btn_tax_period.TabIndex = 8;
-            this.btn_tax_period.Text = "            Tax Period";
-            this.btn_tax_period.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tax_period.UseVisualStyleBackColor = false;
-            // 
-            // btn_tax_table
-            // 
-            this.btn_tax_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_tax_table.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_tax_table.FlatAppearance.BorderSize = 0;
-            this.btn_tax_table.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_tax_table.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_tax_table.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_tax_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_tax_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_tax_table.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_tax_table.Image = ((System.Drawing.Image)(resources.GetObject("btn_tax_table.Image")));
-            this.btn_tax_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tax_table.Location = new System.Drawing.Point(3, 399);
-            this.btn_tax_table.Name = "btn_tax_table";
-            this.btn_tax_table.Size = new System.Drawing.Size(197, 38);
-            this.btn_tax_table.TabIndex = 9;
-            this.btn_tax_table.Text = "            Tax Table";
-            this.btn_tax_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tax_table.UseVisualStyleBackColor = false;
-            // 
-            // btn_sss_table
-            // 
-            this.btn_sss_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_sss_table.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_sss_table.FlatAppearance.BorderSize = 0;
-            this.btn_sss_table.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_sss_table.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_sss_table.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_sss_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sss_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sss_table.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_sss_table.Image = ((System.Drawing.Image)(resources.GetObject("btn_sss_table.Image")));
-            this.btn_sss_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sss_table.Location = new System.Drawing.Point(3, 443);
-            this.btn_sss_table.Name = "btn_sss_table";
-            this.btn_sss_table.Size = new System.Drawing.Size(197, 38);
-            this.btn_sss_table.TabIndex = 10;
-            this.btn_sss_table.Text = "            SSS Table";
-            this.btn_sss_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sss_table.UseVisualStyleBackColor = false;
-            // 
-            // btn_philhealth_table
-            // 
-            this.btn_philhealth_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_philhealth_table.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_philhealth_table.FlatAppearance.BorderSize = 0;
-            this.btn_philhealth_table.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_philhealth_table.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_philhealth_table.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_philhealth_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_philhealth_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_philhealth_table.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_philhealth_table.Image = ((System.Drawing.Image)(resources.GetObject("btn_philhealth_table.Image")));
-            this.btn_philhealth_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_philhealth_table.Location = new System.Drawing.Point(3, 487);
-            this.btn_philhealth_table.Name = "btn_philhealth_table";
-            this.btn_philhealth_table.Size = new System.Drawing.Size(197, 38);
-            this.btn_philhealth_table.TabIndex = 11;
-            this.btn_philhealth_table.Text = "            Philhealth Table";
-            this.btn_philhealth_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_philhealth_table.UseVisualStyleBackColor = false;
-            // 
-            // btn_pagibig_hdmf
-            // 
-            this.btn_pagibig_hdmf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_pagibig_hdmf.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_pagibig_hdmf.FlatAppearance.BorderSize = 0;
-            this.btn_pagibig_hdmf.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_pagibig_hdmf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_pagibig_hdmf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_pagibig_hdmf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pagibig_hdmf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pagibig_hdmf.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_pagibig_hdmf.Image = ((System.Drawing.Image)(resources.GetObject("btn_pagibig_hdmf.Image")));
-            this.btn_pagibig_hdmf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pagibig_hdmf.Location = new System.Drawing.Point(3, 531);
-            this.btn_pagibig_hdmf.Name = "btn_pagibig_hdmf";
-            this.btn_pagibig_hdmf.Size = new System.Drawing.Size(197, 38);
-            this.btn_pagibig_hdmf.TabIndex = 12;
-            this.btn_pagibig_hdmf.Text = "            Pagibig / HDMF";
-            this.btn_pagibig_hdmf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_pagibig_hdmf.UseVisualStyleBackColor = false;
-            // 
-            // btn_reset
-            // 
-            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.btn_reset.FlatAppearance.BorderSize = 0;
-            this.btn_reset.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btn_reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
-            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reset.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_reset.Image = ((System.Drawing.Image)(resources.GetObject("btn_reset.Image")));
-            this.btn_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reset.Location = new System.Drawing.Point(3, 575);
-            this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(197, 38);
-            this.btn_reset.TabIndex = 13;
-            this.btn_reset.Text = "            Reset";
-            this.btn_reset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reset.UseVisualStyleBackColor = false;
             // 
             // payroll_company_id
             // 
@@ -1026,6 +708,325 @@
             this.payroll_company_datagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payroll_company_datagrid_CellClick);
             this.payroll_company_datagrid.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
+            // payroll_config_dropdown
+            // 
+            this.payroll_config_dropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.payroll_config_dropdown.Controls.Add(this.btn_department);
+            this.payroll_config_dropdown.Controls.Add(this.btn_job_title);
+            this.payroll_config_dropdown.Controls.Add(this.btn_holiday);
+            this.payroll_config_dropdown.Controls.Add(this.btn_allowances);
+            this.payroll_config_dropdown.Controls.Add(this.btn_deduction);
+            this.payroll_config_dropdown.Controls.Add(this.btn_leave);
+            this.payroll_config_dropdown.Controls.Add(this.btn_payroll_group);
+            this.payroll_config_dropdown.Controls.Add(this.btn_shift_template);
+            this.payroll_config_dropdown.Controls.Add(this.btn_tax_period);
+            this.payroll_config_dropdown.Controls.Add(this.btn_tax_table);
+            this.payroll_config_dropdown.Controls.Add(this.btn_sss_table);
+            this.payroll_config_dropdown.Controls.Add(this.btn_philhealth_table);
+            this.payroll_config_dropdown.Controls.Add(this.btn_pagibig_hdmf);
+            this.payroll_config_dropdown.Controls.Add(this.btn_reset);
+            this.payroll_config_dropdown.Location = new System.Drawing.Point(199, 0);
+            this.payroll_config_dropdown.Name = "payroll_config_dropdown";
+            this.payroll_config_dropdown.Size = new System.Drawing.Size(200, 630);
+            this.payroll_config_dropdown.TabIndex = 9;
+            this.payroll_config_dropdown.Visible = false;
+            // 
+            // btn_department
+            // 
+            this.btn_department.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_department.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_department.FlatAppearance.BorderSize = 0;
+            this.btn_department.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_department.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_department.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_department.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_department.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_department.Image = ((System.Drawing.Image)(resources.GetObject("btn_department.Image")));
+            this.btn_department.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_department.Location = new System.Drawing.Point(3, 3);
+            this.btn_department.Name = "btn_department";
+            this.btn_department.Size = new System.Drawing.Size(197, 38);
+            this.btn_department.TabIndex = 0;
+            this.btn_department.Text = "            Department";
+            this.btn_department.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_department.UseVisualStyleBackColor = false;
+            this.btn_department.Click += new System.EventHandler(this.btn_department_Click);
+            // 
+            // btn_job_title
+            // 
+            this.btn_job_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_job_title.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_job_title.FlatAppearance.BorderSize = 0;
+            this.btn_job_title.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_job_title.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_job_title.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_job_title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_job_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_job_title.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_job_title.Image = ((System.Drawing.Image)(resources.GetObject("btn_job_title.Image")));
+            this.btn_job_title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_job_title.Location = new System.Drawing.Point(3, 47);
+            this.btn_job_title.Name = "btn_job_title";
+            this.btn_job_title.Size = new System.Drawing.Size(197, 38);
+            this.btn_job_title.TabIndex = 1;
+            this.btn_job_title.Text = "            Job Title";
+            this.btn_job_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_job_title.UseVisualStyleBackColor = false;
+            this.btn_job_title.Click += new System.EventHandler(this.btn_job_title_Click);
+            // 
+            // btn_holiday
+            // 
+            this.btn_holiday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_holiday.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_holiday.FlatAppearance.BorderSize = 0;
+            this.btn_holiday.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_holiday.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_holiday.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_holiday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_holiday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_holiday.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_holiday.Image = ((System.Drawing.Image)(resources.GetObject("btn_holiday.Image")));
+            this.btn_holiday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_holiday.Location = new System.Drawing.Point(3, 91);
+            this.btn_holiday.Name = "btn_holiday";
+            this.btn_holiday.Size = new System.Drawing.Size(197, 38);
+            this.btn_holiday.TabIndex = 2;
+            this.btn_holiday.Text = "            Holiday";
+            this.btn_holiday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_holiday.UseVisualStyleBackColor = false;
+            // 
+            // btn_allowances
+            // 
+            this.btn_allowances.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_allowances.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_allowances.FlatAppearance.BorderSize = 0;
+            this.btn_allowances.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_allowances.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_allowances.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_allowances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_allowances.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_allowances.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_allowances.Image = ((System.Drawing.Image)(resources.GetObject("btn_allowances.Image")));
+            this.btn_allowances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_allowances.Location = new System.Drawing.Point(3, 135);
+            this.btn_allowances.Name = "btn_allowances";
+            this.btn_allowances.Size = new System.Drawing.Size(197, 38);
+            this.btn_allowances.TabIndex = 3;
+            this.btn_allowances.Text = "            Allowances";
+            this.btn_allowances.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_allowances.UseVisualStyleBackColor = false;
+            // 
+            // btn_deduction
+            // 
+            this.btn_deduction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_deduction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_deduction.FlatAppearance.BorderSize = 0;
+            this.btn_deduction.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_deduction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_deduction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_deduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deduction.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_deduction.Image = ((System.Drawing.Image)(resources.GetObject("btn_deduction.Image")));
+            this.btn_deduction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_deduction.Location = new System.Drawing.Point(3, 179);
+            this.btn_deduction.Name = "btn_deduction";
+            this.btn_deduction.Size = new System.Drawing.Size(197, 38);
+            this.btn_deduction.TabIndex = 4;
+            this.btn_deduction.Text = "            Deduction";
+            this.btn_deduction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_deduction.UseVisualStyleBackColor = false;
+            // 
+            // btn_leave
+            // 
+            this.btn_leave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_leave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_leave.FlatAppearance.BorderSize = 0;
+            this.btn_leave.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_leave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_leave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_leave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_leave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_leave.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_leave.Image = ((System.Drawing.Image)(resources.GetObject("btn_leave.Image")));
+            this.btn_leave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_leave.Location = new System.Drawing.Point(3, 223);
+            this.btn_leave.Name = "btn_leave";
+            this.btn_leave.Size = new System.Drawing.Size(197, 38);
+            this.btn_leave.TabIndex = 5;
+            this.btn_leave.Text = "            Leave";
+            this.btn_leave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_leave.UseVisualStyleBackColor = false;
+            // 
+            // btn_payroll_group
+            // 
+            this.btn_payroll_group.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_payroll_group.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_payroll_group.FlatAppearance.BorderSize = 0;
+            this.btn_payroll_group.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_payroll_group.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_payroll_group.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_payroll_group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_payroll_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_payroll_group.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_payroll_group.Image = ((System.Drawing.Image)(resources.GetObject("btn_payroll_group.Image")));
+            this.btn_payroll_group.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_payroll_group.Location = new System.Drawing.Point(3, 267);
+            this.btn_payroll_group.Name = "btn_payroll_group";
+            this.btn_payroll_group.Size = new System.Drawing.Size(197, 38);
+            this.btn_payroll_group.TabIndex = 6;
+            this.btn_payroll_group.Text = "            Payroll Group";
+            this.btn_payroll_group.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_payroll_group.UseVisualStyleBackColor = false;
+            // 
+            // btn_shift_template
+            // 
+            this.btn_shift_template.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_shift_template.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_shift_template.FlatAppearance.BorderSize = 0;
+            this.btn_shift_template.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_shift_template.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_shift_template.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_shift_template.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_shift_template.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_shift_template.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_shift_template.Image = ((System.Drawing.Image)(resources.GetObject("btn_shift_template.Image")));
+            this.btn_shift_template.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_shift_template.Location = new System.Drawing.Point(3, 311);
+            this.btn_shift_template.Name = "btn_shift_template";
+            this.btn_shift_template.Size = new System.Drawing.Size(197, 38);
+            this.btn_shift_template.TabIndex = 7;
+            this.btn_shift_template.Text = "            Shift Template";
+            this.btn_shift_template.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_shift_template.UseVisualStyleBackColor = false;
+            // 
+            // btn_tax_period
+            // 
+            this.btn_tax_period.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_tax_period.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_tax_period.FlatAppearance.BorderSize = 0;
+            this.btn_tax_period.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_tax_period.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_tax_period.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_tax_period.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tax_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tax_period.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_tax_period.Image = ((System.Drawing.Image)(resources.GetObject("btn_tax_period.Image")));
+            this.btn_tax_period.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tax_period.Location = new System.Drawing.Point(3, 355);
+            this.btn_tax_period.Name = "btn_tax_period";
+            this.btn_tax_period.Size = new System.Drawing.Size(197, 38);
+            this.btn_tax_period.TabIndex = 8;
+            this.btn_tax_period.Text = "            Tax Period";
+            this.btn_tax_period.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tax_period.UseVisualStyleBackColor = false;
+            // 
+            // btn_tax_table
+            // 
+            this.btn_tax_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_tax_table.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_tax_table.FlatAppearance.BorderSize = 0;
+            this.btn_tax_table.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_tax_table.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_tax_table.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_tax_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tax_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tax_table.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_tax_table.Image = ((System.Drawing.Image)(resources.GetObject("btn_tax_table.Image")));
+            this.btn_tax_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tax_table.Location = new System.Drawing.Point(3, 399);
+            this.btn_tax_table.Name = "btn_tax_table";
+            this.btn_tax_table.Size = new System.Drawing.Size(197, 38);
+            this.btn_tax_table.TabIndex = 9;
+            this.btn_tax_table.Text = "            Tax Table";
+            this.btn_tax_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_tax_table.UseVisualStyleBackColor = false;
+            // 
+            // btn_sss_table
+            // 
+            this.btn_sss_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_sss_table.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_sss_table.FlatAppearance.BorderSize = 0;
+            this.btn_sss_table.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_sss_table.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_sss_table.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_sss_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sss_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sss_table.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_sss_table.Image = ((System.Drawing.Image)(resources.GetObject("btn_sss_table.Image")));
+            this.btn_sss_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sss_table.Location = new System.Drawing.Point(3, 443);
+            this.btn_sss_table.Name = "btn_sss_table";
+            this.btn_sss_table.Size = new System.Drawing.Size(197, 38);
+            this.btn_sss_table.TabIndex = 10;
+            this.btn_sss_table.Text = "            SSS Table";
+            this.btn_sss_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sss_table.UseVisualStyleBackColor = false;
+            // 
+            // btn_philhealth_table
+            // 
+            this.btn_philhealth_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_philhealth_table.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_philhealth_table.FlatAppearance.BorderSize = 0;
+            this.btn_philhealth_table.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_philhealth_table.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_philhealth_table.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_philhealth_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_philhealth_table.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_philhealth_table.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_philhealth_table.Image = ((System.Drawing.Image)(resources.GetObject("btn_philhealth_table.Image")));
+            this.btn_philhealth_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_philhealth_table.Location = new System.Drawing.Point(3, 487);
+            this.btn_philhealth_table.Name = "btn_philhealth_table";
+            this.btn_philhealth_table.Size = new System.Drawing.Size(197, 38);
+            this.btn_philhealth_table.TabIndex = 11;
+            this.btn_philhealth_table.Text = "            Philhealth Table";
+            this.btn_philhealth_table.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_philhealth_table.UseVisualStyleBackColor = false;
+            // 
+            // btn_pagibig_hdmf
+            // 
+            this.btn_pagibig_hdmf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_pagibig_hdmf.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_pagibig_hdmf.FlatAppearance.BorderSize = 0;
+            this.btn_pagibig_hdmf.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_pagibig_hdmf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_pagibig_hdmf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_pagibig_hdmf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pagibig_hdmf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pagibig_hdmf.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_pagibig_hdmf.Image = ((System.Drawing.Image)(resources.GetObject("btn_pagibig_hdmf.Image")));
+            this.btn_pagibig_hdmf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pagibig_hdmf.Location = new System.Drawing.Point(3, 531);
+            this.btn_pagibig_hdmf.Name = "btn_pagibig_hdmf";
+            this.btn_pagibig_hdmf.Size = new System.Drawing.Size(197, 38);
+            this.btn_pagibig_hdmf.TabIndex = 12;
+            this.btn_pagibig_hdmf.Text = "            Pagibig / HDMF";
+            this.btn_pagibig_hdmf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pagibig_hdmf.UseVisualStyleBackColor = false;
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.btn_reset.FlatAppearance.BorderSize = 0;
+            this.btn_reset.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btn_reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(153)))), ((int)(((byte)(210)))));
+            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reset.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_reset.Image = ((System.Drawing.Image)(resources.GetObject("btn_reset.Image")));
+            this.btn_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_reset.Location = new System.Drawing.Point(3, 575);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(197, 38);
+            this.btn_reset.TabIndex = 13;
+            this.btn_reset.Text = "            Reset";
+            this.btn_reset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_reset.UseVisualStyleBackColor = false;
+            // 
             // CompanyFileDialog
             // 
             this.CompanyFileDialog.FileName = "openFileDialog1";
@@ -1033,6 +1034,7 @@
             // AuditlogsPanel
             // 
             this.AuditlogsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.AuditlogsPanel.Controls.Add(this.cmb_AuditlogsUsers);
             this.AuditlogsPanel.Controls.Add(this.labelAuditLogTo);
             this.AuditlogsPanel.Controls.Add(this.labelAuditLogFrom);
             this.AuditlogsPanel.Controls.Add(this.dateTimePickerAuditLogTo);
@@ -1043,6 +1045,44 @@
             this.AuditlogsPanel.Name = "AuditlogsPanel";
             this.AuditlogsPanel.Size = new System.Drawing.Size(1038, 628);
             this.AuditlogsPanel.TabIndex = 10;
+            // 
+            // labelAuditLogTo
+            // 
+            this.labelAuditLogTo.AutoSize = true;
+            this.labelAuditLogTo.Location = new System.Drawing.Point(241, 118);
+            this.labelAuditLogTo.Name = "labelAuditLogTo";
+            this.labelAuditLogTo.Size = new System.Drawing.Size(23, 13);
+            this.labelAuditLogTo.TabIndex = 22;
+            this.labelAuditLogTo.Text = "To:";
+            // 
+            // labelAuditLogFrom
+            // 
+            this.labelAuditLogFrom.AutoSize = true;
+            this.labelAuditLogFrom.Location = new System.Drawing.Point(10, 118);
+            this.labelAuditLogFrom.Name = "labelAuditLogFrom";
+            this.labelAuditLogFrom.Size = new System.Drawing.Size(33, 13);
+            this.labelAuditLogFrom.TabIndex = 21;
+            this.labelAuditLogFrom.Text = "From:";
+            // 
+            // dateTimePickerAuditLogTo
+            // 
+            this.dateTimePickerAuditLogTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAuditLogTo.Location = new System.Drawing.Point(244, 138);
+            this.dateTimePickerAuditLogTo.Name = "dateTimePickerAuditLogTo";
+            this.dateTimePickerAuditLogTo.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAuditLogTo.TabIndex = 20;
+            this.dateTimePickerAuditLogTo.Value = new System.DateTime(2018, 7, 18, 23, 59, 0, 0);
+            this.dateTimePickerAuditLogTo.ValueChanged += new System.EventHandler(this.AuditDateChanged);
+            // 
+            // dateTimePickerAuditLogFrom
+            // 
+            this.dateTimePickerAuditLogFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAuditLogFrom.Location = new System.Drawing.Point(13, 138);
+            this.dateTimePickerAuditLogFrom.Name = "dateTimePickerAuditLogFrom";
+            this.dateTimePickerAuditLogFrom.Size = new System.Drawing.Size(201, 20);
+            this.dateTimePickerAuditLogFrom.TabIndex = 1;
+            this.dateTimePickerAuditLogFrom.Value = new System.DateTime(2018, 7, 16, 0, 0, 0, 0);
+            this.dateTimePickerAuditLogFrom.ValueChanged += new System.EventHandler(this.AuditDateChanged);
             // 
             // panel4
             // 
@@ -1076,41 +1116,22 @@
             this.payroll_auditlogs_datagrid.Size = new System.Drawing.Size(1012, 424);
             this.payroll_auditlogs_datagrid.TabIndex = 0;
             // 
-            // dateTimePickerAuditLogFrom
+            // cmb_AuditlogsUsers
             // 
-            this.dateTimePickerAuditLogFrom.Location = new System.Drawing.Point(13, 138);
-            this.dateTimePickerAuditLogFrom.Name = "dateTimePickerAuditLogFrom";
-            this.dateTimePickerAuditLogFrom.Size = new System.Drawing.Size(201, 20);
-            this.dateTimePickerAuditLogFrom.TabIndex = 1;
-            this.dateTimePickerAuditLogFrom.Value = new System.DateTime(2018, 7, 18, 0, 0, 0, 0);
-            this.dateTimePickerAuditLogFrom.ValueChanged += new System.EventHandler(this.AuditDateChanged);
-            // 
-            // dateTimePickerAuditLogTo
-            // 
-            this.dateTimePickerAuditLogTo.Location = new System.Drawing.Point(244, 138);
-            this.dateTimePickerAuditLogTo.Name = "dateTimePickerAuditLogTo";
-            this.dateTimePickerAuditLogTo.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerAuditLogTo.TabIndex = 20;
-            this.dateTimePickerAuditLogTo.Value = new System.DateTime(2018, 7, 18, 0, 0, 0, 0);
-            this.dateTimePickerAuditLogTo.ValueChanged += new System.EventHandler(this.AuditDateChanged);
-            // 
-            // labelAuditLogFrom
-            // 
-            this.labelAuditLogFrom.AutoSize = true;
-            this.labelAuditLogFrom.Location = new System.Drawing.Point(10, 118);
-            this.labelAuditLogFrom.Name = "labelAuditLogFrom";
-            this.labelAuditLogFrom.Size = new System.Drawing.Size(33, 13);
-            this.labelAuditLogFrom.TabIndex = 21;
-            this.labelAuditLogFrom.Text = "From:";
-            // 
-            // labelAuditLogTo
-            // 
-            this.labelAuditLogTo.AutoSize = true;
-            this.labelAuditLogTo.Location = new System.Drawing.Point(241, 118);
-            this.labelAuditLogTo.Name = "labelAuditLogTo";
-            this.labelAuditLogTo.Size = new System.Drawing.Size(23, 13);
-            this.labelAuditLogTo.TabIndex = 22;
-            this.labelAuditLogTo.Text = "To:";
+            this.cmb_AuditlogsUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_AuditlogsUsers.FormattingEnabled = true;
+            this.cmb_AuditlogsUsers.Items.AddRange(new object[] {
+            "Paul",
+            "Zedek",
+            "nethken",
+            "Ryann",
+            "Derrek",
+            "Timo"});
+            this.cmb_AuditlogsUsers.Location = new System.Drawing.Point(489, 138);
+            this.cmb_AuditlogsUsers.Name = "cmb_AuditlogsUsers";
+            this.cmb_AuditlogsUsers.Size = new System.Drawing.Size(179, 21);
+            this.cmb_AuditlogsUsers.TabIndex = 23;
+            this.cmb_AuditlogsUsers.SelectedIndexChanged += new System.EventHandler(this.AuditDateChanged);
             // 
             // Form1
             // 
@@ -1131,13 +1152,13 @@
             this.panel1.ResumeLayout(false);
             this.CompanyPanel.ResumeLayout(false);
             this.CompanyPanel.PerformLayout();
-            this.payroll_config_dropdown.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.b.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).EndInit();
+            this.payroll_config_dropdown.ResumeLayout(false);
             this.AuditlogsPanel.ResumeLayout(false);
             this.AuditlogsPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1220,6 +1241,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView payroll_auditlogs_datagrid;
+        private System.Windows.Forms.ComboBox cmb_AuditlogsUsers;
     }
 }
 
