@@ -92,8 +92,8 @@
             this.btn_pagibig_hdmf = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
-
             this.AuditlogsPanel = new System.Windows.Forms.Panel();
+            this.cmb_AuditlogsUsers = new System.Windows.Forms.ComboBox();
             this.labelAuditLogTo = new System.Windows.Forms.Label();
             this.labelAuditLogFrom = new System.Windows.Forms.Label();
             this.dateTimePickerAuditLogTo = new System.Windows.Forms.DateTimePicker();
@@ -101,8 +101,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.payroll_auditlogs_datagrid = new System.Windows.Forms.DataGridView();
-            this.cmb_AuditlogsUsers = new System.Windows.Forms.ComboBox();
-
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,11 +148,10 @@
             this.btn_audit_trail.Name = "btn_audit_trail";
             this.btn_audit_trail.Size = new System.Drawing.Size(197, 40);
             this.btn_audit_trail.TabIndex = 9;
-
             this.btn_audit_trail.Text = "       Audit Trail";
-
             this.btn_audit_trail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_audit_trail.UseVisualStyleBackColor = false;
+            this.btn_audit_trail.Click += new System.EventHandler(this.btn_audit_trail_Click);
             // 
             // btn_reports
             // 
@@ -1045,10 +1042,28 @@
             this.AuditlogsPanel.Controls.Add(this.dateTimePickerAuditLogFrom);
             this.AuditlogsPanel.Controls.Add(this.panel4);
             this.AuditlogsPanel.Controls.Add(this.payroll_auditlogs_datagrid);
-            this.AuditlogsPanel.Location = new System.Drawing.Point(72, 7);
+            this.AuditlogsPanel.Location = new System.Drawing.Point(30, 12);
             this.AuditlogsPanel.Name = "AuditlogsPanel";
             this.AuditlogsPanel.Size = new System.Drawing.Size(1038, 628);
             this.AuditlogsPanel.TabIndex = 10;
+            this.AuditlogsPanel.Visible = false;
+            // 
+            // cmb_AuditlogsUsers
+            // 
+            this.cmb_AuditlogsUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_AuditlogsUsers.FormattingEnabled = true;
+            this.cmb_AuditlogsUsers.Items.AddRange(new object[] {
+            "Paul",
+            "Zedek",
+            "nethken",
+            "Ryann",
+            "Derrek",
+            "Timo"});
+            this.cmb_AuditlogsUsers.Location = new System.Drawing.Point(489, 138);
+            this.cmb_AuditlogsUsers.Name = "cmb_AuditlogsUsers";
+            this.cmb_AuditlogsUsers.Size = new System.Drawing.Size(179, 21);
+            this.cmb_AuditlogsUsers.TabIndex = 23;
+            this.cmb_AuditlogsUsers.SelectedIndexChanged += new System.EventHandler(this.AuditDateChanged);
             // 
             // labelAuditLogTo
             // 
@@ -1120,30 +1135,13 @@
             this.payroll_auditlogs_datagrid.Size = new System.Drawing.Size(1012, 424);
             this.payroll_auditlogs_datagrid.TabIndex = 0;
             // 
-            // cmb_AuditlogsUsers
-            // 
-            this.cmb_AuditlogsUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_AuditlogsUsers.FormattingEnabled = true;
-            this.cmb_AuditlogsUsers.Items.AddRange(new object[] {
-            "Paul",
-            "Zedek",
-            "nethken",
-            "Ryann",
-            "Derrek",
-            "Timo"});
-            this.cmb_AuditlogsUsers.Location = new System.Drawing.Point(489, 138);
-            this.cmb_AuditlogsUsers.Name = "cmb_AuditlogsUsers";
-            this.cmb_AuditlogsUsers.Size = new System.Drawing.Size(179, 21);
-            this.cmb_AuditlogsUsers.TabIndex = 23;
-            this.cmb_AuditlogsUsers.SelectedIndexChanged += new System.EventHandler(this.AuditDateChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.payroll_config_dropdown);
             this.ClientSize = new System.Drawing.Size(1077, 647);
+            this.Controls.Add(this.payroll_config_dropdown);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AuditlogsPanel);
             this.Controls.Add(this.CompanyPanel);

@@ -301,6 +301,14 @@ namespace Payroll
         {
             auditlogscontroller.SearchDate(dateTimePickerAuditLogFrom.Value,dateTimePickerAuditLogTo.Value, cmb_AuditlogsUsers, payroll_auditlogs_datagrid);
         }
+
+        private void btn_audit_trail_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.HideAllPanel(Controls);
+            this.push_button(sender, e);
+            AuditlogsPanel.Visible = true;
+        }
     }
 }
     
