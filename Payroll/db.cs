@@ -31,7 +31,10 @@ namespace Payroll
         {
             try
             {
-                con.Open();
+                if(con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
                 return true;
             }
             catch (MySqlException ex)
@@ -55,7 +58,10 @@ namespace Payroll
         {
             try
             {
-                con.Close();
+                if (con.State != ConnectionState.Closed)
+                {
+                    con.Close();
+                }
                 return true;
             }
             catch (MySqlException ex)

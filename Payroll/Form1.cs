@@ -19,6 +19,7 @@ namespace Payroll
         private Payroll payroll;
         private CompanyController companycontroller;
         private AuditLogsController auditlogscontroller;
+        private EmployeeController employeecontroller;
 
         public Form1()
         {
@@ -27,6 +28,7 @@ namespace Payroll
             payroll = new Payroll();
             companycontroller = new CompanyController();
             auditlogscontroller = new AuditLogsController();
+            employeecontroller = new EmployeeController();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -101,15 +103,36 @@ namespace Payroll
 
                     byte[] picturevalue   = stream.ToArray();
 
-                    string[] column_name  = { "payroll_company_name","payroll_company_code","payroll_company_address", "payroll_company_contact",
-                                             "payroll_company_email","payroll_company_nature_of_business","payroll_company_account_no",
-                                              "payroll_company_tin","payroll_company_sss","payroll_company_philhealth","payroll_company_pagibig",
-                                               "payroll_company_archived","payroll_company_rdo","payroll_company_bank","payroll_company_date_started"};
+                    string[] column_name  = { "payroll_company_name",
+                                              "payroll_company_code",
+                                              "payroll_company_address",
+                                              "payroll_company_contact",
+                                              "payroll_company_email",
+                                              "payroll_company_nature_of_business",
+                                              "payroll_company_account_no",
+                                              "payroll_company_tin",
+                                              "payroll_company_sss",
+                                              "payroll_company_philhealth",
+                                              "payroll_company_pagibig",
+                                              "payroll_company_archived",
+                                              "payroll_company_rdo",
+                                              "payroll_company_bank",
+                                              "payroll_company_date_started" };
                     string table =          "tbl_payroll_company";
-                    string[] column_value = {payroll_company_name.Text,payroll_company_code.Text,payroll_company_address.Text,payroll_company_code.Text
-                                            ,payroll_company_email.Text,payroll_company_nature_of_business.Text,payroll_company_account_no.Text,
-                                            payroll_company_tin.Text,payroll_company_sss.Text,payroll_company_philhealth.Text,payroll_company_pagibig.Text,
-                                            "0",payroll_company_rdo.SelectedValue.ToString(),payroll_company_bank.SelectedValue.ToString(),
+                    string[] column_value = {payroll_company_name.Text,
+                                             payroll_company_code.Text,
+                                             payroll_company_address.Text,
+                                             payroll_company_code.Text,
+                                             payroll_company_email.Text,
+                                             payroll_company_nature_of_business.Text,
+                                             payroll_company_account_no.Text,
+                                             payroll_company_tin.Text,
+                                             payroll_company_sss.Text,
+                                             payroll_company_philhealth.Text,
+                                             payroll_company_pagibig.Text,
+                                             "0",
+                                             payroll_company_rdo.SelectedValue.ToString(),
+                                             payroll_company_bank.SelectedValue.ToString(),
                                              payroll_company_date_started.Value.ToString("yyyy-MM-dd")};
                     string picturecolumn  =  "payroll_company_logo";
 
@@ -266,7 +289,19 @@ namespace Payroll
             this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
             this.HideAllPanel(Controls);
             this.push_button(sender, e);
-            CompanyPanel.Visible = true;
+            EmployeePanel.Visible = true;
+            employeecontroller.LoadCountry(payroll_employee_country_emp);
+            employeecontroller.LoadCompany(payroll_employee_company_id_emp);
+            employeecontroller.LoadTaxStatus(payroll_employee_tax_status_emp);
+            employeecontroller.LoadEmploymentStatus(payroll_employee_contract_status_emp);
+            employeecontroller.LoadDepartment(payroll_department_id_emp);
+            employeecontroller.LoadEmploymentStatus(payroll_employee_filter_status);
+            employeecontroller.LoadDepartment(payroll_employee_filter_dept);
+            employeecontroller.LoadEmploymentStatus(payroll_employee_filter_status_sep);
+            employeecontroller.LoadDepartment(payroll_employee_filter_dept_sep);
+            employeecontroller.LoadJobTitle(payroll_jobtitle_id_emp,payroll_department_id_emp.SelectedValue.ToString());
+            employeecontroller.LoadEmployeeActive(payroll_employee_datagrid_active);
+            payroll_employee_gender_emp.SelectedIndex = 0;
         }
 
         public void HideAllPanel(Control.ControlCollection Controls)
@@ -297,6 +332,7 @@ namespace Payroll
         }
 
 
+
         private void AuditDateChanged(object sender, EventArgs e)
         {
             auditlogscontroller.SearchDate(dateTimePickerAuditLogFrom.Value,dateTimePickerAuditLogTo.Value, cmb_AuditlogsUsers, payroll_auditlogs_datagrid);
@@ -308,6 +344,118 @@ namespace Payroll
             this.HideAllPanel(Controls);
             this.push_button(sender, e);
             AuditlogsPanel.Visible = true;
+        }
+
+        private void btnEmployeeSave_Click(object sender, EventArgs e)
+        {
+            bool complete = true;
+
+            string[] required = { "payroll_employee_first_name_emp", "payroll_employee_middle_name_emp", "payroll_employee_last_name_emp",
+                                         "payroll_employee_number_emp", "payroll_employee_biometric_number_emp", "payroll_employee_contact_emp",
+                                         "payroll_employee_company_id_emp","payroll_employee_email_emp","payroll_department_id_emp","payroll_jobtitle_id_emp",
+                                        "payroll_group_id_emp","payroll_employee_contract_status_emp"};
+
+            foreach (Control c in grpCreateEmployee.Controls)
+            {
+                if (c is TextBox || c is ComboBox)
+                {
+                    if (required.Contains(c.Name) && c.Text == "")
+                    {
+                        MessageBox.Show(c.Tag.ToString() + " is Required", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        complete = false;
+                        c.Focus();
+                        break;
+                    }
+                }
+            }
+
+            if (complete == true)
+            {
+                if (dbcon.OpenCon() == true)
+                {
+                    string shift = (shift_code_id_emp.SelectedItem != null) ? shift_code_id_emp.SelectedValue.ToString() : "0";
+
+                    string[] column_name = { "payroll_employee_company_id",
+                                     "payroll_employee_first_name",
+                                     "payroll_employee_middle_name",
+                                     "payroll_employee_last_name",
+                                     "payroll_employee_suffix_name",
+                                     "payroll_employee_display_name",
+                                     "payroll_employee_contact",
+                                     "payroll_employee_email",
+                                     "payroll_employee_birthdate",
+                                     "payroll_employee_gender",
+                                     "payroll_employee_number",
+                                     "payroll_employee_biometric_number",
+                                     "payroll_employee_atm_number",
+                                     "payroll_employee_street",
+                                     "payroll_employee_city",
+                                     "payroll_employee_state",
+                                     "payroll_employee_zipcode",
+                                     "payroll_employee_country",
+                                     "payroll_employee_tax_status",
+                                     "payroll_employee_tin",
+                                     "payroll_employee_sss",
+                                     "payroll_employee_pagibig",
+                                     "payroll_employee_philhealth",
+                                     "shift_code_id"};
+                    string table = "tbl_payroll_employee_basic";
+                    string[] column_value = {payroll_employee_company_id_emp.SelectedValue.ToString(),
+                                     payroll_employee_first_name_emp.Text,
+                                     payroll_employee_middle_name_emp.Text,
+                                     payroll_employee_last_name_emp.Text,
+                                     payroll_employee_suffix_name_emp.Text,
+                                     payroll_employee_display_name_emp.Text,
+                                     payroll_employee_contact_emp.Text,
+                                     payroll_employee_email_emp.Text,
+                                     payroll_employee_birthdate_emp.Value.ToString("yyyy-MM-dd"),
+                                     payroll_employee_gender_emp.SelectedItem.ToString(),
+                                     payroll_employee_number_emp.Text,
+                                     payroll_employee_biometric_number_emp.Text,
+                                     payroll_employee_atm_number_emp.Text,
+                                     payroll_employee_street_emp.Text,
+                                     payroll_employee_city_emp.Text,
+                                     payroll_employee_state_emp.Text,
+                                     payroll_employee_zipcode_emp.Text,
+                                     payroll_employee_country_emp.SelectedValue.ToString(),
+                                     payroll_employee_tax_status_emp.Text,
+                                     payroll_employee_tin_emp.Text,
+                                     payroll_employee_sss_emp.Text,
+                                     payroll_employee_pagibig_emp.Text,
+                                     payroll_employee_philhealth_emp.Text,
+                                     shift};
+
+                    dbcon.Insert(table, column_name, column_value, "", null);
+                    employeecontroller.LoadEmployeeActive(payroll_employee_datagrid_active);
+                    grpCreateEmployee.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                    addressTab.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
+                }
+            }
+            /*if(complete != false)
+            {
+                foreach(Control b in companyTab.Controls)
+                {
+                    if (b is TextBox || b is ComboBox)
+                    {
+                        if (required.Contains(b.Name) && b.Text == "")
+                        {
+                            MessageBox.Show(b.Tag.ToString() + " is Required", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            complete = false;
+                            CreateEmployeeTabControl.SelectedTab = companyTab;
+                            b.Focus();
+                            break;
+                        }
+                    }
+                }
+            }*/
+
+
+
+        }
+
+        private void payroll_department_id_emp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            employeecontroller.LoadJobTitle(payroll_jobtitle_id_emp, payroll_department_id_emp.SelectedValue.ToString());
         }
     }
 }
