@@ -1225,6 +1225,7 @@
             this.EmployeeTabControl.SelectedIndex = 0;
             this.EmployeeTabControl.Size = new System.Drawing.Size(1016, 223);
             this.EmployeeTabControl.TabIndex = 22;
+            this.EmployeeTabControl.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // activeemployee
             // 
@@ -1242,6 +1243,7 @@
             this.activeemployee.TabIndex = 0;
             this.activeemployee.Text = "Active Employee";
             this.activeemployee.UseVisualStyleBackColor = true;
+            this.activeemployee.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblSearchEmp
             // 
@@ -1251,6 +1253,7 @@
             this.lblSearchEmp.Size = new System.Drawing.Size(90, 13);
             this.lblSearchEmp.TabIndex = 6;
             this.lblSearchEmp.Text = "Search Employee";
+            this.lblSearchEmp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblFilterStatus
             // 
@@ -1269,6 +1272,7 @@
             this.lblFilterDept.Size = new System.Drawing.Size(87, 13);
             this.lblFilterDept.TabIndex = 4;
             this.lblFilterDept.Text = "Filter Department";
+            this.lblFilterDept.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_search
             // 
@@ -1276,9 +1280,11 @@
             this.payroll_employee_search.Name = "payroll_employee_search";
             this.payroll_employee_search.Size = new System.Drawing.Size(194, 20);
             this.payroll_employee_search.TabIndex = 3;
+            this.payroll_employee_search.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_filter_status
             // 
+            this.payroll_employee_filter_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_filter_status.FormattingEnabled = true;
             this.payroll_employee_filter_status.Location = new System.Drawing.Point(146, 25);
             this.payroll_employee_filter_status.Name = "payroll_employee_filter_status";
@@ -1287,19 +1293,24 @@
             // 
             // payroll_employee_filter_dept
             // 
+            this.payroll_employee_filter_dept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_filter_dept.FormattingEnabled = true;
             this.payroll_employee_filter_dept.Location = new System.Drawing.Point(6, 25);
             this.payroll_employee_filter_dept.Name = "payroll_employee_filter_dept";
             this.payroll_employee_filter_dept.Size = new System.Drawing.Size(121, 21);
             this.payroll_employee_filter_dept.TabIndex = 1;
+            this.payroll_employee_filter_dept.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_datagrid_active
             // 
             this.payroll_employee_datagrid_active.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.payroll_employee_datagrid_active.Location = new System.Drawing.Point(6, 52);
             this.payroll_employee_datagrid_active.Name = "payroll_employee_datagrid_active";
+            this.payroll_employee_datagrid_active.ReadOnly = true;
+            this.payroll_employee_datagrid_active.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.payroll_employee_datagrid_active.Size = new System.Drawing.Size(996, 139);
             this.payroll_employee_datagrid_active.TabIndex = 0;
+            this.payroll_employee_datagrid_active.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // separatedemployee
             // 
@@ -1362,6 +1373,7 @@
             // 
             // payroll_employee_filter_status_sep
             // 
+            this.payroll_employee_filter_status_sep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_filter_status_sep.FormattingEnabled = true;
             this.payroll_employee_filter_status_sep.Location = new System.Drawing.Point(146, 25);
             this.payroll_employee_filter_status_sep.Name = "payroll_employee_filter_status_sep";
@@ -1370,6 +1382,7 @@
             // 
             // payroll_employee_filter_dept_sep
             // 
+            this.payroll_employee_filter_dept_sep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_filter_dept_sep.FormattingEnabled = true;
             this.payroll_employee_filter_dept_sep.Location = new System.Drawing.Point(6, 25);
             this.payroll_employee_filter_dept_sep.Name = "payroll_employee_filter_dept_sep";
@@ -1414,6 +1427,7 @@
             this.grpCreateEmployee.TabIndex = 21;
             this.grpCreateEmployee.TabStop = false;
             this.grpCreateEmployee.Text = "Create Employee";
+            this.grpCreateEmployee.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // check_as_print_name
             // 
@@ -1424,6 +1438,7 @@
             this.check_as_print_name.TabIndex = 33;
             this.check_as_print_name.Text = "Use Display name";
             this.check_as_print_name.UseVisualStyleBackColor = true;
+            this.check_as_print_name.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_birthdate_emp
             // 
@@ -1432,14 +1447,18 @@
             this.payroll_employee_birthdate_emp.Name = "payroll_employee_birthdate_emp";
             this.payroll_employee_birthdate_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_birthdate_emp.TabIndex = 32;
+            this.payroll_employee_birthdate_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_company_id_emp
             // 
+            this.payroll_employee_company_id_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_company_id_emp.FormattingEnabled = true;
             this.payroll_employee_company_id_emp.Location = new System.Drawing.Point(229, 110);
             this.payroll_employee_company_id_emp.Name = "payroll_employee_company_id_emp";
             this.payroll_employee_company_id_emp.Size = new System.Drawing.Size(213, 21);
             this.payroll_employee_company_id_emp.TabIndex = 31;
+            this.payroll_employee_company_id_emp.Tag = "Company";
+            this.payroll_employee_company_id_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnCompanyClear
             // 
@@ -1449,6 +1468,7 @@
             this.btnCompanyClear.TabIndex = 30;
             this.btnCompanyClear.Text = "Clear";
             this.btnCompanyClear.UseVisualStyleBackColor = true;
+            this.btnCompanyClear.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnEmployeeSave
             // 
@@ -1458,6 +1478,8 @@
             this.btnEmployeeSave.TabIndex = 29;
             this.btnEmployeeSave.Text = "Save";
             this.btnEmployeeSave.UseVisualStyleBackColor = true;
+            this.btnEmployeeSave.Click += new System.EventHandler(this.btnEmployeeSave_Click);
+            this.btnEmployeeSave.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // CreateEmployeeTabControl
             // 
@@ -1474,6 +1496,7 @@
             this.CreateEmployeeTabControl.SelectedIndex = 0;
             this.CreateEmployeeTabControl.Size = new System.Drawing.Size(628, 151);
             this.CreateEmployeeTabControl.TabIndex = 28;
+            this.CreateEmployeeTabControl.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // addressTab
             // 
@@ -1494,6 +1517,7 @@
             this.addressTab.TabIndex = 0;
             this.addressTab.Text = "Address";
             this.addressTab.UseVisualStyleBackColor = true;
+            this.addressTab.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblCountry
             // 
@@ -1512,14 +1536,17 @@
             this.lblZipCode.Size = new System.Drawing.Size(50, 13);
             this.lblZipCode.TabIndex = 42;
             this.lblZipCode.Text = "Zip Code";
+            this.lblZipCode.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_country_emp
             // 
+            this.payroll_employee_country_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_country_emp.FormattingEnabled = true;
             this.payroll_employee_country_emp.Location = new System.Drawing.Point(308, 99);
             this.payroll_employee_country_emp.Name = "payroll_employee_country_emp";
             this.payroll_employee_country_emp.Size = new System.Drawing.Size(306, 21);
             this.payroll_employee_country_emp.TabIndex = 41;
+            this.payroll_employee_country_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblState
             // 
@@ -1538,6 +1565,7 @@
             this.lblCityTown.Size = new System.Drawing.Size(56, 13);
             this.lblCityTown.TabIndex = 39;
             this.lblCityTown.Text = "City/Town";
+            this.lblCityTown.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_zipcode_emp
             // 
@@ -1545,6 +1573,7 @@
             this.payroll_employee_zipcode_emp.Name = "payroll_employee_zipcode_emp";
             this.payroll_employee_zipcode_emp.Size = new System.Drawing.Size(296, 20);
             this.payroll_employee_zipcode_emp.TabIndex = 38;
+            this.payroll_employee_zipcode_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_state_emp
             // 
@@ -1559,6 +1588,7 @@
             this.payroll_employee_city_emp.Name = "payroll_employee_city_emp";
             this.payroll_employee_city_emp.Size = new System.Drawing.Size(296, 20);
             this.payroll_employee_city_emp.TabIndex = 35;
+            this.payroll_employee_city_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblStreet
             // 
@@ -1568,6 +1598,7 @@
             this.lblStreet.Size = new System.Drawing.Size(35, 13);
             this.lblStreet.TabIndex = 34;
             this.lblStreet.Text = "Street";
+            this.lblStreet.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_street_emp
             // 
@@ -1575,6 +1606,7 @@
             this.payroll_employee_street_emp.Name = "payroll_employee_street_emp";
             this.payroll_employee_street_emp.Size = new System.Drawing.Size(608, 20);
             this.payroll_employee_street_emp.TabIndex = 0;
+            this.payroll_employee_street_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // companyTab
             // 
@@ -1602,11 +1634,13 @@
             // 
             // payroll_employee_contract_status_emp
             // 
+            this.payroll_employee_contract_status_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_contract_status_emp.FormattingEnabled = true;
             this.payroll_employee_contract_status_emp.Location = new System.Drawing.Point(469, 68);
             this.payroll_employee_contract_status_emp.Name = "payroll_employee_contract_status_emp";
             this.payroll_employee_contract_status_emp.Size = new System.Drawing.Size(131, 21);
             this.payroll_employee_contract_status_emp.TabIndex = 44;
+            this.payroll_employee_contract_status_emp.Tag = "Employment Status";
             // 
             // lblEmploymentStatus
             // 
@@ -1652,6 +1686,7 @@
             this.btnCompanyDetails.TabIndex = 40;
             this.btnCompanyDetails.Text = "Company Details";
             this.btnCompanyDetails.UseVisualStyleBackColor = true;
+            this.btnCompanyDetails.Visible = false;
             // 
             // btnNewCompanyDetails
             // 
@@ -1661,14 +1696,17 @@
             this.btnNewCompanyDetails.TabIndex = 39;
             this.btnNewCompanyDetails.Text = "New Company Details";
             this.btnNewCompanyDetails.UseVisualStyleBackColor = true;
+            this.btnNewCompanyDetails.Visible = false;
             // 
             // payroll_group_id_emp
             // 
+            this.payroll_group_id_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_group_id_emp.FormattingEnabled = true;
             this.payroll_group_id_emp.Location = new System.Drawing.Point(321, 68);
             this.payroll_group_id_emp.Name = "payroll_group_id_emp";
             this.payroll_group_id_emp.Size = new System.Drawing.Size(142, 21);
             this.payroll_group_id_emp.TabIndex = 37;
+            this.payroll_group_id_emp.Tag = "Payroll Group";
             // 
             // payroll_employee_contract_date_end_emp
             // 
@@ -1706,19 +1744,24 @@
             // 
             // payroll_jobtitle_id_emp
             // 
+            this.payroll_jobtitle_id_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_jobtitle_id_emp.FormattingEnabled = true;
             this.payroll_jobtitle_id_emp.Location = new System.Drawing.Point(6, 68);
             this.payroll_jobtitle_id_emp.Name = "payroll_jobtitle_id_emp";
             this.payroll_jobtitle_id_emp.Size = new System.Drawing.Size(293, 21);
             this.payroll_jobtitle_id_emp.TabIndex = 1;
+            this.payroll_jobtitle_id_emp.Tag = "Job Title";
             // 
             // payroll_department_id_emp
             // 
+            this.payroll_department_id_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_department_id_emp.FormattingEnabled = true;
             this.payroll_department_id_emp.Location = new System.Drawing.Point(6, 29);
             this.payroll_department_id_emp.Name = "payroll_department_id_emp";
             this.payroll_department_id_emp.Size = new System.Drawing.Size(293, 21);
             this.payroll_department_id_emp.TabIndex = 0;
+            this.payroll_department_id_emp.Tag = "Department";
+            this.payroll_department_id_emp.SelectedIndexChanged += new System.EventHandler(this.payroll_department_id_emp_SelectedIndexChanged);
             // 
             // governmentTab
             // 
@@ -1757,6 +1800,7 @@
             // 
             // payroll_employee_tax_status_emp
             // 
+            this.payroll_employee_tax_status_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_tax_status_emp.FormattingEnabled = true;
             this.payroll_employee_tax_status_emp.Location = new System.Drawing.Point(12, 26);
             this.payroll_employee_tax_status_emp.Name = "payroll_employee_tax_status_emp";
@@ -2432,11 +2476,17 @@
             // 
             // payroll_employee_gender_emp
             // 
+            this.payroll_employee_gender_emp.DisplayMember = "male";
+            this.payroll_employee_gender_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.payroll_employee_gender_emp.FormattingEnabled = true;
+            this.payroll_employee_gender_emp.Items.AddRange(new object[] {
+            "male",
+            "female"});
             this.payroll_employee_gender_emp.Location = new System.Drawing.Point(10, 149);
             this.payroll_employee_gender_emp.Name = "payroll_employee_gender_emp";
             this.payroll_employee_gender_emp.Size = new System.Drawing.Size(213, 21);
             this.payroll_employee_gender_emp.TabIndex = 27;
+            this.payroll_employee_gender_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblPrintName
             // 
@@ -2446,6 +2496,7 @@
             this.lblPrintName.Size = new System.Drawing.Size(104, 13);
             this.lblPrintName.TabIndex = 26;
             this.lblPrintName.Text = "Print on as check as";
+            this.lblPrintName.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblBirthDate
             // 
@@ -2464,6 +2515,7 @@
             this.lblGender.Size = new System.Drawing.Size(42, 13);
             this.lblGender.TabIndex = 24;
             this.lblGender.Text = "Gender";
+            this.lblGender.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_display_name_emp
             // 
@@ -2471,6 +2523,7 @@
             this.payroll_employee_display_name_emp.Name = "payroll_employee_display_name_emp";
             this.payroll_employee_display_name_emp.Size = new System.Drawing.Size(264, 20);
             this.payroll_employee_display_name_emp.TabIndex = 23;
+            this.payroll_employee_display_name_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblEmailAddress
             // 
@@ -2480,6 +2533,7 @@
             this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
             this.lblEmailAddress.TabIndex = 20;
             this.lblEmailAddress.Text = "Email Address";
+            this.lblEmailAddress.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblCompany
             // 
@@ -2498,6 +2552,7 @@
             this.lblContactNumber.Size = new System.Drawing.Size(84, 13);
             this.lblContactNumber.TabIndex = 18;
             this.lblContactNumber.Text = "Contact Number";
+            this.lblContactNumber.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_email_emp
             // 
@@ -2505,6 +2560,8 @@
             this.payroll_employee_email_emp.Name = "payroll_employee_email_emp";
             this.payroll_employee_email_emp.Size = new System.Drawing.Size(264, 20);
             this.payroll_employee_email_emp.TabIndex = 17;
+            this.payroll_employee_email_emp.Tag = "Email Address";
+            this.payroll_employee_email_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_contact_emp
             // 
@@ -2512,6 +2569,8 @@
             this.payroll_employee_contact_emp.Name = "payroll_employee_contact_emp";
             this.payroll_employee_contact_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_contact_emp.TabIndex = 15;
+            this.payroll_employee_contact_emp.Tag = "Contact Number";
+            this.payroll_employee_contact_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblAtmNumber
             // 
@@ -2521,6 +2580,7 @@
             this.lblAtmNumber.Size = new System.Drawing.Size(70, 13);
             this.lblAtmNumber.TabIndex = 14;
             this.lblAtmNumber.Text = "ATM Number";
+            this.lblAtmNumber.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblBiometricNumber
             // 
@@ -2539,6 +2599,7 @@
             this.lblEmployeeNumber.Size = new System.Drawing.Size(93, 13);
             this.lblEmployeeNumber.TabIndex = 12;
             this.lblEmployeeNumber.Text = "Employee Number";
+            this.lblEmployeeNumber.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_atm_number_emp
             // 
@@ -2546,6 +2607,7 @@
             this.payroll_employee_atm_number_emp.Name = "payroll_employee_atm_number_emp";
             this.payroll_employee_atm_number_emp.Size = new System.Drawing.Size(264, 20);
             this.payroll_employee_atm_number_emp.TabIndex = 10;
+            this.payroll_employee_atm_number_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_biometric_number_emp
             // 
@@ -2553,6 +2615,8 @@
             this.payroll_employee_biometric_number_emp.Name = "payroll_employee_biometric_number_emp";
             this.payroll_employee_biometric_number_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_biometric_number_emp.TabIndex = 9;
+            this.payroll_employee_biometric_number_emp.Tag = "Biometric Number";
+            this.payroll_employee_biometric_number_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_number_emp
             // 
@@ -2560,6 +2624,8 @@
             this.payroll_employee_number_emp.Name = "payroll_employee_number_emp";
             this.payroll_employee_number_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_number_emp.TabIndex = 8;
+            this.payroll_employee_number_emp.Tag = "Employee Number";
+            this.payroll_employee_number_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblSuffix
             // 
@@ -2569,6 +2635,7 @@
             this.lblSuffix.Size = new System.Drawing.Size(33, 13);
             this.lblSuffix.TabIndex = 7;
             this.lblSuffix.Text = "Suffix";
+            this.lblSuffix.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblMiddleName
             // 
@@ -2578,6 +2645,7 @@
             this.lblMiddleName.Size = new System.Drawing.Size(69, 13);
             this.lblMiddleName.TabIndex = 6;
             this.lblMiddleName.Text = "Middle Name";
+            this.lblMiddleName.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblFirstName
             // 
@@ -2596,6 +2664,7 @@
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 4;
             this.lblLastName.Text = "Last Name";
+            this.lblLastName.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_suffix_name_emp
             // 
@@ -2603,6 +2672,7 @@
             this.payroll_employee_suffix_name_emp.Name = "payroll_employee_suffix_name_emp";
             this.payroll_employee_suffix_name_emp.Size = new System.Drawing.Size(45, 20);
             this.payroll_employee_suffix_name_emp.TabIndex = 3;
+            this.payroll_employee_suffix_name_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_middle_name_emp
             // 
@@ -2610,6 +2680,8 @@
             this.payroll_employee_middle_name_emp.Name = "payroll_employee_middle_name_emp";
             this.payroll_employee_middle_name_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_middle_name_emp.TabIndex = 2;
+            this.payroll_employee_middle_name_emp.Tag = "Middle Name";
+            this.payroll_employee_middle_name_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_first_name_emp
             // 
@@ -2617,6 +2689,8 @@
             this.payroll_employee_first_name_emp.Name = "payroll_employee_first_name_emp";
             this.payroll_employee_first_name_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_first_name_emp.TabIndex = 1;
+            this.payroll_employee_first_name_emp.Tag = "First Name";
+            this.payroll_employee_first_name_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // payroll_employee_last_name_emp
             // 
@@ -2624,6 +2698,8 @@
             this.payroll_employee_last_name_emp.Name = "payroll_employee_last_name_emp";
             this.payroll_employee_last_name_emp.Size = new System.Drawing.Size(213, 20);
             this.payroll_employee_last_name_emp.TabIndex = 0;
+            this.payroll_employee_last_name_emp.Tag = "Last Name";
+            this.payroll_employee_last_name_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // grpExportEmployee
             // 
@@ -2634,6 +2710,7 @@
             this.grpExportEmployee.TabIndex = 21;
             this.grpExportEmployee.TabStop = false;
             this.grpExportEmployee.Text = "Export Employee";
+            this.grpExportEmployee.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnExportEmployeePDF
             // 
@@ -2643,6 +2720,7 @@
             this.btnExportEmployeePDF.TabIndex = 39;
             this.btnExportEmployeePDF.Text = "Export to PDF";
             this.btnExportEmployeePDF.UseVisualStyleBackColor = true;
+            this.btnExportEmployeePDF.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // grpImportEmployee
             // 
@@ -2658,6 +2736,7 @@
             this.grpImportEmployee.TabIndex = 20;
             this.grpImportEmployee.TabStop = false;
             this.grpImportEmployee.Text = "Import Employee";
+            this.grpImportEmployee.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnUpdateEmployeeExcelFile
             // 
@@ -2667,6 +2746,7 @@
             this.btnUpdateEmployeeExcelFile.TabIndex = 38;
             this.btnUpdateEmployeeExcelFile.Text = "Update 201 File";
             this.btnUpdateEmployeeExcelFile.UseVisualStyleBackColor = true;
+            this.btnUpdateEmployeeExcelFile.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnImportEmployeeExcelFile
             // 
@@ -2676,6 +2756,7 @@
             this.btnImportEmployeeExcelFile.TabIndex = 37;
             this.btnImportEmployeeExcelFile.Text = "Import Excel File";
             this.btnImportEmployeeExcelFile.UseVisualStyleBackColor = true;
+            this.btnImportEmployeeExcelFile.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnChooseEmployeeExcelFile
             // 
@@ -2685,6 +2766,7 @@
             this.btnChooseEmployeeExcelFile.TabIndex = 36;
             this.btnChooseEmployeeExcelFile.Text = "Choose Excel File";
             this.btnChooseEmployeeExcelFile.UseVisualStyleBackColor = true;
+            this.btnChooseEmployeeExcelFile.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // btnDownloadEmployeeTemplate
             // 
@@ -2694,6 +2776,7 @@
             this.btnDownloadEmployeeTemplate.TabIndex = 34;
             this.btnDownloadEmployeeTemplate.Text = "Download Template";
             this.btnDownloadEmployeeTemplate.UseVisualStyleBackColor = true;
+            this.btnDownloadEmployeeTemplate.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // lblNumberofEmployee
             // 
@@ -2703,6 +2786,7 @@
             this.lblNumberofEmployee.Size = new System.Drawing.Size(110, 13);
             this.lblNumberofEmployee.TabIndex = 35;
             this.lblNumberofEmployee.Text = "Number of Employees";
+            this.lblNumberofEmployee.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // number_of_emp
             // 
@@ -2710,6 +2794,7 @@
             this.number_of_emp.Name = "number_of_emp";
             this.number_of_emp.Size = new System.Drawing.Size(212, 20);
             this.number_of_emp.TabIndex = 34;
+            this.number_of_emp.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // panel3
             // 
@@ -2719,6 +2804,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1012, 71);
             this.panel3.TabIndex = 19;
+            this.panel3.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
             // label4
             // 
@@ -2737,8 +2823,8 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1230, 780);
             this.Controls.Add(this.payroll_config_dropdown);
-            this.Controls.Add(this.EmployeePanel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.EmployeePanel);
             this.Controls.Add(this.CompanyPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
