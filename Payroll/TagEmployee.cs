@@ -78,7 +78,7 @@ namespace Payroll
                 {
                     if (((CheckBox)c).Checked)
                     {
-                        employee_id.Add(Convert.ToInt32(c.Tag));
+                        employee_id_list.Add(Convert.ToInt32(c.Tag));
                     }
                 }
             }
