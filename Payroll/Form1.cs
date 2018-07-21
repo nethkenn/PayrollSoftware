@@ -457,6 +457,12 @@ namespace Payroll
         {
             employeecontroller.LoadJobTitle(payroll_jobtitle_id_emp, payroll_department_id_emp.SelectedValue.ToString());
         }
+
+        private void btn_holiday_Click(object sender, EventArgs e)
+        {
+            Holiday hldy = new Holiday();
+            hldy.ShowDialog();
+        }
     }
 }
     

@@ -56,6 +56,12 @@ namespace Payroll
 
         }
 
+        public void TagEmployee(object sender, EventArgs e, int id,string form)
+        {
+            TagEmployee emptag = new TagEmployee(id,form);
+            emptag.ShowDialog();
+        }
+
 
     }
 }
