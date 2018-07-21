@@ -20,7 +20,7 @@ namespace Payroll
         private Payroll payroll;
         private EmployeeController employeecontroller;
         private string dynamic_form;
-        public int[] employee_id;
+
         public TagEmployee(int id,string form)
         {
             InitializeComponent();
@@ -83,10 +83,9 @@ namespace Payroll
                 }
             }
 
-            employee_id = employee_id_list.ToArray();
-
             var type = Type.GetType("Payroll." + dynamic_form);
-            var form = Activator.CreateInstance(type) as Form;
+            dynamic form = Activator.CreateInstance(type) as Form;
+            form.GetEmployeeID(employee_id_list.ToArray());
             this.Close();
 
         }

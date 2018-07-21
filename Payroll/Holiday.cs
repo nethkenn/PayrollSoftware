@@ -16,7 +16,7 @@ namespace Payroll
     {
         private db dbcon;
         private Payroll payroll;
-        private int[] employee_id;
+        public static int[] emp_id;
 
         public Holiday()
         {
@@ -58,7 +58,17 @@ namespace Payroll
             }
          
         }
+        
+        public void GetEmployeeID(int[] employee_id)
+        {
+            emp_id = employee_id;
+            MessageBox.Show(string.Join(Environment.NewLine, emp_id));
+        }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
 
+            MessageBox.Show(string.Join(Environment.NewLine, emp_id));
+        }
     }
 }
