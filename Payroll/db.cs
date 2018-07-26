@@ -15,6 +15,8 @@ namespace Payroll
     public class db
     {
         public MySqlConnection con;
+        public MySqlCommand cmd;
+        public MySqlDataReader read;
         //Constructor
         public db()
         {
@@ -77,7 +79,7 @@ namespace Payroll
             {
                 this.Initialize();
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT count(*) FROM "+table+"", con);
+                cmd = new MySqlCommand("SELECT count(*) FROM "+table+"", con);
                 Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
                 con.Close();
 
@@ -94,17 +96,37 @@ namespace Payroll
             return "No Data";
         }
 
-        //string table -> table name
-        //string[] columns -> column names
-        //string[] values -> values 
-        //Insert statement
-        public void Insert(string table,string[] columns,string[] values, string picturecolumn, byte[] logo)
+        public int GetLastID(string table,string column)
         {
             try
             {
                 this.Initialize();
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO " + table + "(" + string.Join(",", columns) +") VALUES('" + string.Join("','", values) + "')", con);
+                cmd = new MySqlCommand("SELECT * FROM "+table+" ORDER BY "+column+" DESC LIMIT 1", con);
+                read = cmd.ExecuteReader();
+                read.Read();
+                return Convert.ToInt32(read[""+column+""]);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured!" + ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return 0;
+        }
+
+        //string table -> table name
+        //string[] columns -> column names
+        //string[] values -> values 
+        //Insert statement
+        public void Insert(string table,string[] columns,string[] values, string picturecolumn, byte[] logo, bool showmessage)
+        {
+            try
+            {
+                this.Initialize();
+                con.Open();
+                cmd = new MySqlCommand("INSERT INTO " + table + "(" + string.Join(",", columns) +") VALUES('" + string.Join("','", values) + "')", con);
 
                 if (picturecolumn != "")
                 {
@@ -115,7 +137,7 @@ namespace Payroll
                 int check = cmd.ExecuteNonQuery();
                 con.Close();
 
-                if(table != "tbl_payroll_audit_logs")
+                if(showmessage == true)
                 {
                     if (check == 0)
                     {
@@ -145,7 +167,7 @@ namespace Payroll
             {
                 this.Initialize();
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("UPDATE " + table + " SET " + string.Join(",", columnandvalues) + " WHERE " + primarykey + "=" + idvalue + "", con);
+                cmd = new MySqlCommand("UPDATE " + table + " SET " + string.Join(",", columnandvalues) + " WHERE " + primarykey + "=" + idvalue + "", con);
                 if (picturecolumn != "")
                 {
                     cmd = new MySqlCommand("UPDATE " + table + " SET " + string.Join(",", columnandvalues) + "," + picturecolumn + "=@picture WHERE " + primarykey + "=" + idvalue + "", con);
@@ -168,6 +190,32 @@ namespace Payroll
                 MessageBox.Show("Error occured!" + ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        public void Delete(string table,string where)
+        {
+            try
+            {
+                this.Initialize();
+                con.Open();
+                cmd = new MySqlCommand("DELETE FROM "+table+" WHERE "+where+"", con);
+
+                int check = cmd.ExecuteNonQuery();
+                con.Close();
+
+                /**if (check == 0)
+                {
+                    MessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Successfully updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occured!" + ex, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

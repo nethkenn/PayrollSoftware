@@ -32,13 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_audit_trail = new System.Windows.Forms.Button();
-            this.btn_reports = new System.Windows.Forms.Button();
-            this.btn_payroll_process = new System.Windows.Forms.Button();
-            this.btn_timekeeping = new System.Windows.Forms.Button();
-            this.btn_company_list = new System.Windows.Forms.Button();
-            this.btn_employee_list = new System.Windows.Forms.Button();
-            this.btn_payroll_config = new System.Windows.Forms.Button();
             this.CompanyPanel = new System.Windows.Forms.Panel();
             this.payroll_company_id = new System.Windows.Forms.TextBox();
             this.lblBankAccount = new System.Windows.Forms.Label();
@@ -62,9 +55,7 @@
             this.btnCompanySave = new System.Windows.Forms.Button();
             this.btnCompanyEdit = new System.Windows.Forms.Button();
             this.b = new System.Windows.Forms.GroupBox();
-            this.payroll_company_logo_default = new System.Windows.Forms.PictureBox();
             this.btnCompanyUpload = new System.Windows.Forms.Button();
-            this.payroll_company_logo = new System.Windows.Forms.PictureBox();
             this.payroll_company_nature_of_business = new System.Windows.Forms.TextBox();
             this.payroll_company_philhealth = new System.Windows.Forms.TextBox();
             this.payroll_company_email = new System.Windows.Forms.TextBox();
@@ -78,6 +69,7 @@
             this.payroll_company_code = new System.Windows.Forms.TextBox();
             this.payroll_company_name = new System.Windows.Forms.TextBox();
             this.payroll_company_datagrid = new System.Windows.Forms.DataGridView();
+            this.payroll_config_dropdown = new System.Windows.Forms.FlowLayoutPanel();
             this.CompanyFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.AuditlogsPanel = new System.Windows.Forms.Panel();
             this.dateTimePickerAuditLogTo = new System.Windows.Forms.DateTimePicker();
@@ -249,7 +241,6 @@
             this.number_of_emp = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.payroll_config_dropdown = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_department = new System.Windows.Forms.Button();
             this.btn_job_title = new System.Windows.Forms.Button();
             this.btn_holiday = new System.Windows.Forms.Button();
@@ -264,12 +255,19 @@
             this.btn_philhealth_table = new System.Windows.Forms.Button();
             this.btn_pagibig_hdmf = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
+            this.btn_audit_trail = new System.Windows.Forms.Button();
+            this.btn_reports = new System.Windows.Forms.Button();
+            this.btn_payroll_process = new System.Windows.Forms.Button();
+            this.btn_timekeeping = new System.Windows.Forms.Button();
+            this.btn_company_list = new System.Windows.Forms.Button();
+            this.btn_employee_list = new System.Windows.Forms.Button();
+            this.btn_payroll_config = new System.Windows.Forms.Button();
+            this.payroll_company_logo_default = new System.Windows.Forms.PictureBox();
+            this.payroll_company_logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.CompanyPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.b.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).BeginInit();
             this.AuditlogsPanel.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -296,6 +294,8 @@
             this.grpImportEmployee.SuspendLayout();
             this.panel3.SuspendLayout();
             this.payroll_config_dropdown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -471,6 +471,7 @@
             this.btn_payroll_config.Click += new System.EventHandler(this.push_button);
             this.btn_payroll_config.MouseHover += new System.EventHandler(this.show_payroll_config_dropdown);
             // 
+
             // CompanyPanel
             // 
             this.CompanyPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -738,18 +739,6 @@
             this.b.Text = "Company Logo";
             this.b.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             // 
-            // payroll_company_logo_default
-            // 
-            this.payroll_company_logo_default.BackColor = System.Drawing.Color.Transparent;
-            this.payroll_company_logo_default.Location = new System.Drawing.Point(6, 15);
-            this.payroll_company_logo_default.Name = "payroll_company_logo_default";
-            this.payroll_company_logo_default.Size = new System.Drawing.Size(284, 154);
-            this.payroll_company_logo_default.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.payroll_company_logo_default.TabIndex = 36;
-            this.payroll_company_logo_default.TabStop = false;
-            this.payroll_company_logo_default.Visible = false;
-            this.payroll_company_logo_default.MouseHover += new System.EventHandler(this.Form1_MouseHover);
-            // 
             // btnCompanyUpload
             // 
             this.btnCompanyUpload.Location = new System.Drawing.Point(89, 178);
@@ -760,15 +749,6 @@
             this.btnCompanyUpload.UseVisualStyleBackColor = true;
             this.btnCompanyUpload.Click += new System.EventHandler(this.btnCompanyUpload_Click);
             this.btnCompanyUpload.MouseHover += new System.EventHandler(this.Form1_MouseHover);
-            // 
-            // payroll_company_logo
-            // 
-            this.payroll_company_logo.Location = new System.Drawing.Point(6, 15);
-            this.payroll_company_logo.Name = "payroll_company_logo";
-            this.payroll_company_logo.Size = new System.Drawing.Size(284, 154);
-            this.payroll_company_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.payroll_company_logo.TabIndex = 15;
-            this.payroll_company_logo.TabStop = false;
             // 
             // payroll_company_nature_of_business
             // 
@@ -2647,6 +2627,27 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Employee";
             // 
+            // payroll_company_logo_default
+            // 
+            this.payroll_company_logo_default.BackColor = System.Drawing.Color.Transparent;
+            this.payroll_company_logo_default.Location = new System.Drawing.Point(6, 15);
+            this.payroll_company_logo_default.Name = "payroll_company_logo_default";
+            this.payroll_company_logo_default.Size = new System.Drawing.Size(284, 154);
+            this.payroll_company_logo_default.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.payroll_company_logo_default.TabIndex = 36;
+            this.payroll_company_logo_default.TabStop = false;
+            this.payroll_company_logo_default.Visible = false;
+            this.payroll_company_logo_default.MouseHover += new System.EventHandler(this.Form1_MouseHover);
+            // 
+            // payroll_company_logo
+            // 
+            this.payroll_company_logo.Location = new System.Drawing.Point(6, 15);
+            this.payroll_company_logo.Name = "payroll_company_logo";
+            this.payroll_company_logo.Size = new System.Drawing.Size(284, 154);
+            this.payroll_company_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.payroll_company_logo.TabIndex = 15;
+            this.payroll_company_logo.TabStop = false;
+            // 
             // payroll_config_dropdown
             // 
             this.payroll_config_dropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(33)))), ((int)(((byte)(46)))));
@@ -2997,9 +2998,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.b.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_company_datagrid)).EndInit();
+            this.payroll_config_dropdown.ResumeLayout(false);
             this.AuditlogsPanel.ResumeLayout(false);
             this.AuditlogsPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -3039,6 +3039,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.payroll_config_dropdown.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo_default)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_company_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
