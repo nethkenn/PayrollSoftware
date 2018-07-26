@@ -24,11 +24,11 @@ namespace Payroll
         public Form1()
         {
             InitializeComponent();
-            dbcon   = new db();
-            payroll = new Payroll();
-            companycontroller = new CompanyController();
+            dbcon               = new db();
+            payroll             = new Payroll();
+            companycontroller   = new CompanyController();
             auditlogscontroller = new AuditLogsController();
-            employeecontroller = new EmployeeController();
+            employeecontroller  = new EmployeeController();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -139,13 +139,16 @@ namespace Payroll
                     if (dbcon.CheckRecord(table) != "Exist")
                     {
                         //insert company
-                        dbcon.Insert(table, column_name, column_value, picturecolumn, picturevalue);
+                        dbcon.Insert(table, column_name, column_value, picturecolumn, picturevalue,true);
 
                         // insert audit logs
                         string table2 = "tbl_payroll_audit_logs";
-                        string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-                        string[] column_value2 = { "nethken", "Add new Company named " + payroll_company_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-                        dbcon.Insert(table2, column_name2, column_value2, "", null);
+                        string[] column_name2 = { "payroll_audit_logs_user",
+                                                  "payroll_audit_logs_changes",
+                                                  "payroll_audit_logs_datetime" };
+                        string[] column_value2 = { "nethken", "Add new Company named " + payroll_company_name.Text + "",
+                                                    DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                        dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
                         //load company to datagrid
                         companycontroller.LoadCompany(payroll_company_datagrid);
@@ -172,7 +175,7 @@ namespace Payroll
         {
             try
             {
-                    DataGridViewRow row = this.payroll_company_datagrid.Rows[e.RowIndex];
+                    DataGridViewRow row                           = this.payroll_company_datagrid.Rows[e.RowIndex];
                     
                     payroll_company_id.Text                       = row.Cells["payroll_company_id"].Value.ToString();
                     payroll_company_name.Text                     = row.Cells["payroll_company_name"].Value.ToString();
@@ -192,13 +195,13 @@ namespace Payroll
 
                     if (row.Cells["payroll_company_logo"].Value.GetType().ToString() != "System.DBNull")
                     {
-                        MemoryStream str = new MemoryStream((byte[])row.Cells["payroll_company_logo"].Value);
-                        payroll_company_logo.Image = Image.FromStream(str);
+                        MemoryStream str              = new MemoryStream((byte[])row.Cells["payroll_company_logo"].Value);
+                        payroll_company_logo.Image    = Image.FromStream(str);
                         payroll_company_logo.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     else
                     {
-                        payroll_company_logo.Image = Properties.Resources.download;
+                        payroll_company_logo.Image    = Properties.Resources.download;
                     }
 
                     btnCompanyEdit.Enabled = true;
@@ -238,10 +241,13 @@ namespace Payroll
 
 
                 // insert audit logs
-                string table2 = "tbl_payroll_audit_logs";
-                string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-                string[] column_value2 = { "nethken", "Edited Company named " + payroll_company_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-                dbcon.Insert(table2, column_name2, column_value2, "", null);
+                string table2          =  "tbl_payroll_audit_logs";
+                string[] column_name2  = {"payroll_audit_logs_user",
+                                          "payroll_audit_logs_changes",
+                                          "payroll_audit_logs_datetime" };
+                string[] column_value2 = { "nethken", "Edited Company named " + payroll_company_name.Text + "",
+                                            DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
                 companycontroller.LoadCompany(payroll_company_datagrid);
                 //clear textboxes and picture   
@@ -254,9 +260,9 @@ namespace Payroll
 
         private void show_payroll_config_dropdown(object sender, EventArgs e)
         {
-            panel1.Size = new Size(201, 647);
+            panel1.Size                     = new Size(201, 647);
             payroll_config_dropdown.Visible = true;
-            btn_payroll_config.BackColor = Color.FromArgb(54, 153, 210);
+            btn_payroll_config.BackColor    = Color.FromArgb(54, 153, 210);
         }
 
         private void push_button(object sender, EventArgs e)
@@ -350,10 +356,18 @@ namespace Payroll
         {
             bool complete = true;
 
-            string[] required = { "payroll_employee_first_name_emp", "payroll_employee_middle_name_emp", "payroll_employee_last_name_emp",
-                                         "payroll_employee_number_emp", "payroll_employee_biometric_number_emp", "payroll_employee_contact_emp",
-                                         "payroll_employee_company_id_emp","payroll_employee_email_emp","payroll_department_id_emp","payroll_jobtitle_id_emp",
-                                        "payroll_group_id_emp","payroll_employee_contract_status_emp"};
+            string[] required = { "payroll_employee_first_name_emp",
+                                  "payroll_employee_middle_name_emp",
+                                  "payroll_employee_last_name_emp",
+                                  "payroll_employee_number_emp",
+                                  "payroll_employee_biometric_number_emp",
+                                  "payroll_employee_contact_emp",
+                                  "payroll_employee_company_id_emp",
+                                  "payroll_employee_email_emp",
+                                  "payroll_department_id_emp",
+                                  "payroll_jobtitle_id_emp",
+                                  "payroll_group_id_emp",
+                                  "payroll_employee_contract_status_emp" };
 
             foreach (Control c in grpCreateEmployee.Controls)
             {
@@ -425,7 +439,7 @@ namespace Payroll
                                      payroll_employee_philhealth_emp.Text,
                                      shift};
 
-                    dbcon.Insert(table, column_name, column_value, "", null);
+                    dbcon.Insert(table, column_name, column_value, "", null,true);
                     employeecontroller.LoadEmployeeActive(payroll_employee_datagrid_active);
                     grpCreateEmployee.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());
                     addressTab.Controls.OfType<TextBox>().ToList().ForEach(textBox => textBox.Clear());

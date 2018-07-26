@@ -18,7 +18,7 @@ namespace Payroll
         public Department()
         {
             InitializeComponent();
-            dbcon = new db();
+            dbcon   = new db();
             payroll = new Payroll();
         }
 
@@ -29,16 +29,19 @@ namespace Payroll
                 string table           = "tbl_payroll_department";
                 string[] column_name   = {"payroll_department_name"};
                 string[] column_value  = {payroll_department_name.Text};
-                dbcon.Insert(table, column_name, column_value, "", null);
+                dbcon.Insert(table, column_name, column_value, "", null,true);
                 this.LoadActiveCompany();
                 this.LoadArchiveCompany();
 
 
                 // insert audit logs
                 string table2 = "tbl_payroll_audit_logs";
-                string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-                string[] column_value2 = { "nethken", "Add new Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-                dbcon.Insert(table2, column_name2, column_value2, "", null);
+                string[] column_name2 = { "payroll_audit_logs_user",
+                                          "payroll_audit_logs_changes",
+                                          "payroll_audit_logs_datetime" };
+                string[] column_value2 = { "nethken", "Add new Department named " + payroll_department_name.Text + "",
+                                            DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
                 payroll_department_name.Text = "";
                 btnDeptArchived.Enabled      = false;
@@ -90,9 +93,12 @@ namespace Payroll
 
             // insert audit logs
             string table2 = "tbl_payroll_audit_logs";
-            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-            string[] column_value2 = { "nethken", "Archived Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-            dbcon.Insert(table2, column_name2, column_value2, "", null);
+            string[] column_name2 = { "payroll_audit_logs_user",
+                                      "payroll_audit_logs_changes",
+                                      "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Archived Department named " + payroll_department_name.Text + "",
+                                        DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
             payroll_department_name.Text = "";
         }
@@ -169,9 +175,12 @@ namespace Payroll
 
             // insert audit logs
             string table2 = "tbl_payroll_audit_logs";
-            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-            string[] column_value2 = { "nethken", "Restored Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-            dbcon.Insert(table2, column_name2, column_value2, "", null);
+            string[] column_name2 = { "payroll_audit_logs_user",
+                                      "payroll_audit_logs_changes",
+                                      "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Restored Department named " + payroll_department_name.Text + "",
+                                       DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
             payroll_department_name.Text = "";
         }
@@ -191,9 +200,12 @@ namespace Payroll
 
             // insert audit logs
             string table2 = "tbl_payroll_audit_logs";
-            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-            string[] column_value2 = { "nethken", "Edited Department named " + payroll_department_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-            dbcon.Insert(table2, column_name2, column_value2, "", null);
+            string[] column_name2 = { "payroll_audit_logs_user",
+                                      "payroll_audit_logs_changes",
+                                      "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Edited Department named " + payroll_department_name.Text + "",
+                                        DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
             payroll_department_name.Text = "";
         }

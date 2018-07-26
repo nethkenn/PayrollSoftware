@@ -42,6 +42,10 @@
             this.payroll_holiday_holiday_archive = new System.Windows.Forms.DataGridView();
             this.grpAffected = new System.Windows.Forms.GroupBox();
             this.panelHoliday = new System.Windows.Forms.Panel();
+            this.payroll_holiday_id = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.btnArchived = new System.Windows.Forms.Button();
             this.tabHoliday.SuspendLayout();
             this.activeHoliday.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_datagrid_holiday_active)).BeginInit();
@@ -106,7 +110,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(347, 551);
+            this.btnSave.Location = new System.Drawing.Point(353, 364);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 23);
             this.btnSave.TabIndex = 8;
@@ -137,11 +141,17 @@
             // 
             // payroll_datagrid_holiday_active
             // 
+            this.payroll_datagrid_holiday_active.AllowUserToAddRows = false;
+            this.payroll_datagrid_holiday_active.AllowUserToDeleteRows = false;
+            this.payroll_datagrid_holiday_active.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.payroll_datagrid_holiday_active.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.payroll_datagrid_holiday_active.Location = new System.Drawing.Point(6, 6);
             this.payroll_datagrid_holiday_active.Name = "payroll_datagrid_holiday_active";
+            this.payroll_datagrid_holiday_active.ReadOnly = true;
+            this.payroll_datagrid_holiday_active.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.payroll_datagrid_holiday_active.Size = new System.Drawing.Size(436, 217);
             this.payroll_datagrid_holiday_active.TabIndex = 0;
+            this.payroll_datagrid_holiday_active.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payroll_datagrid_holiday_active_CellClick);
             // 
             // archiveHoliday
             // 
@@ -156,18 +166,24 @@
             // 
             // payroll_holiday_holiday_archive
             // 
+            this.payroll_holiday_holiday_archive.AllowUserToAddRows = false;
+            this.payroll_holiday_holiday_archive.AllowUserToDeleteRows = false;
+            this.payroll_holiday_holiday_archive.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.payroll_holiday_holiday_archive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.payroll_holiday_holiday_archive.Location = new System.Drawing.Point(6, 6);
             this.payroll_holiday_holiday_archive.Name = "payroll_holiday_holiday_archive";
+            this.payroll_holiday_holiday_archive.ReadOnly = true;
+            this.payroll_holiday_holiday_archive.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.payroll_holiday_holiday_archive.Size = new System.Drawing.Size(436, 217);
             this.payroll_holiday_holiday_archive.TabIndex = 1;
+            this.payroll_holiday_holiday_archive.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.payroll_holiday_holiday_archive_CellClick);
             // 
             // grpAffected
             // 
             this.grpAffected.Controls.Add(this.panelHoliday);
             this.grpAffected.Location = new System.Drawing.Point(12, 364);
             this.grpAffected.Name = "grpAffected";
-            this.grpAffected.Size = new System.Drawing.Size(457, 176);
+            this.grpAffected.Size = new System.Drawing.Size(335, 176);
             this.grpAffected.TabIndex = 7;
             this.grpAffected.TabStop = false;
             this.grpAffected.Text = "Company";
@@ -177,14 +193,59 @@
             this.panelHoliday.AutoScroll = true;
             this.panelHoliday.Location = new System.Drawing.Point(4, 13);
             this.panelHoliday.Name = "panelHoliday";
-            this.panelHoliday.Size = new System.Drawing.Size(449, 157);
+            this.panelHoliday.Size = new System.Drawing.Size(325, 157);
             this.panelHoliday.TabIndex = 0;
+            // 
+            // payroll_holiday_id
+            // 
+            this.payroll_holiday_id.Location = new System.Drawing.Point(358, 514);
+            this.payroll_holiday_id.Name = "payroll_holiday_id";
+            this.payroll_holiday_id.Size = new System.Drawing.Size(100, 20);
+            this.payroll_holiday_id.TabIndex = 0;
+            this.payroll_holiday_id.Visible = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(353, 393);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(122, 23);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Enabled = false;
+            this.btnRestore.Location = new System.Drawing.Point(353, 451);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(122, 23);
+            this.btnRestore.TabIndex = 32;
+            this.btnRestore.Text = "Restore";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnArchived
+            // 
+            this.btnArchived.Enabled = false;
+            this.btnArchived.Location = new System.Drawing.Point(353, 422);
+            this.btnArchived.Name = "btnArchived";
+            this.btnArchived.Size = new System.Drawing.Size(122, 23);
+            this.btnArchived.TabIndex = 31;
+            this.btnArchived.Text = "Archive";
+            this.btnArchived.UseVisualStyleBackColor = true;
+            this.btnArchived.Click += new System.EventHandler(this.btnArchived_Click);
             // 
             // Holiday
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 586);
+            this.ClientSize = new System.Drawing.Size(481, 552);
+            this.Controls.Add(this.payroll_holiday_id);
+            this.Controls.Add(this.btnRestore);
+            this.Controls.Add(this.btnArchived);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.tabHoliday);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpAffected);
@@ -224,5 +285,9 @@
         private System.Windows.Forms.DataGridView payroll_holiday_holiday_archive;
         private System.Windows.Forms.GroupBox grpAffected;
         private System.Windows.Forms.Panel panelHoliday;
+        private System.Windows.Forms.TextBox payroll_holiday_id;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnRestore;
+        private System.Windows.Forms.Button btnArchived;
     }
 }

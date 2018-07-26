@@ -18,7 +18,7 @@ namespace Payroll
         public Jobtitle()
         {
             InitializeComponent();
-            dbcon = new db();
+            dbcon   = new db();
             payroll = new Payroll();
         }
 
@@ -36,22 +36,25 @@ namespace Payroll
         {
             if(payroll_jobtitle_department_id.SelectedItem != null)
             {
-                string table = "tbl_payroll_jobtitle";
-                string[] column_name = { "payroll_jobtitle_department_id", "payroll_jobtitle_name" };
-                string[] column_value = { payroll_jobtitle_department_id.SelectedValue.ToString(), payroll_jobtitle_name.Text };
-                dbcon.Insert(table, column_name, column_value, "", null);
+                string table               = "tbl_payroll_jobtitle";
+                string[] column_name       = { "payroll_jobtitle_department_id", "payroll_jobtitle_name" };
+                string[] column_value      = { payroll_jobtitle_department_id.SelectedValue.ToString(), payroll_jobtitle_name.Text };
+                dbcon.Insert(table, column_name, column_value, "", null,true);
                 this.LoadActiveJob();
                 this.LoadArchiveJob();
 
                 // insert audit logs
-                string table2 = "tbl_payroll_audit_logs";
-                string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-                string[] column_value2 = { "nethken", "Add new Job Title named " + payroll_jobtitle_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-                dbcon.Insert(table2, column_name2, column_value2, "", null);
+                string table2              =   "tbl_payroll_audit_logs";
+                string[] column_name2      = { "payroll_audit_logs_user",
+                                               "payroll_audit_logs_changes",
+                                               "payroll_audit_logs_datetime" };
+                string[] column_value2     = { "nethken", "Add new Job Title named " + payroll_jobtitle_name.Text + "",
+                                               DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+                dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
                 payroll_jobtitle_name.Text = "";
-                btnJobArchived.Enabled = false;
-                btnJobEdit.Enabled = false;
+                btnJobArchived.Enabled     = false;
+                btnJobEdit.Enabled         = false;
             }
             else
             {
@@ -64,7 +67,7 @@ namespace Payroll
             //load active job to datagrid
             string active = "SELECT tbl_payroll_jobtitle.payroll_jobtitle_id, tbl_payroll_jobtitle.payroll_jobtitle_name, tbl_payroll_department.payroll_department_name, tbl_payroll_jobtitle.payroll_jobtitle_department_id  from tbl_payroll_jobtitle LEFT JOIN tbl_payroll_department ON tbl_payroll_jobtitle.payroll_jobtitle_department_id = tbl_payroll_department.payroll_department_id where payroll_jobtitle_archived=0";
             payroll.FillDataGrid(active, payroll_job_datagrid_active);
-            payroll_job_datagrid_active.Columns["payroll_jobtitle_id"].Visible = false;
+            payroll_job_datagrid_active.Columns["payroll_jobtitle_id"].Visible            = false;
             payroll_job_datagrid_active.Columns["payroll_jobtitle_department_id"].Visible = false;
         }
          
@@ -73,7 +76,7 @@ namespace Payroll
             //load archive job to datagrid
             string archive = "SELECT tbl_payroll_jobtitle.payroll_jobtitle_id, tbl_payroll_jobtitle.payroll_jobtitle_name, tbl_payroll_department.payroll_department_name, tbl_payroll_jobtitle.payroll_jobtitle_department_id from tbl_payroll_jobtitle LEFT JOIN tbl_payroll_department ON tbl_payroll_jobtitle.payroll_jobtitle_department_id = tbl_payroll_department.payroll_department_id where payroll_jobtitle_archived=1";
             payroll.FillDataGrid(archive, payroll_job_datagrid_archive);
-            payroll_job_datagrid_archive.Columns["payroll_jobtitle_id"].Visible = false;
+            payroll_job_datagrid_archive.Columns["payroll_jobtitle_id"].Visible            = false;
             payroll_job_datagrid_archive.Columns["payroll_jobtitle_department_id"].Visible = false;
         }
 
@@ -82,13 +85,13 @@ namespace Payroll
             if (tabJob.SelectedTab == tabJob.TabPages["activejobtitle"])
             {
                 btnJobRestore.Enabled = false;
-                btnJobEdit.Enabled = false;
-                btnJobSave.Enabled = true;
+                btnJobEdit.Enabled    = false;
+                btnJobSave.Enabled    = true;
             }
             else
             {
                 btnJobArchived.Enabled = false;
-                btnJobEdit.Enabled = false;
+                btnJobEdit.Enabled     = false;
             }
 
             payroll_jobtitle_name.Text = "";
@@ -96,22 +99,25 @@ namespace Payroll
 
         private void btnJobEdit_Click(object sender, EventArgs e)
         {
-            string table = "tbl_payroll_jobtitle";
-            string idvalue = payroll_jobtitle_id.Text;
-            string primarykey = "payroll_jobtitle_id";
+            string table             = "tbl_payroll_jobtitle";
+            string idvalue           = payroll_jobtitle_id.Text;
+            string primarykey        = "payroll_jobtitle_id";
             string[] columnandvalues = { "payroll_jobtitle_department_id='" + payroll_jobtitle_department_id.SelectedValue.ToString() + "'", "payroll_jobtitle_name='" + payroll_jobtitle_name.Text + "'"};
             dbcon.Update(table, columnandvalues, idvalue, primarykey, "", null);
             this.LoadActiveJob();
             this.LoadArchiveJob();
             btnJobArchived.Enabled = false;
-            btnJobEdit.Enabled = false;
-            btnJobSave.Enabled = true;
+            btnJobEdit.Enabled     = false;
+            btnJobSave.Enabled     = true;
 
             // insert audit logs
-            string table2 = "tbl_payroll_audit_logs";
-            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-            string[] column_value2 = { "nethken", "Edited Job Title named " + payroll_jobtitle_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-            dbcon.Insert(table2, column_name2, column_value2, "", null);
+            string table2          =  "tbl_payroll_audit_logs";
+            string[] column_name2  = {"payroll_audit_logs_user",
+                                      "payroll_audit_logs_changes",
+                                      "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Edited Job Title named " + payroll_jobtitle_name.Text + "",
+                                        DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
             payroll_jobtitle_name.Text = "";
 
@@ -121,15 +127,15 @@ namespace Payroll
         {
             try
             {
-                DataGridViewRow row = this.payroll_job_datagrid_active.Rows[e.RowIndex];
+                DataGridViewRow row                          = this.payroll_job_datagrid_active.Rows[e.RowIndex];
 
-                payroll_jobtitle_name.Text = row.Cells["payroll_jobtitle_name"].Value.ToString();
-                payroll_jobtitle_id.Text = row.Cells["payroll_jobtitle_id"].Value.ToString();
+                payroll_jobtitle_name.Text                   = row.Cells["payroll_jobtitle_name"].Value.ToString();
+                payroll_jobtitle_id.Text                     = row.Cells["payroll_jobtitle_id"].Value.ToString();
                 payroll_jobtitle_department_id.SelectedValue = row.Cells["payroll_jobtitle_department_id"].Value.ToString();
-                btnJobArchived.Enabled = true;
-                btnJobRestore.Enabled = false;
-                btnJobEdit.Enabled = true;
-                btnJobSave.Enabled = false;
+                btnJobArchived.Enabled                       = true;
+                btnJobRestore.Enabled                        = false;
+                btnJobEdit.Enabled                           = true;
+                btnJobSave.Enabled                           = false;
 
             }
             catch (Exception)
@@ -142,14 +148,14 @@ namespace Payroll
         {
             try
             {
-                DataGridViewRow row = this.payroll_job_datagrid_archive.Rows[e.RowIndex];
+                DataGridViewRow row                          = this.payroll_job_datagrid_archive.Rows[e.RowIndex];
 
-                payroll_jobtitle_name.Text = row.Cells["payroll_jobtitle_name"].Value.ToString();
-                payroll_jobtitle_id.Text = row.Cells["payroll_jobtitle_id"].Value.ToString();
+                payroll_jobtitle_name.Text                   = row.Cells["payroll_jobtitle_name"].Value.ToString();
+                payroll_jobtitle_id.Text                     = row.Cells["payroll_jobtitle_id"].Value.ToString();
                 payroll_jobtitle_department_id.SelectedValue = row.Cells["payroll_jobtitle_department_id"].Value.ToString();
-                btnJobArchived.Enabled = false;
-                btnJobSave.Enabled = false;
-                btnJobRestore.Enabled = true; 
+                btnJobArchived.Enabled                       = false;
+                btnJobSave.Enabled                           = false;
+                btnJobRestore.Enabled                        = true; 
 
             }
             catch (Exception)
@@ -160,9 +166,9 @@ namespace Payroll
 
         private void btnJobArchived_Click(object sender, EventArgs e)
         {
-            string table = "tbl_payroll_jobtitle";
-            string idvalue = payroll_jobtitle_id.Text;
-            string primarykey = "payroll_jobtitle_id";
+            string table             = "tbl_payroll_jobtitle";
+            string idvalue           = payroll_jobtitle_id.Text;
+            string primarykey        = "payroll_jobtitle_id";
             string[] columnandvalues = { "payroll_jobtitle_archived='1'" };
             dbcon.Update(table, columnandvalues, idvalue, primarykey, "", null);
             this.LoadActiveJob();
@@ -170,21 +176,23 @@ namespace Payroll
             btnJobArchived.Enabled = false;
 
             // insert audit logs
-            string table2 = "tbl_payroll_audit_logs";
-            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
+            string table2          =  "tbl_payroll_audit_logs";
+            string[] column_name2  = {"payroll_audit_logs_user",
+                                      "payroll_audit_logs_changes",
+                                      "payroll_audit_logs_datetime" };
             string[] column_value2 = { "nethken", "Archived Job Title named " + payroll_jobtitle_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-            dbcon.Insert(table2, column_name2, column_value2, "", null);
+            dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
             payroll_jobtitle_name.Text = "";
-            btnJobSave.Enabled = true;
-            btnJobEdit.Enabled = false;
+            btnJobSave.Enabled         = true;
+            btnJobEdit.Enabled         = false;
         }
 
         private void btnJobRestore_Click(object sender, EventArgs e)
         {
-            string table = "tbl_payroll_jobtitle";
-            string idvalue = payroll_jobtitle_id.Text;
-            string primarykey = "payroll_jobtitle_id";
+            string table             = "tbl_payroll_jobtitle";
+            string idvalue           = payroll_jobtitle_id.Text;
+            string primarykey        = "payroll_jobtitle_id";
             string[] columnandvalues = { "payroll_jobtitle_archived='0'" };
             dbcon.Update(table, columnandvalues, idvalue, primarykey, "", null);
             this.LoadActiveJob();
@@ -193,15 +201,18 @@ namespace Payroll
 
 
             // insert audit logs
-            string table2 = "tbl_payroll_audit_logs";
-            string[] column_name2 = { "payroll_audit_logs_user", "payroll_audit_logs_changes", "payroll_audit_logs_datetime" };
-            string[] column_value2 = { "nethken", "Restored Job Title named " + payroll_jobtitle_name.Text + "", DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
-            dbcon.Insert(table2, column_name2, column_value2, "", null);
+            string table2          = "tbl_payroll_audit_logs";
+            string[] column_name2  = { "payroll_audit_logs_user",
+                                      "payroll_audit_logs_changes",
+                                      "payroll_audit_logs_datetime" };
+            string[] column_value2 = { "nethken", "Restored Job Title named " + payroll_jobtitle_name.Text + "",
+                                       DateTime.Now.ToString("yyyyMMddHHmmss").ToString() };
+            dbcon.Insert(table2, column_name2, column_value2, "", null,false);
 
 
             payroll_jobtitle_name.Text = "";
-            btnJobSave.Enabled = true;
-            btnJobEdit.Enabled = false;
+            btnJobSave.Enabled         = true;
+            btnJobEdit.Enabled         = false;
         }
     }
 }

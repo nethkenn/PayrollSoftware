@@ -32,7 +32,7 @@ namespace Payroll
             string rdo = "SELECT payroll_rdo_id, Concat(rdo_code, ' - ',rdo_location) AS rdocon from tbl_payroll_rdo";
             payroll.FillComboBox(rdo, payroll_company_rdo, "RDO", "rdocon", "payroll_rdo_id");
         }
-
+        
         public void LoadBDO(ComboBox payroll_company_bank)
         {
             //load bank to combobox

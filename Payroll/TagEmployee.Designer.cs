@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.grpEmployeeTag = new System.Windows.Forms.GroupBox();
+            this.Checkall = new System.Windows.Forms.CheckBox();
+            this.panelEmployee = new System.Windows.Forms.Panel();
             this.payroll_filter_dept_tag = new System.Windows.Forms.ComboBox();
             this.payroll_filter_job_tag = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelEmployee = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnTag = new System.Windows.Forms.Button();
             this.grpEmployeeTag.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpEmployeeTag
             // 
-            this.grpEmployeeTag.Controls.Add(this.checkBox1);
+            this.grpEmployeeTag.Controls.Add(this.Checkall);
             this.grpEmployeeTag.Controls.Add(this.panelEmployee);
             this.grpEmployeeTag.Location = new System.Drawing.Point(12, 57);
             this.grpEmployeeTag.Name = "grpEmployeeTag";
@@ -49,6 +49,25 @@
             this.grpEmployeeTag.TabIndex = 0;
             this.grpEmployeeTag.TabStop = false;
             this.grpEmployeeTag.Text = "Employee";
+            // 
+            // Checkall
+            // 
+            this.Checkall.AutoSize = true;
+            this.Checkall.Location = new System.Drawing.Point(6, 23);
+            this.Checkall.Name = "Checkall";
+            this.Checkall.Size = new System.Drawing.Size(71, 17);
+            this.Checkall.TabIndex = 0;
+            this.Checkall.Text = "Check All";
+            this.Checkall.UseVisualStyleBackColor = true;
+            this.Checkall.CheckStateChanged += new System.EventHandler(this.Checkall_CheckStateChanged);
+            // 
+            // panelEmployee
+            // 
+            this.panelEmployee.AutoScroll = true;
+            this.panelEmployee.Location = new System.Drawing.Point(6, 46);
+            this.panelEmployee.Name = "panelEmployee";
+            this.panelEmployee.Size = new System.Drawing.Size(316, 396);
+            this.panelEmployee.TabIndex = 0;
             // 
             // payroll_filter_dept_tag
             // 
@@ -86,24 +105,6 @@
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Select Job Title";
-            // 
-            // panelEmployee
-            // 
-            this.panelEmployee.AutoScroll = true;
-            this.panelEmployee.Location = new System.Drawing.Point(6, 46);
-            this.panelEmployee.Name = "panelEmployee";
-            this.panelEmployee.Size = new System.Drawing.Size(316, 396);
-            this.panelEmployee.TabIndex = 0;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Check All";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // btnTag
             // 
@@ -144,7 +145,7 @@
         private System.Windows.Forms.ComboBox payroll_filter_job_tag;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox Checkall;
         private System.Windows.Forms.Panel panelEmployee;
         private System.Windows.Forms.Button btnTag;
     }
