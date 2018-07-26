@@ -27,7 +27,7 @@ namespace Payroll
 
         public void SearchDate(DateTime from, DateTime to, ComboBox cmbUser, DataGridView datagrid)
         {
-            string searchLogs = "SELECT * FROM tbl_payroll_audit_logs where payroll_audit_logs_datetime >= '" + from.ToString("yyyy-MM-dd") + "' AND payroll_audit_logs_datetime < '" + to.ToString("yyyy-MM-dd") + "' AND payroll_audit_logs_user ='" + cmbUser.SelectedItem.ToString() + "'";
+            string searchLogs = "SELECT * FROM tbl_payroll_audit_logs where payroll_audit_logs_datetime >= '" + from.ToString("yyyyMMddHHmmss") + "' AND payroll_audit_logs_datetime < '" + to.ToString("yyyyMMddHHmmss") + "' AND payroll_audit_logs_user ='" + cmbUser.SelectedItem.ToString() + "'";
             payroll.FillDataGrid(searchLogs, datagrid);
             datagrid.Columns["payroll_audit_logs_id"].Visible = false;
             datagrid.Columns["payroll_audit_logs_archived"].Visible = false;
