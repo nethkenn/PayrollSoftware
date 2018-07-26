@@ -41,6 +41,12 @@ namespace Payroll
             companycontroller.LoadCompany(payroll_company_datagrid);
             //load auditlogs to datagrid
             auditlogscontroller.LoadAuditLogs(payroll_auditlogs_datagrid);
+            //pass data grid view names
+            auditlogscontroller.PassDataGridViewName(payroll_auditlogs_datagrid);
+            companycontroller.PassDataGridViewName(payroll_company_datagrid);
+
+            //combobox selectedIndex
+            cmb_AuditlogsUsers.SelectedIndex = 0;
 
             //check if company is exist
             if (dbcon.CheckRecord("tbl_payroll_company") == "Exist")
@@ -57,7 +63,7 @@ namespace Payroll
             payroll_config_dropdown.Visible = false;
             if (btn_payroll_config.BackColor != Color.FromArgb(158, 158, 158))
             {
-                btn_payroll_config.BackColor = Color.FromArgb(41, 39, 40);
+                btn_payroll_config.BackColor = Color.FromArgb(17, 33, 46);
             }
         }
 
@@ -68,7 +74,7 @@ namespace Payroll
             payroll_config_dropdown.Visible = false;
             if (btn_payroll_config.BackColor == Color.FromArgb(54, 153, 210))
             {
-                btn_payroll_config.BackColor = Color.FromArgb(41, 39, 40);
+                btn_payroll_config.BackColor = Color.FromArgb(17, 33, 46);
             }
         }
 
@@ -278,7 +284,7 @@ namespace Payroll
 
         private void btn_company_list_Click(object sender, EventArgs e)
         {
-            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.ActiveControl.BackColor = Color.FromArgb(17, 33, 46);
             this.HideAllPanel(Controls);
             this.push_button(sender,e);
             CompanyPanel.Visible = true;
@@ -286,7 +292,7 @@ namespace Payroll
 
         private void btn_employee_list_Click(object sender, EventArgs e)
         {
-            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.ActiveControl.BackColor = Color.FromArgb(17, 33, 46);
             this.HideAllPanel(Controls);
             this.push_button(sender, e);
             EmployeePanel.Visible = true;
@@ -340,7 +346,7 @@ namespace Payroll
 
         private void btn_audit_trail_Click(object sender, EventArgs e)
         {
-            this.ActiveControl.BackColor = Color.FromArgb(49, 46, 48);
+            this.ActiveControl.BackColor = Color.FromArgb(17, 33, 46);
             this.HideAllPanel(Controls);
             this.push_button(sender, e);
             AuditlogsPanel.Visible = true;
@@ -456,6 +462,46 @@ namespace Payroll
         private void payroll_department_id_emp_SelectedIndexChanged(object sender, EventArgs e)
         {
             employeecontroller.LoadJobTitle(payroll_jobtitle_id_emp, payroll_department_id_emp.SelectedValue.ToString());
+        }
+
+        private void btn_holiday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_allowances_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_deduction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_leave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_payroll_group_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void payroll_config_dropdown_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_tax_period_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_tax_table_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

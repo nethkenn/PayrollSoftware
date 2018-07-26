@@ -20,10 +20,14 @@ namespace Payroll
         public void LoadCompany(DataGridView datagrid)
         {
             //load company to datagrid
-            string company = "SELECT * from tbl_payroll_company";
+            string company  = "SELECT company.* , bank.bank_name from tbl_payroll_company as company";
+                   company += " LEFT JOIN tbl_payroll_bank_convertion as bank";
+                   company += " ON company.payroll_company_bank = bank.payroll_bank_convertion_id";
             payroll.FillDataGrid(company, datagrid);
             datagrid.Columns["payroll_company_logo"].Visible = false;
             datagrid.Columns["payroll_company_id"].Visible   = false;
+            datagrid.Columns["payroll_company_archived"].Visible = false;
+            datagrid.Columns["payroll_company_bank"].Visible = false;
         }
 
         public void LoadRDO(ComboBox payroll_company_rdo)
@@ -56,6 +60,36 @@ namespace Payroll
                     MessageBox.Show(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        public void PassDataGridViewName(DataGridView datagridviewname)
+        {
+            string[] columname = {"payroll_company_name",
+                                  "payroll_company_address",
+                                  "payroll_company_contact",
+                                  "payroll_company_email",
+                                  "payroll_company_nature_of_business",
+                                  "payroll_company_rdo",
+                                  "payroll_company_date_started",
+                                  "payroll_company_tin",
+                                  "payroll_company_sss",
+                                  "payroll_company_philhealth",
+                                  "payroll_company_pagibig",
+                                  "payroll_company_code",
+                                  "bank_name"};
+            string[] headerName = {"Name",
+                                   "Address",
+                                   "Contact",
+                                   "Email",
+                                   "Nature of Business",
+                                   "RDO",
+                                   "Date Started",
+                                   "TIN",
+                                   "SSS",
+                                   "Philhealth",
+                                   "Pagibig",
+                                   "Company Code",
+                                   "Bank"};
+            payroll.SetHeaderText(columname, headerName, datagridviewname);
         }
     }
 }

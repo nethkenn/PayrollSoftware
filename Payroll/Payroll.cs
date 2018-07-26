@@ -55,7 +55,16 @@ namespace Payroll
             }
 
         }
+        public void SetHeaderText(string[] columname, string[] headerName, DataGridView datagridviewname)
+        {
+            int count = 0;
+            
+            foreach(string column in columname)
+            {
+                datagridviewname.Columns[column].HeaderText = headerName[count];
+                count++;
 
-
+            }
+        }
     }
 }
