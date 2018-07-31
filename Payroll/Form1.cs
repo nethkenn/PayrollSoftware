@@ -343,8 +343,6 @@ namespace Payroll
             job.ShowDialog();
         }
 
-
-
         private void AuditDateChanged(object sender, EventArgs e)
         {
             auditlogscontroller.SearchDate(dateTimePickerAuditLogFrom.Value,dateTimePickerAuditLogTo.Value, cmb_AuditlogsUsers, payroll_auditlogs_datagrid);
@@ -497,7 +495,8 @@ namespace Payroll
 
         private void btn_leave_Click(object sender, EventArgs e)
         {
-
+            Leave leave = new Leave();
+            leave.ShowDialog();
         }
 
         private void btn_payroll_group_Click(object sender, EventArgs e)
