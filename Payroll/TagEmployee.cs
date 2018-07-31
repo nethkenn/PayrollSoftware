@@ -39,10 +39,19 @@ namespace Payroll
             if (dbcon.OpenCon() == true)
             {
                 CheckBox box;
-
-                string query = "SELECT * from tbl_payroll_employee_basic where payroll_employee_company_id="+company_id+" ORDER by payroll_employee_last_name";
-                MySqlCommand cmd = new MySqlCommand(query, dbcon.con);
-                MySqlDataReader read = cmd.ExecuteReader();
+                MySqlDataReader read;
+                if (company_id != 0)
+                {
+                    string query = "SELECT * from tbl_payroll_employee_basic where payroll_employee_company_id=" + company_id + " ORDER by payroll_employee_last_name";
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon.con);
+                    read = cmd.ExecuteReader();
+                }
+                else
+                {
+                    string query = "SELECT * from tbl_payroll_employee_basic ORDER by payroll_employee_last_name";
+                    MySqlCommand cmd = new MySqlCommand(query, dbcon.con);
+                    read = cmd.ExecuteReader();
+                }
 
                 int y = 3;
                 while (read.Read())

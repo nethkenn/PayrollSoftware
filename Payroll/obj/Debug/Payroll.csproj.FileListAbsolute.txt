@@ -1,4 +1,9 @@
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Payroll.exe.config
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Payroll.exe
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Payroll.pdb
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\MySql.Data.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Google.Protobuf.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\MySql.Data.xml
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.csprojResolveAssemblyReference.cache
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Department.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Designhere.resources
@@ -8,10 +13,6 @@ C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Properties.Resources.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.TagEmployee.resources
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.csproj.GenerateResource.Cache
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Payroll.exe
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Payroll.pdb
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\MySql.Data.dll
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\Google.Protobuf.dll
-C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\bin\Debug\MySql.Data.xml
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.exe
 C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.pdb
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Leave.resources
