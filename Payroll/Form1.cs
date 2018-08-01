@@ -485,12 +485,14 @@ namespace Payroll
 
         private void btn_allowances_Click(object sender, EventArgs e)
         {
-
+            Allowances allowance = new Allowances();
+            allowance.ShowDialog();
         }
 
         private void btn_deduction_Click(object sender, EventArgs e)
         {
-
+            Deduction Deduction = new Deduction();
+            Deduction.ShowDialog();
         }
 
         private void btn_leave_Click(object sender, EventArgs e)
