@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabLeave = new System.Windows.Forms.TabControl();
             this.activeleave = new System.Windows.Forms.TabPage();
             this.payroll_leave_datagrid_active = new System.Windows.Forms.DataGridView();
             this.archiveleave = new System.Windows.Forms.TabPage();
             this.payroll_leave_datagrid_archive = new System.Windows.Forms.DataGridView();
             this.dgvTaggedEmployee = new System.Windows.Forms.DataGridView();
+            this.empName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaveHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payroll_leave_temp_name = new System.Windows.Forms.ComboBox();
             this.btnTagEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,9 +47,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdnNo = new System.Windows.Forms.RadioButton();
             this.rdnYes = new System.Windows.Forms.RadioButton();
-            this.empName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leaveHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabLeave.SuspendLayout();
             this.activeleave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_leave_datagrid_active)).BeginInit();
@@ -118,18 +119,36 @@
             // 
             this.dgvTaggedEmployee.AllowUserToAddRows = false;
             this.dgvTaggedEmployee.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle1.NullValue = "0";
+            this.dgvTaggedEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTaggedEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTaggedEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTaggedEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.empName,
-            this.EmpID,
+            this.empID,
             this.leaveHours});
             this.dgvTaggedEmployee.Location = new System.Drawing.Point(6, 19);
             this.dgvTaggedEmployee.Name = "dgvTaggedEmployee";
-            this.dgvTaggedEmployee.ReadOnly = true;
             this.dgvTaggedEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTaggedEmployee.Size = new System.Drawing.Size(445, 154);
             this.dgvTaggedEmployee.TabIndex = 1;
+            // 
+            // empName
+            // 
+            this.empName.HeaderText = "Employee Name";
+            this.empName.Name = "empName";
+            this.empName.ReadOnly = true;
+            // 
+            // empID
+            // 
+            this.empID.HeaderText = "Employee ID";
+            this.empID.Name = "empID";
+            this.empID.ReadOnly = true;
+            // 
+            // leaveHours
+            // 
+            this.leaveHours.HeaderText = "Leave Hours";
+            this.leaveHours.Name = "leaveHours";
             // 
             // payroll_leave_temp_name
             // 
@@ -187,6 +206,7 @@
             this.btnSave.TabIndex = 30;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -216,13 +236,13 @@
             this.rdnNo.Name = "rdnNo";
             this.rdnNo.Size = new System.Drawing.Size(39, 17);
             this.rdnNo.TabIndex = 34;
-            this.rdnNo.TabStop = true;
             this.rdnNo.Text = "No";
             this.rdnNo.UseVisualStyleBackColor = true;
             // 
             // rdnYes
             // 
             this.rdnYes.AutoSize = true;
+            this.rdnYes.Checked = true;
             this.rdnYes.Location = new System.Drawing.Point(26, 14);
             this.rdnYes.Name = "rdnYes";
             this.rdnYes.Size = new System.Drawing.Size(43, 17);
@@ -230,25 +250,6 @@
             this.rdnYes.TabStop = true;
             this.rdnYes.Text = "Yes";
             this.rdnYes.UseVisualStyleBackColor = true;
-            // 
-            // empName
-            // 
-            this.empName.HeaderText = "Employee Name";
-            this.empName.Name = "empName";
-            this.empName.ReadOnly = true;
-            // 
-            // EmpID
-            // 
-            this.EmpID.HeaderText = "Employee ID";
-            this.EmpID.Name = "EmpID";
-            this.EmpID.ReadOnly = true;
-            this.EmpID.Visible = false;
-            // 
-            // leaveHours
-            // 
-            this.leaveHours.HeaderText = "Leave Hours";
-            this.leaveHours.Name = "leaveHours";
-            this.leaveHours.ReadOnly = true;
             // 
             // Leave
             // 
@@ -266,6 +267,7 @@
             this.Name = "Leave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Leave";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Leave_FormClosing);
             this.Load += new System.EventHandler(this.Leave_Load);
             this.tabLeave.ResumeLayout(false);
             this.activeleave.ResumeLayout(false);
@@ -288,7 +290,6 @@
         private System.Windows.Forms.DataGridView payroll_leave_datagrid_active;
         private System.Windows.Forms.TabPage archiveleave;
         private System.Windows.Forms.DataGridView payroll_leave_datagrid_archive;
-        private System.Windows.Forms.DataGridView dgvTaggedEmployee;
         private System.Windows.Forms.ComboBox payroll_leave_temp_name;
         private System.Windows.Forms.Button btnTagEmployee;
         private System.Windows.Forms.Label label1;
@@ -298,8 +299,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdnNo;
         private System.Windows.Forms.RadioButton rdnYes;
+        public System.Windows.Forms.DataGridView dgvTaggedEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn empName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmpID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empID;
         private System.Windows.Forms.DataGridViewTextBoxColumn leaveHours;
     }
 }

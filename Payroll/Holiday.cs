@@ -334,5 +334,10 @@ namespace Payroll
             btnRestore.Enabled = false;
             TagEmployee.empid.Clear();
         }
+
+        private void Holiday_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            TagEmployee.empid.Clear();
+        }
     }
 }

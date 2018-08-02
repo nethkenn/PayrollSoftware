@@ -15,12 +15,17 @@ namespace Payroll
 {
     public partial class TagEmployee : Form
     {
+        public Leave leave { get; set; }
+
         private db dbcon;
         private int company_id;
         private Payroll payroll;
         private EmployeeController employeecontroller;
         private string dynamic_form;
         public static Dictionary<int, List<int>> empid = new Dictionary<int, List<int>>();
+        public static List<int> untagempid = new List<int>();
+        private MySqlDataReader read;
+        private bool exist;
 
         public TagEmployee(int id,string form)
         {
@@ -74,7 +79,7 @@ namespace Payroll
             }
 
             //mark check the checkbox if found in dictionary(array)
-            if(empid.Count != 0)
+            if (empid.Count != 0)
             {
                 //loop the checkbox
                 foreach (Control c in panelEmployee.Controls)
@@ -104,9 +109,12 @@ namespace Payroll
 
         private void btnTag_Click(object sender, EventArgs e)
         {
-            int count = 0;
             int check = 0;
 
+            //remove all the value of the dictionary
+            empid.Clear();
+
+            // push/refill the value of the dictionary with the checked values
             foreach (Control c in panelEmployee.Controls)
             {
                 if (c is CheckBox)
@@ -120,14 +128,6 @@ namespace Payroll
                         }
                         else
                         {
-                            //triger 1 time
-                            if(count == 0)
-                            {
-                                //remove all the value 
-                                empid[company_id].Clear();
-                                count++;
-                            }
-
                             //add again the checked value
                             empid[company_id].Add(Convert.ToInt32(c.Tag));
                         }
@@ -137,17 +137,53 @@ namespace Payroll
                 }
             }
 
-
-            if(check == 0)
+            switch (dynamic_form)
             {
-                //remove all the value in dictionary(array) if there is no checked box
-                empid[company_id].Clear();
+                case "Leave":
+                    if(empid.Count != 0)
+                    {
+                        payroll.RemoveUntaggedEmployee(empid,leave.dgvTaggedEmployee);
+
+                        foreach (KeyValuePair<int, List<int>> item in empid)
+                        {
+                            foreach (int value in item.Value)
+                            {
+                                read = employeecontroller.GetEmployeeDetails(value.ToString());
+
+                                if (read.HasRows == true)
+                                {
+                                    exist = payroll.CheckIfValueExistInDataGrid(leave.dgvTaggedEmployee, read["payroll_employee_id"].ToString());
+
+                                    if (exist == false)
+                                    {
+                                        leave.dgvTaggedEmployee.Rows.Add(read["payroll_employee_last_name"].ToString() + ", " + read["payroll_employee_first_name"].ToString() + read["payroll_employee_middle_name"].ToString(),
+                                                                        read["payroll_employee_id"],
+                                                                        "0.00");
+                                    }
+
+                                }
+
+                                read.Close();
+                                dbcon.CloseCon();
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        leave.dgvTaggedEmployee.Rows.Clear();
+                    }
+                    this.Close();
+                    break;
+
+                default:
+                    this.Close();
+                    var type = Type.GetType("Payroll." + dynamic_form);
+                    dynamic form = Activator.CreateInstance(type) as Form;
+                    form.GetEmployeeID(empid);
+                    break;
             }
 
-            var type = Type.GetType("Payroll." + dynamic_form);
-            dynamic form = Activator.CreateInstance(type) as Form;
-            form.GetEmployeeID(empid);
-            this.Close();
 
         }
 
@@ -172,6 +208,7 @@ namespace Payroll
                     if (c is CheckBox)
                     {
                         ((CheckBox)c).CheckState = CheckState.Unchecked;
+                        
                     }
                 }
             }

@@ -16,7 +16,10 @@ namespace Payroll
 {
     public class EmployeeController
     {
+        private db dbcon = new db();
         private Payroll payroll = new Payroll();
+        private MySqlCommand cmd;
+        private MySqlDataReader read;
 
         public void LoadCountry(ComboBox payroll_country)
         {
@@ -69,6 +72,20 @@ namespace Payroll
                 payroll.FillComboBox(jobtitle, payroll_job, "JOBTITLE", "payroll_jobtitle_name", "payroll_jobtitle_id");
             }
 
+        }
+
+        public MySqlDataReader GetEmployeeDetails(string empid)
+        {
+            if (dbcon.OpenCon() == true)
+            {
+                string query = "SELECT * from tbl_payroll_employee_basic where payroll_employee_id=" + empid + "";
+                cmd = new MySqlCommand(query, dbcon.con);
+                read = cmd.ExecuteReader();
+                read.Read();
+                return read;
+            }
+
+            return read;
         }
 
     }

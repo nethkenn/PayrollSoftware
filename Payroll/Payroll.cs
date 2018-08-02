@@ -72,5 +72,56 @@ namespace Payroll
             emptag.ShowDialog();
         }
 
+        public bool CheckIfValueExistInDataGrid(DataGridView grid,string val)
+        {
+            bool exist = false;
+
+            for (int i = 0; i < grid.Rows.Count; i++)
+            {
+                for (int j = 0; j < grid.Columns.Count; j++)
+                {
+                    if (grid.Rows[i].Cells[j].Value != null && val == grid.Rows[i].Cells[j].Value.ToString())
+                    {
+                        exist = true;
+                        break;
+                    }
+                }
+            }
+
+            return exist;
+        }
+
+        public void RemoveUntaggedEmployee(Dictionary<int, List<int>> empid, DataGridView grid)
+        {
+
+                for (int i = 0; i < grid.Rows.Count-1; i++)
+                {
+                    for (int j = 0; j < grid.Columns.Count-1; j++)
+                    {
+                        if (grid.Rows[i].Cells[j].Value != null)
+                        {
+                            bool exist = false;
+                            foreach (KeyValuePair<int, List<int>> item in empid)
+                            {
+                                foreach (int value in item.Value)
+                                {
+                                    if (grid.Rows[i].Cells[j].Value.ToString() == value.ToString())
+                                    {
+                                        exist = true;
+                                    }
+                                }
+                            }
+
+                            if (exist == false)
+                            {
+                                grid.Rows.RemoveAt(grid.Rows[i].Cells[j].RowIndex);
+                            }
+                        }
+
+                    }
+                }     
+
+        }
+
     }
 }
