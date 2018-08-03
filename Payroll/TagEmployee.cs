@@ -142,27 +142,30 @@ namespace Payroll
                 case "Leave":
                     if(empid.Count != 0)
                     {
-                        payroll.RemoveUntaggedEmployee(empid,leave.dgvTaggedEmployee);
-
+                        //remove untag employee
+                        payroll.RemoveUntaggedEmployee(empid,leave.dgvTaggedEmployee,"empID");
+                        //loop through the dictionary
                         foreach (KeyValuePair<int, List<int>> item in empid)
                         {
                             foreach (int value in item.Value)
                             {
+                                //get employee details
                                 read = employeecontroller.GetEmployeeDetails(value.ToString());
-
+                                //if employee details has values
                                 if (read.HasRows == true)
                                 {
-                                    exist = payroll.CheckIfValueExistInDataGrid(leave.dgvTaggedEmployee, read["payroll_employee_id"].ToString());
+                                    // check if value already exist
+                                    exist = payroll.CheckIfValueExistInDataGrid(leave.dgvTaggedEmployee, read["payroll_employee_id"].ToString(),"empID");
 
                                     if (exist == false)
                                     {
+                                        //add if not exist
                                         leave.dgvTaggedEmployee.Rows.Add(read["payroll_employee_last_name"].ToString() + ", " + read["payroll_employee_first_name"].ToString() + read["payroll_employee_middle_name"].ToString(),
                                                                         read["payroll_employee_id"],
                                                                         "0.00");
                                     }
-
                                 }
-
+                                //close the reader and connection
                                 read.Close();
                                 dbcon.CloseCon();
                             }
@@ -171,8 +174,10 @@ namespace Payroll
                     }
                     else
                     {
+                        //if dictionary doesn't have data clear the grid
                         leave.dgvTaggedEmployee.Rows.Clear();
                     }
+                    //close the modal
                     this.Close();
                     break;
 

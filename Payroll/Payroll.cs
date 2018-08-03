@@ -72,54 +72,48 @@ namespace Payroll
             emptag.ShowDialog();
         }
 
-        public bool CheckIfValueExistInDataGrid(DataGridView grid,string val)
+        public bool CheckIfValueExistInDataGrid(DataGridView grid,string val, string cell)
         {
+
             bool exist = false;
 
-            for (int i = 0; i < grid.Rows.Count; i++)
+            foreach (DataGridViewRow row in grid.Rows)
             {
-                for (int j = 0; j < grid.Columns.Count; j++)
-                {
-                    if (grid.Rows[i].Cells[j].Value != null && val == grid.Rows[i].Cells[j].Value.ToString())
-                    {
-                        exist = true;
-                        break;
-                    }
-                }
+                 if (row.Cells[cell].Value.ToString() == val)
+                 {
+                     exist = true;
+                     break;
+                 }
+                  
             }
 
             return exist;
+
         }
 
-        public void RemoveUntaggedEmployee(Dictionary<int, List<int>> empid, DataGridView grid)
+        public void RemoveUntaggedEmployee(Dictionary<int, List<int>> empid, DataGridView grid, string cell)
         {
-
-                for (int i = 0; i < grid.Rows.Count-1; i++)
+            foreach (DataGridViewRow row in grid.Rows)
+            {
+                bool exist = false;
+                
+                foreach (KeyValuePair<int, List<int>> item in empid)
                 {
-                    for (int j = 0; j < grid.Columns.Count-1; j++)
+                    foreach (int value in item.Value)
                     {
-                        if (grid.Rows[i].Cells[j].Value != null)
+                        if (row.Cells[cell].Value.ToString() == value.ToString())
                         {
-                            bool exist = false;
-                            foreach (KeyValuePair<int, List<int>> item in empid)
-                            {
-                                foreach (int value in item.Value)
-                                {
-                                    if (grid.Rows[i].Cells[j].Value.ToString() == value.ToString())
-                                    {
-                                        exist = true;
-                                    }
-                                }
-                            }
-
-                            if (exist == false)
-                            {
-                                grid.Rows.RemoveAt(grid.Rows[i].Cells[j].RowIndex);
-                            }
+                            exist = true;
                         }
-
                     }
-                }     
+                }
+
+                if (exist == false)
+                {
+                    grid.Rows.RemoveAt(row.Cells[cell].RowIndex);
+                }
+
+            }   
 
         }
 

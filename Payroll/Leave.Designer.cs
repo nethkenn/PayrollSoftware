@@ -35,9 +35,6 @@
             this.archiveleave = new System.Windows.Forms.TabPage();
             this.payroll_leave_datagrid_archive = new System.Windows.Forms.DataGridView();
             this.dgvTaggedEmployee = new System.Windows.Forms.DataGridView();
-            this.empName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leaveHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payroll_leave_temp_name = new System.Windows.Forms.ComboBox();
             this.btnTagEmployee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +44,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdnNo = new System.Windows.Forms.RadioButton();
             this.rdnYes = new System.Windows.Forms.RadioButton();
+            this.empName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leaveHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabLeave.SuspendLayout();
             this.activeleave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_leave_datagrid_active)).BeginInit();
@@ -132,23 +132,6 @@
             this.dgvTaggedEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTaggedEmployee.Size = new System.Drawing.Size(445, 154);
             this.dgvTaggedEmployee.TabIndex = 1;
-            // 
-            // empName
-            // 
-            this.empName.HeaderText = "Employee Name";
-            this.empName.Name = "empName";
-            this.empName.ReadOnly = true;
-            // 
-            // empID
-            // 
-            this.empID.HeaderText = "Employee ID";
-            this.empID.Name = "empID";
-            this.empID.ReadOnly = true;
-            // 
-            // leaveHours
-            // 
-            this.leaveHours.HeaderText = "Leave Hours";
-            this.leaveHours.Name = "leaveHours";
             // 
             // payroll_leave_temp_name
             // 
@@ -250,6 +233,23 @@
             this.rdnYes.TabStop = true;
             this.rdnYes.Text = "Yes";
             this.rdnYes.UseVisualStyleBackColor = true;
+            // 
+            // empName
+            // 
+            this.empName.HeaderText = "Employee Name";
+            this.empName.Name = "empName";
+            this.empName.ReadOnly = true;
+            // 
+            // empID
+            // 
+            this.empID.HeaderText = "Employee ID";
+            this.empID.Name = "empID";
+            this.empID.ReadOnly = true;
+            // 
+            // leaveHours
+            // 
+            this.leaveHours.HeaderText = "Leave Hours";
+            this.leaveHours.Name = "leaveHours";
             // 
             // Leave
             // 
