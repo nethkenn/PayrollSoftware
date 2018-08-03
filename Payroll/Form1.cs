@@ -501,7 +501,8 @@ namespace Payroll
 
         private void btn_payroll_group_Click(object sender, EventArgs e)
         {
-
+            PayrollGroup P_Group = new PayrollGroup();
+            P_Group.ShowDialog();
         }
 
         private void payroll_config_dropdown_Paint(object sender, PaintEventArgs e)

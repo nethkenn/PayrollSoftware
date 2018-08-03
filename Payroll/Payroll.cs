@@ -63,7 +63,6 @@ namespace Payroll
             {
                 datagridviewname.Columns[column].HeaderText = headerName[count];
                 count++;
-
             }
         }
         public void TagEmployee(object sender, EventArgs e, int id,string form)

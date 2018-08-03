@@ -88,6 +88,18 @@
       <DependentUpon>Leave.cs</DependentUpon>
     </Compile>
     <Compile Include="Payroll.cs" />
+    <Compile Include="PayrollGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollGroup.Designer.cs">
+      <DependentUpon>PayrollGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollGrouptabs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollGrouptabs.Designer.cs">
+      <DependentUpon>PayrollGrouptabs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TagEmployee.cs">
@@ -113,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Leave.resx">
       <DependentUpon>Leave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollGroup.resx">
+      <DependentUpon>PayrollGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollGrouptabs.resx">
+      <DependentUpon>PayrollGrouptabs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
