@@ -258,6 +258,7 @@
             this.Name = "Holiday";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holiday";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Holiday_FormClosing);
             this.Load += new System.EventHandler(this.Holiday_Load);
             this.tabHoliday.ResumeLayout(false);
             this.activeHoliday.ResumeLayout(false);

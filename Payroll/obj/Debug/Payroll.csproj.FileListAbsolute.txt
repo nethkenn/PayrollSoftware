@@ -12,9 +12,9 @@ C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Jobtitle.resources
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Leave.resources
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.PayrollGroup.resources
+C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.PayrollGrouptabs.resources
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.Properties.Resources.resources
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.TagEmployee.resources
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.csproj.GenerateResource.Cache
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.exe
 C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.pdb
-C:\Users\ZEDEK\Documents\Visual Studio 2015\Projects\PayrollSoftware\Payroll\obj\Debug\Payroll.PayrollGrouptabs.resources
